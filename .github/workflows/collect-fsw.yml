@@ -5,12 +5,19 @@ on:
   schedule:
     # UTC: Beijing 05:40 and 19:40; scheduled execution may be delayed.
     - cron: '40 21,11 * * *'
+    # Postgame gate: only tipoffs 2–6 hours ago cause official requests.
+    - cron: '7,17,27,37,47,57 * * * *'
   push:
     branches: [master]
     paths:
       - '.github/workflows/collect-fsw.yml'
       - '.github/scripts/fsw-collector.cjs'
       - '.github/scripts/fsw-collector.test.cjs'
+      - '.github/scripts/fsw-details.cjs'
+      - '.github/scripts/fsw-details.test.cjs'
+      - '.github/scripts/fsw-publication.cjs'
+      - '.github/scripts/fsw-publication.test.cjs'
+      - '.github/scripts/fixtures/**'
       - '.github/scripts/fsw-games.json'
 
 permissions:
@@ -30,25 +37,36 @@ jobs:
           ref: master
           fetch-depth: 1
       - name: Test parser
-        run: node --test .github/scripts/fsw-collector.test.cjs
+        run: node --test .github/scripts/*.test.cjs
       - name: Collect verified FSW data
+        env:
+          FSW_COLLECT_MODE: ${{ github.event_name == 'schedule' && github.event.schedule != '40 21,11 * * *' && 'postgame' || 'full' }}
         run: node .github/scripts/fsw-collector.cjs
       - name: Commit JSON snapshot
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if [ ! -f data/fsw-2026-27.json ]; then
+            echo 'No FSW index published yet'
+            exit 0
+          fi
           git add -- data/fsw-2026-27.json
+          if [ -d data/fsw-2026-27/games ]; then
+            git add -- data/fsw-2026-27/games
+          fi
           if git diff --cached --quiet; then
             echo 'No snapshot changes'
             exit 0
           fi
-          git commit -m '更新 FSW 官方赛程和赵维伦比赛数据'
+          git commit -m '更新 FSW 赛程索引和单场比赛数据'
           git push origin HEAD:master
       - name: Preserve snapshot artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: fsw-snapshot-${{ github.run_id }}-${{ github.run_attempt }}
-          path: data/fsw-2026-27.json
+          path: |
+            data/fsw-2026-27.json
+            data/fsw-2026-27/games/*.json
           retention-days: 7
           if-no-files-found: warn
