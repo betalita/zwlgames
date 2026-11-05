@@ -1,0 +1,54 @@
+name: Collect FSW schedule
+
+on:
+  workflow_dispatch:
+  schedule:
+    # UTC: Beijing 05:40 and 19:40; scheduled execution may be delayed.
+    - cron: '40 21,11 * * *'
+  push:
+    branches: [master]
+    paths:
+      - '.github/workflows/collect-fsw.yml'
+      - '.github/scripts/fsw-collector.cjs'
+      - '.github/scripts/fsw-collector.test.cjs'
+      - '.github/scripts/fsw-games.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect-fsw
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: master
+          fetch-depth: 1
+      - name: Test parser
+        run: node --test .github/scripts/fsw-collector.test.cjs
+      - name: Collect verified FSW data
+        run: node .github/scripts/fsw-collector.cjs
+      - name: Commit JSON snapshot
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- data/fsw-2026-27.json
+          if git diff --cached --quiet; then
+            echo 'No snapshot changes'
+            exit 0
+          fi
+          git commit -m '更新 FSW 官方赛程和赵维伦比赛数据'
+          git push origin HEAD:master
+      - name: Preserve snapshot artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fsw-snapshot-${{ github.run_id }}-${{ github.run_attempt }}
+          path: data/fsw-2026-27.json
+          retention-days: 7
+          if-no-files-found: warn

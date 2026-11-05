@@ -1,0 +1,258 @@
+[
+  {
+    "id": "official-njcaa-2026-10-30-vs-hill-college",
+    "date": "2026-10-30",
+    "opponent": "Hill College",
+    "venue": "neutral",
+    "location": "Waco, TX",
+    "localTime": "16:00",
+    "timeSource": "fsw-official",
+    "uid": "yigcy26ggp4hebmr"
+  },
+  {
+    "id": "official-njcaa-2026-10-31-at-mclennan-community-college",
+    "date": "2026-10-31",
+    "opponent": "McLennan Community College",
+    "venue": "away",
+    "location": "Waco, TX",
+    "localTime": "19:00",
+    "timeSource": "fsw-official",
+    "uid": "cub1ucqshibu4onu"
+  },
+  {
+    "id": "official-njcaa-2026-11-04-vs-albany-technical-college",
+    "date": "2026-11-04",
+    "opponent": "Albany Technical College",
+    "venue": "home",
+    "localTime": "17:00",
+    "timeSource": "fsw-official",
+    "uid": "pe7la74hkp9ul46x"
+  },
+  {
+    "id": "official-njcaa-2026-11-06-vs-ave-maria-jv",
+    "date": "2026-11-06",
+    "opponent": "Ave Maria JV",
+    "venue": "home",
+    "localTime": "18:00",
+    "timeSource": "fsw-official",
+    "uid": "cf7o6jyr6vjdguws"
+  },
+  {
+    "id": "official-njcaa-2026-11-07-vs-pasco-hernando-state-college",
+    "date": "2026-11-07",
+    "opponent": "Pasco-Hernando State College",
+    "venue": "home",
+    "localTime": "14:00",
+    "timeSource": "fsw-official",
+    "uid": "90iksddh3e4v56yg"
+  },
+  {
+    "id": "official-njcaa-2026-11-12-vs-northwest-florida-state-college",
+    "date": "2026-11-12",
+    "opponent": "Northwest Florida State College",
+    "venue": "home",
+    "localTime": "17:00",
+    "timeSource": "fsw-official",
+    "uid": "2wedun0k59t7qutc"
+  },
+  {
+    "id": "official-njcaa-2026-11-18-at-northwest-florida-state-college",
+    "date": "2026-11-18",
+    "opponent": "Northwest Florida State College",
+    "venue": "away",
+    "timeZone": "America/Chicago",
+    "localTime": "19:00",
+    "timeSource": "fsw-official",
+    "uid": "eerf0zf1mmpjybyu"
+  },
+  {
+    "id": "official-njcaa-2026-11-23-vs-southern-union-state",
+    "date": "2026-11-23",
+    "opponent": "Southern Union State Community College",
+    "venue": "neutral",
+    "location": "Miami, FL",
+    "localTime": "13:00",
+    "timeSource": "fsw-official",
+    "uid": "1el6hcr0ftxxcr6w"
+  },
+  {
+    "id": "official-njcaa-2026-11-24-at-urbe-university",
+    "date": "2026-11-24",
+    "opponent": "URBE University",
+    "venue": "away",
+    "location": "Miami, FL",
+    "timeSource": "fsw-official",
+    "uid": "psnozlw9dddetfbr"
+  },
+  {
+    "id": "official-njcaa-2026-11-25-vs-elgin-community-college",
+    "date": "2026-11-25",
+    "opponent": "Elgin Community College",
+    "venue": "neutral",
+    "location": "Miami, FL",
+    "localTime": "12:00",
+    "timeSource": "fsw-official",
+    "uid": "wf1d71f55db93jru"
+  },
+  {
+    "id": "official-njcaa-2026-12-04-vs-gulf-coast-state-college",
+    "date": "2026-12-04",
+    "opponent": "Gulf Coast State College",
+    "venue": "home",
+    "localTime": "18:00",
+    "timeSource": "fsw-official",
+    "uid": "o8fbzej1rsqyjist"
+  },
+  {
+    "id": "official-njcaa-2026-12-05-vs-mclennan-community-college",
+    "date": "2026-12-05",
+    "opponent": "McLennan Community College",
+    "venue": "home",
+    "localTime": "14:00",
+    "timeSource": "fsw-official",
+    "uid": "0544rq3xwjd6jnju"
+  },
+  {
+    "id": "official-njcaa-2026-12-08-vs-pasco-hernando-state-college",
+    "date": "2026-12-08",
+    "opponent": "Pasco-Hernando State College",
+    "venue": "home",
+    "localTime": "17:00",
+    "timeSource": "fsw-official",
+    "uid": "hf6rtj0a62onbt4e"
+  },
+  {
+    "id": "official-njcaa-2026-12-15-vs-st-thomas-jv",
+    "date": "2026-12-15",
+    "opponent": "St. Thomas JV",
+    "venue": "home",
+    "localTime": "17:00",
+    "timeSource": "fsw-official",
+    "uid": "8zhrlf5y008u66tg"
+  },
+  {
+    "id": "official-njcaa-2027-01-06-at-eastern-florida-state-college",
+    "date": "2027-01-06",
+    "opponent": "Eastern Florida State College",
+    "venue": "away",
+    "localTime": "19:00",
+    "timeSource": "fsw-official",
+    "uid": "yh1owp1hog3qjlin"
+  },
+  {
+    "id": "official-njcaa-2027-01-09-vs-santa-fe-college",
+    "date": "2027-01-09",
+    "opponent": "Santa Fe College",
+    "venue": "home",
+    "localTime": "16:00",
+    "timeSource": "fsw-official",
+    "uid": "v1xkr1e3yktxtxnk"
+  },
+  {
+    "id": "official-njcaa-2027-01-13-vs-miami-dade-college",
+    "date": "2027-01-13",
+    "opponent": "Miami Dade College",
+    "venue": "home",
+    "localTime": "19:00",
+    "timeSource": "fsw-official",
+    "uid": "h0t86f9yrp74lqps"
+  },
+  {
+    "id": "official-njcaa-2027-01-16-at-daytona-state-college",
+    "date": "2027-01-16",
+    "opponent": "Daytona State College",
+    "venue": "away",
+    "localTime": "16:00",
+    "timeSource": "fsw-official",
+    "uid": "7g7vblpnc1fyju64"
+  },
+  {
+    "id": "official-njcaa-2027-01-20-at-polk-state-college",
+    "date": "2027-01-20",
+    "opponent": "Polk State College",
+    "venue": "away",
+    "localTime": "19:00",
+    "timeSource": "fsw-official",
+    "uid": "bv8hpgci8impmdnd"
+  },
+  {
+    "id": "official-njcaa-2027-01-27-at-indian-river-state-college",
+    "date": "2027-01-27",
+    "opponent": "Indian River State College",
+    "venue": "away",
+    "localTime": "17:00",
+    "timeSource": "fsw-official",
+    "uid": "vsmpjzbo2qwssubc"
+  },
+  {
+    "id": "official-njcaa-2027-01-30-vs-st-petersburg-college",
+    "date": "2027-01-30",
+    "opponent": "St. Petersburg College",
+    "venue": "home",
+    "localTime": "14:00",
+    "timeSource": "fsw-official",
+    "uid": "sk0kvrx3736m5bji"
+  },
+  {
+    "id": "official-njcaa-2027-02-03-vs-eastern-florida-state-college",
+    "date": "2027-02-03",
+    "opponent": "Eastern Florida State College",
+    "venue": "home",
+    "timeSource": "fsw-official",
+    "uid": "yyy4erxk9nt2lfbt"
+  },
+  {
+    "id": "official-njcaa-2027-02-06-at-santa-fe-college",
+    "date": "2027-02-06",
+    "opponent": "Santa Fe College",
+    "venue": "away",
+    "localTime": "16:00",
+    "timeSource": "fsw-official",
+    "uid": "nfjd7yik1vyz8erg"
+  },
+  {
+    "id": "official-njcaa-2027-02-10-at-miami-dade-college",
+    "date": "2027-02-10",
+    "opponent": "Miami Dade College",
+    "venue": "away",
+    "localTime": "19:00",
+    "timeSource": "fsw-official",
+    "uid": "9fi1q6zjkcspqgw1"
+  },
+  {
+    "id": "official-njcaa-2027-02-17-vs-daytona-state-college",
+    "date": "2027-02-17",
+    "opponent": "Daytona State College",
+    "venue": "home",
+    "localTime": "17:00",
+    "timeSource": "fsw-official",
+    "uid": "m9pcl0w7vzosqygo"
+  },
+  {
+    "id": "official-njcaa-2027-02-20-vs-polk-state-college",
+    "date": "2027-02-20",
+    "opponent": "Polk State College",
+    "venue": "home",
+    "localTime": "16:00",
+    "timeSource": "fsw-official",
+    "uid": "e57jz2d1t0pg30tm"
+  },
+  {
+    "id": "official-njcaa-2027-02-24-vs-indian-river-state-college",
+    "date": "2027-02-24",
+    "opponent": "Indian River State College",
+    "venue": "home",
+    "localTime": "19:00",
+    "timeSource": "fsw-official",
+    "uid": "4jg7utcduc3g8zq7"
+  },
+  {
+    "id": "official-njcaa-2027-02-27-at-st-petersburg-college",
+    "date": "2027-02-27",
+    "opponent": "St. Petersburg College",
+    "venue": "away",
+    "localTime": "16:00",
+    "timeSource": "fsw-official",
+    "uid": "b4c4jctfg5v3xdey"
+  }
+]
