@@ -5,7 +5,7 @@ on:
   schedule:
     # UTC: Beijing 05:40 and 19:40; scheduled execution may be delayed.
     - cron: '40 21,11 * * *'
-    # Postgame gate: only tipoffs 2–6 hours ago cause official requests.
+    # Postgame gate: only unconfirmed games with tipoffs 2–6 hours ago cause requests.
     - cron: '7,17,27,37,47,57 * * * *'
   push:
     branches: [master]
@@ -17,6 +17,8 @@ on:
       - '.github/scripts/fsw-details.test.cjs'
       - '.github/scripts/fsw-publication.cjs'
       - '.github/scripts/fsw-publication.test.cjs'
+      - '.github/scripts/fsw-collection-gate.cjs'
+      - '.github/scripts/fsw-collection-gate.test.cjs'
       - '.github/scripts/fixtures/**'
       - '.github/scripts/fsw-games.json'
 
@@ -31,18 +33,24 @@ jobs:
   collect:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+    env:
+      FSW_COLLECT_MODE: ${{ github.event_name == 'schedule' && github.event.schedule != '40 21,11 * * *' && 'postgame' || 'full' }}
     steps:
       - uses: actions/checkout@v5
         with:
           ref: master
           fetch-depth: 1
+      - name: Check collection window
+        id: gate
+        run: node .github/scripts/fsw-collection-gate.cjs
       - name: Test parser
+        if: steps.gate.outputs.collect == 'true'
         run: node --test .github/scripts/*.test.cjs
       - name: Collect verified FSW data
-        env:
-          FSW_COLLECT_MODE: ${{ github.event_name == 'schedule' && github.event.schedule != '40 21,11 * * *' && 'postgame' || 'full' }}
+        if: steps.gate.outputs.collect == 'true'
         run: node .github/scripts/fsw-collector.cjs
       - name: Commit JSON snapshot
+        if: steps.gate.outputs.collect == 'true'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -61,7 +69,7 @@ jobs:
           git commit -m '更新 FSW 赛程索引和单场比赛数据'
           git push origin HEAD:master
       - name: Preserve snapshot artifact
-        if: always()
+        if: always() && steps.gate.outputs.collect == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: fsw-snapshot-${{ github.run_id }}-${{ github.run_attempt }}

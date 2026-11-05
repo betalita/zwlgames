@@ -40,11 +40,14 @@ test('targeted updates preserve other games and a temporarily unavailable final'
   assert.equal(next.files.size, 0);
 });
 test('postgame collection is limited to known tipoffs between two and six hours ago', () => {
-  const index = { games: [game, { ...game, id: 'tba', timeKnown: false, startsAt: null }] };
+  const index = { games: [{ ...game, result: null }, { ...game, id: 'tba', timeKnown: false, startsAt: null }] };
   assert.deepEqual(postgameCandidates(index, new Date('2026-11-04T23:59:00Z')), []);
   assert.deepEqual(postgameCandidates(index, new Date('2026-11-05T00:00:00Z')), [game.id]);
   assert.deepEqual(postgameCandidates(index, new Date('2026-11-05T03:59:00Z')), [game.id]);
   assert.deepEqual(postgameCandidates(index, new Date('2026-11-05T04:00:00Z')), []);
+});
+test('confirmed finals are excluded from postgame collection even while inside the window', () => {
+  assert.deepEqual(postgameCandidates({ games: [game] }, new Date('2026-11-05T01:00:00Z')), []);
 });
 test('publication writes the index and its exact referenced details to a standalone checkout', async () => {
   const fs=require('node:fs/promises'),os=require('node:os'),path=require('node:path');
