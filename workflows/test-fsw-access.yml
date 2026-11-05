@@ -1,0 +1,36 @@
+name: Test FSW website access
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-fsw-access
+  cancel-in-progress: false
+
+jobs:
+  access-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Check probe content validation
+        run: node --test .github/scripts/test-fsw-access.test.cjs
+
+      - name: Test FSW public pages
+        run: node .github/scripts/test-fsw-access.cjs
+
+      - name: Upload access report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fsw-access-report-${{ github.run_id }}-${{ github.run_attempt }}
+          path: fsw-access-report/
+          retention-days: 7
+          if-no-files-found: warn
