@@ -22,6 +22,8 @@ function buildPublication(snapshot, previousIndex = null) {
     if (!/^[a-z0-9-]{1,100}$/.test(id)) throw new Error('invalid FSW game file identity');
     // A temporarily unavailable or incomplete page cannot downgrade an earlier final.
     if (!game.result && old?.result && old.opponent === game.opponent && old.venue === game.venue) game = old;
+    if (game.result?.sourceType === 'schedule' && old?.result && old.result.sourceType !== 'schedule' &&
+      old.opponent === game.opponent && old.venue === game.venue) game = old;
     if (!game.result || game.detail) {
       const { collectionError, ...entry } = game;
       return { ...entry, detail: game.detail || null };
@@ -31,7 +33,8 @@ function buildPublication(snapshot, previousIndex = null) {
       school: 'official-fsw', game: detailGame });
     const file = `${DETAIL_DIR}/${id}.json`;
     files.set(file, text);
-    return { ...detailGame, result: { schoolScore: game.result.schoolScore, opponentScore: game.result.opponentScore },
+    return { ...detailGame, result: { schoolScore: game.result.schoolScore, opponentScore: game.result.opponentScore,
+      ...(game.result.sourceType === 'schedule' ? { sourceType: 'schedule' } : {}) },
       detail: { path: file, sha256: createHash('sha256').update(text).digest('hex') } };
   });
   const index = { schemaVersion: 2, kind: 'schedule', season: 2027, school: 'official-fsw',

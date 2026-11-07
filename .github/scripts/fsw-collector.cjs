@@ -33,6 +33,23 @@ function parseCalendar(text){
 }
 function rows(html){return [...html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)]
  .map(match=>[...match[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)].map(cell=>plain(cell[1])));}
+function parseScheduleResult(html,seed){
+ const starts=[...html.matchAll(/<div\b[^>]*class=["'][^"']*\bevent-row\b[^"']*["'][^>]*>/gi)];
+ const cards=starts.map((m,i)=>html.slice(m.index,starts[i+1]?.index??html.length))
+  .filter(card=>card.match(/\bdata-event-id=["']([^"']+)["']/i)?.[1]===seed.uid);
+ if(cards.length!==1)return null;
+ const card=cards[0];
+ const field=name=>card.match(new RegExp('<div\\b[^>]*class=["\\\'][^"\\\']*\\b'+name+'\\b[^"\\\']*["\\\'][^>]*>([\\s\\S]*?)<\\/div>','i'))?.[1]||'';
+ if(norm(field('event-opponent'))!==norm((seed.venue==='away'?'at ':'vs ')+seed.opponent))return null;
+ if(!/^Final(?:\s*\/\s*(?:\d*OT))?$/i.test(plain(field('status'))))return null;
+ const score=plain(field('event-result')).match(/^([WL])\s*,\s*(\d{1,3})\s*[-–]\s*(\d{1,3})$/i);
+ if(!score)return null;
+ const schoolScore=Number(score[2]),opponentScore=Number(score[3]);
+ if(schoolScore>300||opponentScore>300||schoolScore===opponentScore||
+  (score[1].toUpperCase()==='W')!==(schoolScore>opponentScore))return null;
+ return {schoolScore,opponentScore,schoolPeriods:[],opponentPeriods:[],stats:null,
+  sourceType:'schedule',sourceUrl:`${BASE}/schedule?eid=${seed.uid}`};
+}
 function parseBoxscore(html,seed){
  if(!matchHeading(html,seed)){
   const headings=[...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)].map(m=>plain(m[1])).join(' | ').slice(0,300);
@@ -75,6 +92,7 @@ async function collect({seeds=require('./fsw-games.json'),fetchText:read=fetchTe
   const sourceDate=event.startsAt?new Intl.DateTimeFormat('sv-SE',{timeZone}).format(new Date(event.startsAt)):event.sourceDate;
   let result=null;
   if(event.startsAt&&Date.parse(event.startsAt)<clock().getTime()){
+   const scheduleResult=parseScheduleResult(schedule,seed);
    // Link must be present in the current official schedule, never fabricated.
    const link=links.find(url=>url.origin==='https://www.fswbucs.com'&&url.pathname.includes(`_${seed.uid.slice(0,4)}.xml`));
    if(link){
@@ -91,6 +109,7 @@ async function collect({seeds=require('./fsw-games.json'),fetchText:read=fetchTe
     }
     }catch(error){console.warn(`FSW game ${seed.id} unavailable: ${error.message}; source=${link.href}`);}
    }
+   result=result||scheduleResult;
   }
   games.push({id:seed.id,uid:seed.uid,sourceDate,opponent:seed.opponent,venue:seed.venue,
    startsAt:event.startsAt,timeKnown:!!event.startsAt,result});

@@ -51,6 +51,36 @@ test('snapshot output stays compact and rejects an oversized UTF-8 payload befor
  assert.throws(()=>serializeSnapshot({value:'球'.repeat(180000)}),/size limit/i);
 });
 module.exports={calendar,box,seed};
+const pascoSeed=require('./fsw-games.json').find(g=>g.date==='2026-11-07');
+const pascoSchedule=require('node:fs').readFileSync(require('node:path').join(__dirname,'fixtures/fsw-pasco-schedule.html'),'utf8');
+const pascoCalendar=calendar.replaceAll(seed.uid,pascoSeed.uid).replaceAll('20261104','20261107')
+ .replaceAll(seed.opponent,pascoSeed.opponent);
+async function collectPasco(schedule=pascoSchedule){
+ return (await collect({seeds:[pascoSeed],clock:()=>new Date('2026-11-08T00:00:00Z'),
+  fetchText:async url=>url.includes('print=ical')?pascoCalendar:url.endsWith('/schedule')?schedule:box})).games[0];
+}
+test('official schedule Final supplies a score without inventing periods or player statistics',async()=>{
+ const game=await collectPasco();
+ assert.deepEqual(game.result,{schoolScore:99,opponentScore:76,schoolPeriods:[],opponentPeriods:[],
+  stats:null,sourceType:'schedule',sourceUrl:'https://www.fswbucs.com/sports/mbkb/2026-27/schedule?eid='+pascoSeed.uid});
+});
+test('schedule fallback requires the exact event, opponent, Final and consistent win/loss',async()=>{
+ for(const html of [pascoSchedule.replaceAll(pascoSeed.uid,'other-event'),
+  pascoSchedule.replaceAll(pascoSeed.opponent,'Other College'),pascoSchedule.replace('Final','In Progress'),
+  pascoSchedule.replace('99-76','70-76'),pascoSchedule.replace('99-76','999-76'),
+  pascoSchedule+pascoSchedule]){
+  assert.equal((await collectPasco(html)).result,null);
+ }
+ const loss=await collectPasco(pascoSchedule.replace('data-context="result">W','data-context="result">L').replace('99-76','70-76'));
+ assert.equal(loss.result.schoolScore,70);
+});
+test('a failed or unpublished boxscore keeps the verified schedule score',async()=>{
+ const html=pascoSchedule.replace('data-recap=', 'data-boxscore="/sports/mbkb/2026-27/boxscores/20261107_90ik.xml" data-recap=')
+  +'<a href="/sports/mbkb/2026-27/boxscores/20261107_90ik.xml">Box Score</a>';
+ const game=await collectPasco(html);
+ assert.equal(game.result?.schoolScore,99);
+ assert.equal(game.result?.stats,null);
+});
 test('collection includes verified full details and tolerates unavailable optional team comparison',async()=>{
  const f=require('./fixtures/fsw-albany.cjs');const reads=[];
  const get=async url=>{reads.push(url);if(url.includes('print=ical'))return calendar;

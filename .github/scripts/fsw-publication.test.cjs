@@ -31,6 +31,18 @@ test('unchanged detail content has a stable hash across collection times', () =>
   s.generatedAt = '2026-11-05T03:00:00.000Z';
   assert.equal(buildPublication(s).index.games[0].detail.sha256, first.index.games[0].detail.sha256);
 });
+test('score-only finals can be corrected and upgraded, but never replace full boxscores',()=>{
+ const s=snapshot(), full=buildPublication(s);
+ const partial={...game.result,sourceType:'schedule',schoolPeriods:[],opponentPeriods:[],stats:null};
+ delete partial.details;
+ s.games[0].result=partial;
+ const scoreOnly=buildPublication(s);
+ assert.equal(scoreOnly.index.games[0].result.sourceType,'schedule');
+ assert.deepEqual(buildPublication(s,full.index).index.games[0],full.index.games[0]);
+ s.games[0].result.schoolScore=86;
+ assert.equal(buildPublication(s,scoreOnly.index).index.games[0].result.schoolScore,86);
+ assert.equal(buildPublication(snapshot(),scoreOnly.index).index.games[0].result.sourceType,undefined);
+});
 test('targeted updates preserve other games and a temporarily unavailable final', () => {
   const first = buildPublication(snapshot()).index;
   const partial = { ...snapshot(), games: [{ ...game, result: null, collectionError: 'HTTP 403' }] };
