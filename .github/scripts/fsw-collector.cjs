@@ -2,7 +2,7 @@
 const fs=require('node:fs/promises');
 const path=require('node:path');
 const {setTimeout:pause}=require('node:timers/promises');
-const {parseDetails,KEYS}=require('./fsw-details.cjs');
+const {parseDetails,matchHeading,KEYS}=require('./fsw-details.cjs');
 const {buildPublication,writePublication,postgameCandidates,serializeSnapshot,INDEX_PATH}=require('./fsw-publication.cjs');
 const BASE='https://www.fswbucs.com/sports/mbkb/2026-27';
 const plain=html=>html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,' ').replace(/<[^>]*>/g,' ')
@@ -34,8 +34,10 @@ function parseCalendar(text){
 function rows(html){return [...html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)]
  .map(match=>[...match[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)].map(cell=>plain(cell[1])));}
 function parseBoxscore(html,seed){
- const heading=plain(html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1]||'');
- if(!isSchool(heading)||!norm(heading).includes(norm(seed.opponent)))throw new Error('boxscore identity mismatch');
+ if(!matchHeading(html,seed)){
+  const headings=[...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)].map(m=>plain(m[1])).join(' | ').slice(0,300);
+  throw new Error(`boxscore identity mismatch: expected FSW vs ${seed.opponent}; headings=${headings||'(none)'}`);
+ }
  const tables=[...html.matchAll(/<table\b[^>]*>[\s\S]*?<\/table>/gi)].map(match=>rows(match[0]));
  const scoreTable=tables.find(table=>table.some(row=>row.some(cell=>/^Final(?:\s|$)/i.test(cell))));
  if(!scoreTable)return null;
@@ -87,7 +89,7 @@ async function collect({seeds=require('./fsw-games.json'),fetchText:read=fetchTe
      }
      result.details=parseDetails(boxHtml,seed,result,teamHtml);
     }
-    }catch(error){console.warn(`FSW game ${seed.id} unavailable: ${error.message}`);}
+    }catch(error){console.warn(`FSW game ${seed.id} unavailable: ${error.message}; source=${link.href}`);}
    }
   }
   games.push({id:seed.id,uid:seed.uid,sourceDate,opponent:seed.opponent,venue:seed.venue,

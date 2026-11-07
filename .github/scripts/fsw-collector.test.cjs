@@ -6,6 +6,23 @@ const calendar='BEGIN:VCALENDAR\r\nBEGIN:VEVENT\r\nUID:abcdefgh@prestosports.com
 const f=require('./fixtures/fsw-albany.cjs');
 const score='<table><tr><td>Final</td><td>1</td><td>2</td><td>T</td></tr><tr><td>Albany Technical College</td><td>44</td><td>59</td><td>103</td></tr><tr><td>Florida SouthWestern State College</td><td>37</td><td>48</td><td>85</td></tr></table>';
 const box=f.heading+score+f.html()+'<a id="teamstats-tab" href="?view=teamstats">Team Stats</a>';
+const aveHtml=require('node:fs').readFileSync(require('node:path').join(__dirname,'fixtures/fsw-ave-maria.html'),'utf8');
+const aveSeed={opponent:'Ave Maria JV'};
+test('Ave Maria final uses full-game rosters when the page also includes both half box scores',()=>{
+ const result=parseBoxscore(aveHtml,aveSeed);
+ assert.equal(result.schoolScore,124);assert.equal(result.opponentScore,79);
+ assert.deepEqual(result.schoolPeriods,[63,61]);assert.deepEqual(result.opponentPeriods,[36,43]);
+ assert.equal(result.stats?.MIN,'13');assert.equal(result.stats?.PTS,'13');
+ assert.equal(result.stats?.FG,'5-6');assert.equal(result.stats?.['3PT'],'3-4');
+ assert.equal(result.stats?.REB,'4');assert.equal(result.stats?.AST,'2');
+ assert.equal(result.details.school.groups.flatMap(g=>g.athletes).length,13);
+ assert.equal(result.details.opponent.groups.flatMap(g=>g.athletes).length,9);
+});
+test('a preceding site heading does not hide the verified match heading or allow a foreign opponent',()=>{
+ const html='<h1>Men\'s Basketball</h1>'+aveHtml;
+ assert.equal(parseBoxscore(html,aveSeed).stats?.PTS,'13');
+ assert.throws(()=>parseBoxscore(html,{opponent:'Another JV'}),/identity mismatch/);
+});
 test('calendar binds stable UID and preserves explicit TBA',()=>{
  assert.equal(parseCalendar(calendar).get('abcdefgh').startsAt,'2026-11-04T22:00:00.000Z');
  assert.equal(parseCalendar(calendar.replace('DTSTART:20261104T220000Z','DTSTART;VALUE=DATE:20261104')).get('abcdefgh').startsAt,null);

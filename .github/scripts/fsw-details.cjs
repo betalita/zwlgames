@@ -4,6 +4,10 @@ const HEAD=['Player','MIN','FGM-A','3PM-A','FTM-A','OREB','DREB','REB','AST','ST
 const LABELS={FG:'投篮', '3PT':'三分',FT:'罚球',OREB:'进攻篮板',DREB:'防守篮板',REB:'篮板',AST:'助攻',STL:'抢断',BLK:'盖帽',TO:'失误',PF:'犯规',PTS:'得分',FG_PCT:'投篮命中率',THREE_PCT:'三分命中率',FT_PCT:'罚球命中率',OFF_TO:'利用失误得分',SECOND:'二次进攻得分',PAINT:'内线得分',FAST:'快攻得分',BENCH:'替补得分',LEAD:'最大领先'};
 const plain=s=>String(s).replace(/<[^>]*>/g,' ').replace(/&nbsp;|&#160;/g,' ').replace(/&amp;/g,'&').replace(/&#0?39;|&apos;/g,"'").replace(/\s+/g,' ').trim();
 const norm=s=>plain(s).toLowerCase().replace(/\b(university|community|college)\b/g,'').replace(/[^a-z0-9]/g,'');
+function matchHeading(html,seed){
+ return [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)].map(m=>plain(m[1]))
+  .find(h=>norm(h).includes('floridasouthwestern')&&norm(h).includes(norm(seed.opponent)))||'';
+}
 const rows=s=>[...s.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)].map(m=>[...m[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)].map(c=>plain(c[1])));
 function cleanStats(values,score,team=false){
  const stats=values.map((v,i)=>{
@@ -18,9 +22,12 @@ function cleanStats(values,score,team=false){
  return stats;
 }
 function parseDetails(html,seed,result,teamHtml=''){
- const identity=s=>{const h=plain(s.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1]||'');return norm(h).includes('floridasouthwestern')&&norm(h).includes(norm(seed.opponent));};
+ const identity=s=>!!matchHeading(s,seed);
  if(!identity(html))return {};
- const tables=[...html.matchAll(/<table\b[^>]*>[\s\S]*?<\/table>/gi)].map(m=>({name:plain(m[0].match(/<caption\b[^>]*>([\s\S]*?)<\/caption>/i)?.[1]||''),rows:rows(m[0])}));
+ // Modern Presto pages embed half/period tables with the same team captions.
+ // Only the full-game panel may supply player totals; older pages have no panel.
+ const fullGame=html.match(/<section\b[^>]*\bid=["']boxscore-tabpanel["'][^>]*>([\s\S]*?)<\/section>/i)?.[1]??html;
+ const tables=[...fullGame.matchAll(/<table\b[^>]*>[\s\S]*?<\/table>/gi)].map(m=>({name:plain(m[0].match(/<caption\b[^>]*>([\s\S]*?)<\/caption>/i)?.[1]||''),rows:rows(m[0])}));
  const details={};const totals={};
  for(const role of ['school','opponent']){
   const choices=tables.filter(t=>role==='school'?norm(t.name)==='floridasouthwesternstate':norm(t.name)===norm(seed.opponent));
@@ -65,7 +72,7 @@ function parseDetails(html,seed,result,teamHtml=''){
   if(totals[role][11]==='0'&&Number(totals[other][3]?.split('-')[1])>0)bad.push('PF');
   for(const key of bad){for(const g of details[role].groups)for(const a of g.athletes)a.stats[KEYS.indexOf(key)]=null;details[role].statistics=details[role].statistics.filter(s=>s.name!==key);}
  }
- const heading=s=>plain(s.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1]||'');
+ const heading=s=>matchHeading(s,seed);
  if(teamHtml&&identity(teamHtml)&&heading(teamHtml)===heading(html)){
   const comparison=[...teamHtml.matchAll(/<table\b[^>]*>[\s\S]*?<\/table>/gi)].map(m=>rows(m[0])).find(t=>t[0]?.length===3&&t[0][0]==='Stat'&&t[0].some(n=>norm(n).includes('floridasouthwestern'))&&t[0].some(n=>norm(n)===norm(seed.opponent)));
   const extra={'Field Goal %':['FG_PCT','FG'],'3 Point %':['THREE_PCT','3PT'],'Free Throw %':['FT_PCT','FT'],'Points off Turnovers':['OFF_TO'],'2nd Chance Points':['SECOND'],'Points in the Paint':['PAINT'],'Fastbreak Points':['FAST'],'Bench Points':['BENCH'],'Largest Lead':['LEAD']};
@@ -80,4 +87,4 @@ function parseDetails(html,seed,result,teamHtml=''){
  }
  return details;
 }
-module.exports={parseDetails,KEYS,LABELS};
+module.exports={parseDetails,matchHeading,KEYS,LABELS};
