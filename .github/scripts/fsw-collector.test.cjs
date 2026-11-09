@@ -55,6 +55,31 @@ const pascoSeed=require('./fsw-games.json').find(g=>g.date==='2026-11-07');
 const pascoSchedule=require('node:fs').readFileSync(require('node:path').join(__dirname,'fixtures/fsw-pasco-schedule.html'),'utf8');
 const pascoCalendar=calendar.replaceAll(seed.uid,pascoSeed.uid).replaceAll('20261104','20261107')
  .replaceAll(seed.opponent,pascoSeed.opponent);
+const pascoBox=require('node:fs').readFileSync(require('node:path').join(__dirname,'fixtures/fsw-pasco-boxscore.html'),'utf8');
+test('published Pasco boxscore preserves both complete rosters and verifies Zhao statistics',()=>{
+ const result=parseBoxscore(pascoBox,pascoSeed);
+ assert.equal(result.schoolScore,99);assert.equal(result.opponentScore,76);
+ assert.deepEqual(result.schoolPeriods,[46,53]);assert.deepEqual(result.opponentPeriods,[36,40]);
+ assert.equal(result.stats.PTS,'25');assert.equal(result.stats.REB,'4');assert.equal(result.stats.AST,'3');
+ assert.equal(result.stats.MIN,undefined);
+ assert.equal(result.details.school.groups.flatMap(g=>g.athletes).length,11);
+ assert.equal(result.details.opponent.groups.flatMap(g=>g.athletes).length,11);
+ const cook=result.details.opponent.groups.flatMap(g=>g.athletes).find(a=>a.name==='Tavian Cook');
+ assert.equal(cook.jersey,'0');assert.equal(cook.stats[12],'18');
+ assert.ok(result.details.opponent.statistics.some(s=>s.name==='FG'&&s.value==='29-69'));
+});
+test('a later collection upgrades the Pasco schedule score to a verified boxscore',async()=>{
+ const {buildPublication}=require('./fsw-publication.cjs');
+ const previous=buildPublication({games:[{...pascoSeed,result:{schoolScore:99,opponentScore:76,sourceType:'schedule'}}]}).index;
+ const schedule=pascoSchedule+'<a href="/sports/mbkb/2026-27/boxscores/20261107_90ik.xml">Box Score</a>';
+ const snapshot=await collect({seeds:[pascoSeed],clock:()=>new Date('2026-11-09T07:00:00Z'),
+  fetchText:async url=>url.includes('print=ical')?pascoCalendar:url.endsWith('/schedule')?schedule:pascoBox});
+ const publication=buildPublication(snapshot,previous);
+ assert.equal(publication.index.games[0].result.sourceType,undefined);
+ const detail=JSON.parse(publication.files.get(publication.index.games[0].detail.path));
+ assert.equal(detail.game.result.stats.PTS,'25');
+ assert.equal(detail.game.result.details.opponent.groups[0].athletes.length,5);
+});
 async function collectPasco(schedule=pascoSchedule){
  return (await collect({seeds:[pascoSeed],clock:()=>new Date('2026-11-08T00:00:00Z'),
   fetchText:async url=>url.includes('print=ical')?pascoCalendar:url.endsWith('/schedule')?schedule:box})).games[0];

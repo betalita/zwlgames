@@ -5,7 +5,7 @@ on:
   schedule:
     # UTC: Beijing 05:40 and 19:40; scheduled execution may be delayed.
     - cron: '40 21,11 * * *'
-    # Postgame gate: only unconfirmed games with tipoffs 2–6 hours ago cause requests.
+    # Postgame gate: games without a boxscore (including score-only finals), 2–6 hours after tipoff.
     - cron: '7,17,27,37,47,57 * * * *'
   push:
     branches: [master]

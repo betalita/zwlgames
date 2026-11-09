@@ -61,6 +61,11 @@ test('postgame collection is limited to known tipoffs between two and six hours 
 test('confirmed finals are excluded from postgame collection even while inside the window', () => {
   assert.deepEqual(postgameCandidates({ games: [game] }, new Date('2026-11-05T01:00:00Z')), []);
 });
+test('schedule-only finals remain eligible for postgame boxscore completion', () => {
+  const partial = { ...game, result: { schoolScore: 85, opponentScore: 103, sourceType: 'schedule' } };
+  assert.deepEqual(postgameCandidates({ games: [partial] }, new Date('2026-11-05T01:00:00Z')), [game.id]);
+  assert.deepEqual(postgameCandidates({ games: [partial] }, new Date('2026-11-05T04:00:00Z')), []);
+});
 test('publication writes the index and its exact referenced details to a standalone checkout', async () => {
   const fs=require('node:fs/promises'),os=require('node:os'),path=require('node:path');
   const root=await fs.mkdtemp(path.join(os.tmpdir(),'fsw-publication-'));

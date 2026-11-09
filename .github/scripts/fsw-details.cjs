@@ -2,7 +2,8 @@
 const KEYS=['MIN','FG','3PT','FT','OREB','DREB','REB','AST','STL','BLK','TO','PF','PTS'];
 const HEAD=['Player','MIN','FGM-A','3PM-A','FTM-A','OREB','DREB','REB','AST','STL','BLK','TO','PF','PTS'];
 const LABELS={FG:'投篮', '3PT':'三分',FT:'罚球',OREB:'进攻篮板',DREB:'防守篮板',REB:'篮板',AST:'助攻',STL:'抢断',BLK:'盖帽',TO:'失误',PF:'犯规',PTS:'得分',FG_PCT:'投篮命中率',THREE_PCT:'三分命中率',FT_PCT:'罚球命中率',OFF_TO:'利用失误得分',SECOND:'二次进攻得分',PAINT:'内线得分',FAST:'快攻得分',BENCH:'替补得分',LEAD:'最大领先'};
-const plain=s=>String(s).replace(/<[^>]*>/g,' ').replace(/&nbsp;|&#160;/g,' ').replace(/&amp;/g,'&').replace(/&#0?39;|&apos;/g,"'").replace(/\s+/g,' ').trim();
+const plain=s=>String(s).replace(/<span\b[^>]*class=["'][^"']*\bposition\b[^"']*["'][^>]*>[\s\S]*?<\/span>/gi,' ')
+ .replace(/<[^>]*>/g,' ').replace(/&nbsp;|&#160;/g,' ').replace(/&amp;/g,'&').replace(/&#0?39;|&apos;/g,"'").replace(/\s+/g,' ').trim();
 const norm=s=>plain(s).toLowerCase().replace(/\b(university|community|college)\b/g,'').replace(/[^a-z0-9]/g,'');
 function matchHeading(html,seed){
  return [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)].map(m=>plain(m[1]))

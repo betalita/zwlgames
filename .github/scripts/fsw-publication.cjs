@@ -55,7 +55,7 @@ async function writePublication(publication, root = process.cwd()) {
 
 function postgameCandidates(index, now = new Date()) {
   return (index?.games || []).filter(game => {
-    if (game.result || !game.timeKnown || !game.startsAt) return false;
+    if ((game.result && game.result.sourceType !== 'schedule') || !game.timeKnown || !game.startsAt) return false;
     const elapsed = now.getTime() - Date.parse(game.startsAt);
     return elapsed >= 2 * 3600000 && elapsed < 6 * 3600000;
   }).map(game => game.id);
