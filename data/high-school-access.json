@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-12T07:48:36.246Z",
+  "runner": "github-actions",
+  "note": "A single successful probe does not establish long-term availability or current player statistics coverage.",
+  "results": [
+    {
+      "id": "maxpreps-providence",
+      "url": "https://www.maxpreps.com/tn/murfreesboro/providence-christian-academy-lions/basketball/schedule/",
+      "status": 200,
+      "readable": true,
+      "reason": "requested boys varsity season and schedule payload found",
+      "elapsedMs": 527
+    },
+    {
+      "id": "maxpreps-veritas",
+      "url": "https://www.maxpreps.com/ca/ontario/veritas-academy-titans/basketball/schedule/",
+      "status": 200,
+      "readable": true,
+      "reason": "requested boys varsity season and schedule payload found",
+      "elapsedMs": 316
+    },
+    {
+      "id": "maxpreps-peddie",
+      "url": "https://www.maxpreps.com/nj/hightstown/peddie-falcons/basketball/schedule/",
+      "status": 200,
+      "readable": true,
+      "reason": "requested boys varsity season and schedule payload found",
+      "elapsedMs": 711
+    },
+    {
+      "id": "eybl-current-stats",
+      "url": "https://nikeeyblscholastic.com/stats.aspx?path=mbball&year=2026",
+      "status": 200,
+      "readable": true,
+      "currentStats": false,
+      "reason": "current season statistics not published",
+      "elapsedMs": 1529
+    },
+    {
+      "id": "legit-historical-box",
+      "url": "https://legitgm.com/stats/game/5a6459d4-a2f2-400d-b9b7-0fa7f3c2650c/print",
+      "status": 200,
+      "readable": true,
+      "reason": "historical box score found; current tracked-player coverage unverified",
+      "elapsedMs": 284
+    }
+  ]
+}
