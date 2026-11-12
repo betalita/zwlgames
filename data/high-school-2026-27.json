@@ -1,0 +1,1218 @@
+{
+  "schemaVersion": 1,
+  "league": "high-school-basketball",
+  "season": 2027,
+  "generatedAt": "2026-11-12T08:30:34.251Z",
+  "schools": [
+    {
+      "schoolId": "bella-vista",
+      "games": [
+        {
+          "id": "seed2027-veritas-bella-vista",
+          "schoolId": "veritas-national",
+          "date": "2026-11-20",
+          "opponent": "CIA Bella Vista",
+          "venue": "away",
+          "sourceUrl": "https://veritasbasketball.com/schedule",
+          "season": 2027,
+          "state": "pre",
+          "opponentSchoolId": "bella-vista",
+          "bootstrap": true
+        }
+      ],
+      "mode": "verified-seed",
+      "fetchedAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "schoolId": "wasatch-national",
+      "games": [
+        {
+          "id": "seed2027-wasatch-faith-family",
+          "schoolId": "wasatch-national",
+          "date": "2026-11-20",
+          "opponent": "Faith Family",
+          "venue": "unknown",
+          "sourceUrl": "https://www.basketball.wasatchacademy.org/s/2026-27-Schedule.pdf",
+          "season": 2027,
+          "state": "pre",
+          "bootstrap": true
+        },
+        {
+          "id": "seed2027-wasatch-pineview",
+          "schoolId": "wasatch-national",
+          "date": "2026-12-08",
+          "opponent": "Pineview",
+          "venue": "unknown",
+          "sourceUrl": "https://www.basketball.wasatchacademy.org/s/2026-27-Schedule.pdf",
+          "season": 2027,
+          "state": "pre",
+          "bootstrap": true
+        },
+        {
+          "id": "seed2027-wasatch-maple-mountain",
+          "schoolId": "wasatch-national",
+          "date": "2027-01-05",
+          "opponent": "Maple Mountain",
+          "venue": "unknown",
+          "sourceUrl": "https://www.basketball.wasatchacademy.org/s/2026-27-Schedule.pdf",
+          "season": 2027,
+          "state": "pre",
+          "bootstrap": true
+        },
+        {
+          "id": "seed2027-wasatch-orem",
+          "schoolId": "wasatch-national",
+          "date": "2027-01-12",
+          "opponent": "Orem",
+          "venue": "unknown",
+          "sourceUrl": "https://www.basketball.wasatchacademy.org/s/2026-27-Schedule.pdf",
+          "season": 2027,
+          "state": "pre",
+          "bootstrap": true
+        },
+        {
+          "id": "seed2027-wasatch-layton-christian",
+          "schoolId": "wasatch-national",
+          "date": "2027-01-19",
+          "opponent": "Layton Christian",
+          "venue": "unknown",
+          "sourceUrl": "https://www.basketball.wasatchacademy.org/s/2026-27-Schedule.pdf",
+          "season": 2027,
+          "state": "pre",
+          "bootstrap": true
+        },
+        {
+          "id": "seed2027-wasatch-cottonwood",
+          "schoolId": "wasatch-national",
+          "date": "2027-02-16",
+          "opponent": "Cottonwood",
+          "venue": "unknown",
+          "sourceUrl": "https://www.basketball.wasatchacademy.org/s/2026-27-Schedule.pdf",
+          "season": 2027,
+          "state": "pre",
+          "bootstrap": true
+        },
+        {
+          "id": "seed2027-wasatch-iowa-united",
+          "schoolId": "wasatch-national",
+          "date": "2027-02-26",
+          "opponent": "Iowa United",
+          "venue": "unknown",
+          "sourceUrl": "https://www.basketball.wasatchacademy.org/s/2026-27-Schedule.pdf",
+          "season": 2027,
+          "state": "pre",
+          "bootstrap": true
+        },
+        {
+          "id": "seed2027-veritas-wasatch",
+          "schoolId": "veritas-national",
+          "date": "2027-02-14",
+          "opponent": "Wasatch Academy",
+          "venue": "home",
+          "sourceUrl": "https://veritasbasketball.com/schedule",
+          "season": 2027,
+          "state": "pre",
+          "opponentSchoolId": "wasatch-national",
+          "bootstrap": true
+        }
+      ],
+      "mode": "verified-seed",
+      "fetchedAt": "2026-11-11T00:00:00.000Z"
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "games": [
+        {
+          "id": "893cd8f10ecb412b69c5c7e279837c4c",
+          "schoolId": "providence-tn-varsity",
+          "season": 2027,
+          "date": "2026-11-17",
+          "opponent": "MBA",
+          "sourceUrl": "https://providencechristian.com/calendar/athletics-calendar-list/",
+          "state": "pre",
+          "venue": "away",
+          "timeZone": "America/Chicago",
+          "scheduleStatus": null
+        },
+        {
+          "id": "7c8d3121ccaf8dc3fe69101e5508b2a3",
+          "schoolId": "providence-tn-varsity",
+          "season": 2027,
+          "date": "2026-11-19",
+          "opponent": "McMallie",
+          "sourceUrl": "https://providencechristian.com/calendar/athletics-calendar-list/",
+          "state": "pre",
+          "venue": "away",
+          "timeZone": "America/Chicago",
+          "scheduleStatus": null
+        },
+        {
+          "id": "03ef2b45c96405b4601ad3f05b22da40",
+          "schoolId": "providence-tn-varsity",
+          "season": 2027,
+          "date": "2026-11-20",
+          "opponent": "Baylor",
+          "sourceUrl": "https://providencechristian.com/calendar/athletics-calendar-list/",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/Chicago",
+          "scheduleStatus": null
+        },
+        {
+          "id": "a9a2fe3d8f620800c8b9d52ab9dbd98f",
+          "schoolId": "providence-tn-varsity",
+          "season": 2027,
+          "date": "2026-12-01",
+          "opponent": "Franklin Road Academy",
+          "sourceUrl": "https://providencechristian.com/calendar/athletics-calendar-list/",
+          "state": "pre",
+          "venue": "away",
+          "timeZone": "America/Chicago",
+          "scheduleStatus": null
+        },
+        {
+          "id": "c6e3b89962f8ea1c6e00d7fc0342c6e2",
+          "schoolId": "providence-tn-varsity",
+          "season": 2027,
+          "date": "2026-12-08",
+          "opponent": "Columbia Academy",
+          "sourceUrl": "https://providencechristian.com/calendar/athletics-calendar-list/",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/Chicago",
+          "scheduleStatus": null
+        },
+        {
+          "id": "mp-23cbcc19-0669-4528-866d-d7f6e62f6288",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2026-11-03",
+          "opponent": "Franklin Classical School",
+          "venue": "away",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/franklin-classical-school-vs-providence-christian-academy-murfreesboro/11-3-2026/?c=23cbcc19-0669-4528-866d-d7f6e62f6288",
+          "state": "pre"
+        },
+        {
+          "id": "mp-de8b9ac4-6932-45be-83de-283181f60e63",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2026-11-23",
+          "opponent": "Columbia Central",
+          "venue": "unknown",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/columbia-central-vs-providence-christian-academy-murfreesboro/11-23-2026/?c=de8b9ac4-6932-45be-83de-283181f60e63",
+          "state": "pre"
+        },
+        {
+          "id": "mp-ea3813e1-3564-4f49-987e-de3c461a2740",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2026-11-24",
+          "opponent": "Brentwood",
+          "venue": "unknown",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/brentwood-vs-providence-christian-academy-murfreesboro/11-24-2026/?c=ea3813e1-3564-4f49-987e-de3c461a2740",
+          "state": "pre"
+        },
+        {
+          "id": "mp-fc89b273-dc37-4fc5-b596-a2b1edd5c3ef",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2026-12-04",
+          "opponent": "Memphis University School",
+          "venue": "unknown",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/memphis-university-school-vs-providence-christian-academy-murfreesboro/12-4-2026/?c=fc89b273-dc37-4fc5-b596-a2b1edd5c3ef",
+          "state": "pre"
+        },
+        {
+          "id": "mp-ec39b4af-fad2-4e95-9994-5e223c69a4ca",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2026-12-11",
+          "opponent": "MTCHS*",
+          "venue": "unknown",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/middle-tennessee-christian-murfreesboro-vs-providence-christian-academy-murfreesboro/12-11-2026/?c=ec39b4af-fad2-4e95-9994-5e223c69a4ca",
+          "state": "pre"
+        },
+        {
+          "id": "mp-d50a797b-0134-4762-806a-a8a66e21015b",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2026-12-12",
+          "opponent": "Winston Salem Christian",
+          "venue": "unknown",
+          "sourceUrl": "https://www.maxpreps.com/inter-state/basketball/game/providence-christian-academy-murfreesboro-tn-vs-winston-salem-christian-nc/12-12-2026/?c=d50a797b-0134-4762-806a-a8a66e21015b",
+          "state": "pre"
+        },
+        {
+          "id": "mp-256348cf-e97d-4843-aee8-f03adb7b22c0",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2026-12-18",
+          "opponent": "Battle Ground Academy*",
+          "venue": "unknown",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/battle-ground-academy-franklin-vs-providence-christian-academy-murfreesboro/12-18-2026/?c=256348cf-e97d-4843-aee8-f03adb7b22c0",
+          "state": "pre"
+        },
+        {
+          "id": "mp-061d5ead-9b78-4d10-a5d7-d26741429166",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2027-01-05",
+          "opponent": "FCA*",
+          "venue": "away",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/franklin-christian-academy-vs-providence-christian-academy-murfreesboro/1-5-2027/?c=061d5ead-9b78-4d10-a5d7-d26741429166",
+          "state": "pre"
+        },
+        {
+          "id": "mp-132935c5-f508-4217-99c5-fa291cde5e05",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2027-01-08",
+          "opponent": "The Webb School*",
+          "venue": "unknown",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/providence-christian-academy-murfreesboro-vs-the-webb-school-bell-buckle/1-8-2027/?c=132935c5-f508-4217-99c5-fa291cde5e05",
+          "state": "pre"
+        },
+        {
+          "id": "mp-191d849a-e536-41c3-a69f-73877d375d69",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2027-01-09",
+          "opponent": "Grace Christian Academy*",
+          "venue": "unknown",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/grace-christian-academy-franklin-vs-providence-christian-academy-murfreesboro/1-9-2027/?c=191d849a-e536-41c3-a69f-73877d375d69",
+          "state": "pre"
+        },
+        {
+          "id": "mp-aca18d78-4189-4775-a5a7-1d7373b8bace",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2027-01-12",
+          "opponent": "Franklin Road Academy*",
+          "venue": "unknown",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/franklin-road-academy-nashville-vs-providence-christian-academy-murfreesboro/1-12-2027/?c=aca18d78-4189-4775-a5a7-1d7373b8bace",
+          "state": "pre"
+        },
+        {
+          "id": "mp-80b9f2c2-f3d7-4653-bf95-6b5fdd9a8ba6",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2027-01-15",
+          "opponent": "Zion Christian Academy*",
+          "venue": "unknown",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/providence-christian-academy-murfreesboro-vs-zion-christian-academy-columbia/1-15-2027/?c=80b9f2c2-f3d7-4653-bf95-6b5fdd9a8ba6",
+          "state": "pre"
+        },
+        {
+          "id": "mp-bbb1e976-73b3-4ccd-b010-a607dd47e959",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2027-01-16",
+          "opponent": "Briarcrest Christian",
+          "venue": "away",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/briarcrest-christian-eads-vs-providence-christian-academy-murfreesboro/1-16-2027/?c=bbb1e976-73b3-4ccd-b010-a607dd47e959",
+          "state": "pre"
+        },
+        {
+          "id": "mp-25c3e86c-102c-400a-961e-448e11f85e09",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2027-01-19",
+          "opponent": "Columbia Academy*",
+          "venue": "away",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/columbia-academy-vs-providence-christian-academy-murfreesboro/1-19-2027/?c=25c3e86c-102c-400a-961e-448e11f85e09",
+          "state": "pre"
+        },
+        {
+          "id": "mp-52b08bcb-1fac-4278-afc2-5c782eba01ee",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2027-01-22",
+          "opponent": "MTCHS*",
+          "venue": "away",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/middle-tennessee-christian-murfreesboro-vs-providence-christian-academy-murfreesboro/1-22-2027/?c=52b08bcb-1fac-4278-afc2-5c782eba01ee",
+          "state": "pre"
+        },
+        {
+          "id": "mp-94a4d9b4-d3a1-4cce-ab99-527c1d8fd7b1",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2027-01-26",
+          "opponent": "Battle Ground Academy*",
+          "venue": "away",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/battle-ground-academy-franklin-vs-providence-christian-academy-murfreesboro/1-26-2027/?c=94a4d9b4-d3a1-4cce-ab99-527c1d8fd7b1",
+          "state": "pre"
+        },
+        {
+          "id": "mp-596f8d26-b90c-494f-b854-e804a37577d9",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2027-01-29",
+          "opponent": "FCA*",
+          "venue": "unknown",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/franklin-christian-academy-vs-providence-christian-academy-murfreesboro/1-29-2027/?c=596f8d26-b90c-494f-b854-e804a37577d9",
+          "state": "pre"
+        },
+        {
+          "id": "mp-8df9751d-8386-46c1-b331-8ec09d2a162c",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2027-01-30",
+          "opponent": "Zion Christian Academy*",
+          "venue": "away",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/providence-christian-academy-murfreesboro-vs-zion-christian-academy-columbia/1-30-2027/?c=8df9751d-8386-46c1-b331-8ec09d2a162c",
+          "state": "pre"
+        },
+        {
+          "id": "mp-a24baa53-04a4-4554-bc12-5e1357fc7679",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2027-02-02",
+          "opponent": "The Webb School*",
+          "venue": "away",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/providence-christian-academy-murfreesboro-vs-the-webb-school-bell-buckle/2-2-2027/?c=a24baa53-04a4-4554-bc12-5e1357fc7679",
+          "state": "pre"
+        },
+        {
+          "id": "mp-492073a7-f8d0-492f-9329-5dde5024f9da",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2027-02-05",
+          "opponent": "Grace Christian Academy*",
+          "venue": "away",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/grace-christian-academy-franklin-vs-providence-christian-academy-murfreesboro/2-5-2027/?c=492073a7-f8d0-492f-9329-5dde5024f9da",
+          "state": "pre"
+        }
+      ],
+      "mode": "automatic",
+      "fetchedAt": "2026-11-12T08:30:34.251Z"
+    },
+    {
+      "schoolId": "veritas-national",
+      "games": [
+        {
+          "id": "seed2027-veritas-bella-vista",
+          "schoolId": "veritas-national",
+          "date": "2026-11-20",
+          "opponent": "CIA Bella Vista",
+          "venue": "away",
+          "sourceUrl": "https://veritasbasketball.com/schedule",
+          "season": 2027,
+          "state": "pre",
+          "opponentSchoolId": "bella-vista",
+          "bootstrap": true
+        },
+        {
+          "id": "seed2027-veritas-az-compass",
+          "schoolId": "veritas-national",
+          "date": "2027-02-12",
+          "opponent": "AZ Compass",
+          "venue": "home",
+          "sourceUrl": "https://veritasbasketball.com/schedule",
+          "season": 2027,
+          "state": "pre",
+          "bootstrap": true
+        },
+        {
+          "id": "seed2027-veritas-wasatch",
+          "schoolId": "veritas-national",
+          "date": "2027-02-14",
+          "opponent": "Wasatch Academy",
+          "venue": "home",
+          "sourceUrl": "https://veritasbasketball.com/schedule",
+          "season": 2027,
+          "state": "pre",
+          "opponentSchoolId": "wasatch-national",
+          "bootstrap": true
+        },
+        {
+          "id": "seed2027-veritas-dream-city",
+          "schoolId": "veritas-national",
+          "date": "2027-02-26",
+          "opponent": "Dream City Christian",
+          "venue": "home",
+          "sourceUrl": "https://veritasbasketball.com/schedule",
+          "season": 2027,
+          "state": "pre",
+          "bootstrap": true
+        },
+        {
+          "id": "mp-3099d503-8efc-49eb-83ce-19d39d1db51d",
+          "season": 2027,
+          "schoolId": "veritas-national",
+          "date": "2026-11-23",
+          "opponent": "OCFFA",
+          "venue": "unknown",
+          "sourceUrl": "https://www.maxpreps.com/inter-state/basketball/game/oak-cliff-faith-family-academy-dallas-tx-vs-veritas-academy-ontario-ca/11-23-2026/?c=3099d503-8efc-49eb-83ce-19d39d1db51d",
+          "state": "pre"
+        },
+        {
+          "id": "mp-7f68c7bc-87b0-48a5-bdbe-ca03f3991afd",
+          "season": 2027,
+          "schoolId": "veritas-national",
+          "date": "2027-02-13",
+          "opponent": "Wasatch Academy*",
+          "venue": "away",
+          "sourceUrl": "https://www.maxpreps.com/inter-state/basketball/game/veritas-academy-ontario-ca-vs-wasatch-academy-mt-pleasant-ut/2-13-2027/?c=7f68c7bc-87b0-48a5-bdbe-ca03f3991afd",
+          "state": "pre"
+        }
+      ],
+      "mode": "automatic",
+      "fetchedAt": "2026-11-12T08:30:34.251Z"
+    },
+    {
+      "schoolId": "link-hs-elite",
+      "games": [
+        {
+          "id": "4d1728a993b443be7b0012853d5f8dcc",
+          "schoolId": "link-hs-elite",
+          "season": 2027,
+          "date": "2026-11-14",
+          "opponent": "South Central Prep",
+          "sourceUrl": "https://linkhoops.com/hs-elite-schedule",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "location": "Myrtle Beach, SC",
+          "localTime": "18:45"
+        },
+        {
+          "id": "20e308fef76f087a1c4eedd963c3e40d",
+          "schoolId": "link-hs-elite",
+          "season": 2027,
+          "date": "2026-11-15",
+          "opponent": "Anthem Prep",
+          "sourceUrl": "https://linkhoops.com/hs-elite-schedule",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "location": "Myrtle Beach, SC",
+          "localTime": "13:30"
+        },
+        {
+          "id": "96c7d8a54deaab67b8a1877eb5167af9",
+          "schoolId": "link-hs-elite",
+          "season": 2027,
+          "date": "2026-11-23",
+          "opponent": "Wellington Academy",
+          "sourceUrl": "https://linkhoops.com/hs-elite-schedule",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "location": "Daytona Beach, FL"
+        },
+        {
+          "id": "d07bc6785b535f01dd80cfe9a62deadc",
+          "schoolId": "link-hs-elite",
+          "season": 2027,
+          "date": "2026-11-24",
+          "opponent": "Brewster Academy",
+          "sourceUrl": "https://linkhoops.com/hs-elite-schedule",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "location": "Daytona Beach, FL"
+        },
+        {
+          "id": "0a0885caad1b788c5a28b612dfb41eeb",
+          "schoolId": "link-hs-elite",
+          "season": 2027,
+          "date": "2026-11-27",
+          "opponent": "Wisconsin Academy",
+          "sourceUrl": "https://linkhoops.com/hs-elite-schedule",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "location": "Orlando, FL"
+        },
+        {
+          "id": "a95580387441ca06e63656d89b17b7f0",
+          "schoolId": "link-hs-elite",
+          "season": 2027,
+          "date": "2026-11-28",
+          "opponent": "DME",
+          "sourceUrl": "https://linkhoops.com/hs-elite-schedule",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "location": "Orlando, FL"
+        },
+        {
+          "id": "a8613128a891cae34d30a18af80f5491",
+          "schoolId": "link-hs-elite",
+          "season": 2027,
+          "date": "2026-12-10",
+          "opponent": "Prolific Prep",
+          "sourceUrl": "https://linkhoops.com/hs-elite-schedule",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "location": "Lion Cty, KY"
+        },
+        {
+          "id": "637fd69291134c827e7157393482eca4",
+          "schoolId": "link-hs-elite",
+          "season": 2027,
+          "date": "2026-12-12",
+          "opponent": "Sunrise Academy",
+          "sourceUrl": "https://linkhoops.com/hs-elite-schedule",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "location": "Louisville, KY",
+          "localTime": "16:45"
+        },
+        {
+          "id": "e0b5e79870000d3c8411db12934263f2",
+          "schoolId": "link-hs-elite",
+          "season": 2027,
+          "date": "2026-12-13",
+          "opponent": "Iowa United",
+          "sourceUrl": "https://linkhoops.com/hs-elite-schedule",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "location": "Louisville, KY",
+          "localTime": "17:00"
+        },
+        {
+          "id": "4867eaa083ed45e0773aa05d1ea8f537",
+          "schoolId": "link-hs-elite",
+          "season": 2027,
+          "date": "2027-01-01",
+          "opponent": "St. Xavier HS",
+          "sourceUrl": "https://linkhoops.com/hs-elite-schedule",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "location": "Louisville, KY"
+        },
+        {
+          "id": "c8848c81bcb90c07229d87dd8d87f493",
+          "schoolId": "link-hs-elite",
+          "season": 2027,
+          "date": "2027-01-16",
+          "opponent": "Bella Vista",
+          "sourceUrl": "https://linkhoops.com/hs-elite-schedule",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "location": "Dayton, OH",
+          "localTime": "17:15"
+        },
+        {
+          "id": "805e24970634f2855499b7844758b759",
+          "schoolId": "link-hs-elite",
+          "season": 2027,
+          "date": "2027-01-17",
+          "opponent": "Andrews Osborne Academy",
+          "sourceUrl": "https://linkhoops.com/hs-elite-schedule",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "location": "Dayton, OH",
+          "localTime": "17:15"
+        },
+        {
+          "id": "c84158e58ca5e7a4bb21cd4463a14660",
+          "schoolId": "link-hs-elite",
+          "season": 2027,
+          "date": "2027-01-22",
+          "opponent": "Wasatch Academy",
+          "sourceUrl": "https://linkhoops.com/hs-elite-schedule",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/Chicago",
+          "location": "Quincy, IL"
+        },
+        {
+          "id": "aac8a55862391b2c66eeec9d18aa7b9e",
+          "schoolId": "link-hs-elite",
+          "season": 2027,
+          "date": "2027-01-23",
+          "opponent": "Patrick School",
+          "sourceUrl": "https://linkhoops.com/hs-elite-schedule",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/Chicago",
+          "location": "Quincy, IL"
+        }
+      ],
+      "mode": "automatic",
+      "fetchedAt": "2026-11-12T08:30:34.251Z"
+    },
+    {
+      "schoolId": "phelps-national",
+      "games": [
+        {
+          "id": "phelps-8516",
+          "schoolId": "phelps-national",
+          "season": 2027,
+          "date": "2026-11-03",
+          "opponent": "Covenant College",
+          "sourceUrl": "https://www.thephelpsschool.org/athletics/schedules",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "localTime": "15:45",
+          "sourceNativeId": "phelps-8516",
+          "scheduleStatus": null
+        },
+        {
+          "id": "phelps-8517",
+          "schoolId": "phelps-national",
+          "season": 2027,
+          "date": "2026-11-06",
+          "opponent": "STEAM Academy",
+          "sourceUrl": "https://www.thephelpsschool.org/athletics/schedules",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "localTime": "16:00",
+          "sourceNativeId": "phelps-8517",
+          "scheduleStatus": null
+        },
+        {
+          "id": "phelps-8518",
+          "schoolId": "phelps-national",
+          "season": 2027,
+          "date": "2026-11-07",
+          "opponent": "Westtown",
+          "sourceUrl": "https://www.thephelpsschool.org/athletics/schedules",
+          "state": "pre",
+          "venue": "away",
+          "timeZone": "America/New_York",
+          "localTime": "16:00",
+          "sourceNativeId": "phelps-8518",
+          "scheduleStatus": null
+        },
+        {
+          "id": "phelps-8519",
+          "schoolId": "phelps-national",
+          "season": 2027,
+          "date": "2026-11-14",
+          "opponent": "Springdale Prep",
+          "sourceUrl": "https://www.thephelpsschool.org/athletics/schedules",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "localTime": "16:00",
+          "sourceNativeId": "phelps-8519",
+          "scheduleStatus": null
+        },
+        {
+          "id": "phelps-8520",
+          "schoolId": "phelps-national",
+          "season": 2027,
+          "date": "2026-11-18",
+          "opponent": "Perkiomen",
+          "sourceUrl": "https://www.thephelpsschool.org/athletics/schedules",
+          "state": "pre",
+          "venue": "away",
+          "timeZone": "America/New_York",
+          "localTime": "16:00",
+          "sourceNativeId": "phelps-8520",
+          "scheduleStatus": null
+        },
+        {
+          "id": "phelps-8521",
+          "schoolId": "phelps-national",
+          "season": 2027,
+          "date": "2026-11-20",
+          "opponent": "Vermont Academy",
+          "sourceUrl": "https://www.thephelpsschool.org/athletics/schedules",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "localTime": "17:10",
+          "sourceNativeId": "phelps-8521",
+          "scheduleStatus": null
+        },
+        {
+          "id": "phelps-8522",
+          "schoolId": "phelps-national",
+          "season": 2027,
+          "date": "2026-11-21",
+          "opponent": "Link Academy",
+          "sourceUrl": "https://www.thephelpsschool.org/athletics/schedules",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "sourceNativeId": "phelps-8522",
+          "scheduleStatus": null
+        },
+        {
+          "id": "phelps-8523",
+          "schoolId": "phelps-national",
+          "season": 2027,
+          "date": "2026-12-02",
+          "opponent": "RockTop",
+          "sourceUrl": "https://www.thephelpsschool.org/athletics/schedules",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "localTime": "14:30",
+          "sourceNativeId": "phelps-8523",
+          "scheduleStatus": null
+        },
+        {
+          "id": "phelps-8524",
+          "schoolId": "phelps-national",
+          "season": 2027,
+          "date": "2026-12-05",
+          "opponent": "Newman",
+          "sourceUrl": "https://www.thephelpsschool.org/athletics/schedules",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "localTime": "15:20",
+          "sourceNativeId": "phelps-8524",
+          "scheduleStatus": null
+        }
+      ],
+      "mode": "automatic",
+      "fetchedAt": "2026-11-12T08:30:34.251Z"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "games": [
+        {
+          "id": "peddie-47020",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2026-11-20",
+          "opponent": "Notre Dame (NY)",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "localTime": "19:30",
+          "sourceNativeId": "peddie-47020",
+          "scheduleStatus": null
+        },
+        {
+          "id": "peddie-47021",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2026-11-21",
+          "opponent": "George School",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "localTime": "13:45",
+          "sourceNativeId": "peddie-47021",
+          "scheduleStatus": null
+        },
+        {
+          "id": "peddie-47022",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2026-11-22",
+          "opponent": "Virginia Episcopal School (VA)",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "localTime": "11:45",
+          "sourceNativeId": "peddie-47022",
+          "scheduleStatus": null
+        },
+        {
+          "id": "peddie-47037",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2026-12-15",
+          "opponent": "Malvern Preparatory School",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "localTime": "19:00",
+          "sourceNativeId": "peddie-47037",
+          "scheduleStatus": null
+        },
+        {
+          "id": "peddie-47038",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2026-12-18",
+          "opponent": "Dexter Southfield School (MA)",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "localTime": "16:45",
+          "sourceNativeId": "peddie-47038",
+          "scheduleStatus": null
+        },
+        {
+          "id": "peddie-47041",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2027-01-06",
+          "opponent": "Blair Academy",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "away",
+          "timeZone": "America/New_York",
+          "localTime": "18:30",
+          "sourceNativeId": "peddie-47041",
+          "scheduleStatus": null
+        },
+        {
+          "id": "peddie-47042",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2027-01-09",
+          "opponent": "The Lawrenceville School",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "localTime": "18:30",
+          "sourceNativeId": "peddie-47042",
+          "scheduleStatus": null
+        },
+        {
+          "id": "peddie-47043",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2027-01-13",
+          "opponent": "The Hun School of Princeton",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "away",
+          "timeZone": "America/New_York",
+          "localTime": "17:45",
+          "sourceNativeId": "peddie-47043",
+          "scheduleStatus": null
+        },
+        {
+          "id": "peddie-47044",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2027-01-16",
+          "opponent": "The Hill School",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "localTime": "18:30",
+          "sourceNativeId": "peddie-47044",
+          "scheduleStatus": null
+        },
+        {
+          "id": "peddie-47045",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2027-01-20",
+          "opponent": "Perkiomen School (National Team)",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "localTime": "18:00",
+          "sourceNativeId": "peddie-47045",
+          "scheduleStatus": null
+        },
+        {
+          "id": "peddie-47046",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2027-01-23",
+          "opponent": "Mercersburg Academy",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "away",
+          "timeZone": "America/New_York",
+          "localTime": "14:30",
+          "sourceNativeId": "peddie-47046",
+          "scheduleStatus": null
+        },
+        {
+          "id": "peddie-47047",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2027-01-26",
+          "opponent": "William Penn Charter School",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "away",
+          "timeZone": "America/New_York",
+          "localTime": "18:30",
+          "sourceNativeId": "peddie-47047",
+          "scheduleStatus": null
+        },
+        {
+          "id": "peddie-47048",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2027-01-29",
+          "opponent": "The Pennington School",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "localTime": "18:15",
+          "sourceNativeId": "peddie-47048",
+          "scheduleStatus": null
+        },
+        {
+          "id": "peddie-47049",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2027-01-30",
+          "opponent": "The Haverford School",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "localTime": "15:00",
+          "sourceNativeId": "peddie-47049",
+          "scheduleStatus": null
+        },
+        {
+          "id": "peddie-47050",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2027-02-03",
+          "opponent": "Perkiomen School (Prep Team)",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "away",
+          "timeZone": "America/New_York",
+          "localTime": "18:30",
+          "sourceNativeId": "peddie-47050",
+          "scheduleStatus": null
+        },
+        {
+          "id": "peddie-48294",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2027-02-04",
+          "opponent": "Hightstown High School",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "localTime": "19:00",
+          "sourceNativeId": "peddie-48294",
+          "scheduleStatus": null
+        },
+        {
+          "id": "peddie-47051",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2027-02-09",
+          "opponent": "Life Center Academy",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "away",
+          "timeZone": "America/New_York",
+          "localTime": "16:15",
+          "sourceNativeId": "peddie-47051",
+          "scheduleStatus": null
+        },
+        {
+          "id": "peddie-48363",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2027-02-20",
+          "opponent": "Staten Island Academy",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "localTime": "17:00",
+          "sourceNativeId": "peddie-48363",
+          "scheduleStatus": null
+        },
+        {
+          "id": "mp-410052c9-a920-430c-a98a-199dc242f596",
+          "season": 2027,
+          "schoolId": "peddie-varsity",
+          "date": "2026-12-12",
+          "opponent": "Milton Academy",
+          "venue": "away",
+          "sourceUrl": "https://www.maxpreps.com/inter-state/basketball/game/milton-academy-ma-vs-peddie-hightstown-nj/12-12-2026/?c=410052c9-a920-430c-a98a-199dc242f596",
+          "state": "pre"
+        }
+      ],
+      "mode": "automatic",
+      "fetchedAt": "2026-11-12T08:30:34.251Z"
+    }
+  ],
+  "sources": [
+    {
+      "schoolId": "bella-vista",
+      "source": "verified-seed",
+      "status": "ok",
+      "message": "2026-11-11 transcription; source availability rechecked",
+      "games": 1
+    },
+    {
+      "schoolId": "bella-vista",
+      "source": "legitgm",
+      "status": "pending",
+      "message": "no verified current matchup/player statistics found",
+      "games": 0
+    },
+    {
+      "schoolId": "wasatch-national",
+      "source": "verified-seed",
+      "status": "ok",
+      "message": "2026-11-11 transcription; source availability rechecked",
+      "games": 8
+    },
+    {
+      "schoolId": "wasatch-national",
+      "source": "legitgm",
+      "status": "pending",
+      "message": "no verified current matchup/player statistics found",
+      "games": 0
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "official",
+      "status": "ok",
+      "message": null,
+      "games": 5
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-11-17; official MBA; supplement Montgomery Bell Academy; manual identity check required"
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-11-19; official McMallie; supplement McCallie; manual identity check required"
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "maxpreps",
+      "status": "ok",
+      "message": null,
+      "games": 25
+    },
+    {
+      "schoolId": "veritas-national",
+      "source": "verified-seed",
+      "status": "ok",
+      "message": "2026-11-11 transcription; source availability rechecked",
+      "games": 4
+    },
+    {
+      "schoolId": "veritas-national",
+      "source": "maxpreps",
+      "status": "ok",
+      "message": null,
+      "games": 2
+    },
+    {
+      "schoolId": "veritas-national",
+      "source": "legitgm",
+      "status": "pending",
+      "message": "no verified current matchup/player statistics found",
+      "games": 0
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "official",
+      "status": "pending",
+      "message": "awaiting a verified schedule for this exact squad",
+      "games": 0
+    },
+    {
+      "schoolId": "link-hs-elite",
+      "source": "official",
+      "status": "ok",
+      "message": null,
+      "games": 14
+    },
+    {
+      "schoolId": "patrick-school",
+      "source": "official",
+      "status": "pending",
+      "message": "awaiting a verified schedule for this exact squad",
+      "games": 0
+    },
+    {
+      "schoolId": "phelps-national",
+      "source": "official",
+      "status": "ok",
+      "message": null,
+      "games": 9
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "official",
+      "status": "ok",
+      "message": null,
+      "games": 18
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-11-22; official Virginia Episcopal School (VA); supplement Virginia Episcopal School***; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-12-12; official Milton Academy; supplement Malvern Prep; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-12-15; official Malvern Preparatory School; supplement Hun*; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-01-09; official The Lawrenceville School; supplement Lawrenceville School*; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-01-13; official The Hun School of Princeton; supplement Hun*; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-01-20; official Perkiomen School (National Team); supplement Perkiomen School; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-01-26; official William Penn Charter School; supplement William Penn Charter; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-02-04; official Hightstown High School; supplement Perkiomen School; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-02-04; official Hightstown High School; supplement Hightstown; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps",
+      "status": "ok",
+      "message": null,
+      "games": 14
+    }
+  ]
+}
