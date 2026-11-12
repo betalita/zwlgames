@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-12T08:30:34.251Z",
+  "generatedAt": "2026-11-12T18:57:15.019Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -183,14 +183,16 @@
           "scheduleStatus": null
         },
         {
-          "id": "mp-23cbcc19-0669-4528-866d-d7f6e62f6288",
-          "season": 2027,
+          "id": "26fbef1fb1c4bfe5e67fc5f3a435ae49",
           "schoolId": "providence-tn-varsity",
-          "date": "2026-11-03",
-          "opponent": "Franklin Classical School",
-          "venue": "away",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/franklin-classical-school-vs-providence-christian-academy-murfreesboro/11-3-2026/?c=23cbcc19-0669-4528-866d-d7f6e62f6288",
-          "state": "pre"
+          "season": 2027,
+          "date": "2026-12-11",
+          "opponent": "MTCS",
+          "sourceUrl": "https://providencechristian.com/calendar/athletics-calendar-list/",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/Chicago",
+          "scheduleStatus": null
         },
         {
           "id": "mp-de8b9ac4-6932-45be-83de-283181f60e63",
@@ -220,26 +222,6 @@
           "opponent": "Memphis University School",
           "venue": "unknown",
           "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/memphis-university-school-vs-providence-christian-academy-murfreesboro/12-4-2026/?c=fc89b273-dc37-4fc5-b596-a2b1edd5c3ef",
-          "state": "pre"
-        },
-        {
-          "id": "mp-ec39b4af-fad2-4e95-9994-5e223c69a4ca",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2026-12-11",
-          "opponent": "MTCHS*",
-          "venue": "unknown",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/middle-tennessee-christian-murfreesboro-vs-providence-christian-academy-murfreesboro/12-11-2026/?c=ec39b4af-fad2-4e95-9994-5e223c69a4ca",
-          "state": "pre"
-        },
-        {
-          "id": "mp-d50a797b-0134-4762-806a-a8a66e21015b",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2026-12-12",
-          "opponent": "Winston Salem Christian",
-          "venue": "unknown",
-          "sourceUrl": "https://www.maxpreps.com/inter-state/basketball/game/providence-christian-academy-murfreesboro-tn-vs-winston-salem-christian-nc/12-12-2026/?c=d50a797b-0134-4762-806a-a8a66e21015b",
           "state": "pre"
         },
         {
@@ -384,7 +366,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-12T08:30:34.251Z"
+      "fetchedAt": "2026-11-12T18:57:15.019Z"
     },
     {
       "schoolId": "veritas-national",
@@ -457,7 +439,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-12T08:30:34.251Z"
+      "fetchedAt": "2026-11-12T18:57:15.019Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -638,7 +620,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-12T08:30:34.251Z"
+      "fetchedAt": "2026-11-12T18:57:15.019Z"
     },
     {
       "schoolId": "phelps-national",
@@ -770,7 +752,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-12T08:30:34.251Z"
+      "fetchedAt": "2026-11-12T18:57:15.019Z"
     },
     {
       "schoolId": "peddie-varsity",
@@ -1039,7 +1021,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-12T08:30:34.251Z"
+      "fetchedAt": "2026-11-12T18:57:15.019Z"
     }
   ],
   "sources": [
@@ -1076,7 +1058,7 @@
       "source": "official",
       "status": "ok",
       "message": null,
-      "games": 5
+      "games": 6
     },
     {
       "schoolId": "providence-tn-varsity",
@@ -1092,10 +1074,16 @@
     },
     {
       "schoolId": "providence-tn-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-12-11; official MTCS; supplement MTCHS*; manual identity check required"
+    },
+    {
+      "schoolId": "providence-tn-varsity",
       "source": "maxpreps",
       "status": "ok",
       "message": null,
-      "games": 25
+      "games": 23
     },
     {
       "schoolId": "veritas-national",
