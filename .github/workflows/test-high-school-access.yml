@@ -1,0 +1,38 @@
+name: Test high school sources
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - '.github/workflows/test-high-school-access.yml'
+      - '.github/scripts/high-school-access*'
+permissions:
+  contents: write
+concurrency:
+  group: high-school-publication
+  cancel-in-progress: false
+jobs:
+  access:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: master
+      - run: node --test .github/scripts/high-school-access.test.cjs
+      - run: node .github/scripts/high-school-access.cjs
+      - name: Publish access evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/high-school-access.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Record high school source access probe'
+          git pull --rebase origin master
+          git push origin HEAD:master
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: high-school-access-${{ github.run_id }}
+          path: data/high-school-access.json
+          retention-days: 7
