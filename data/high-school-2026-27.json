@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-13T01:51:06.673Z",
+  "generatedAt": "2026-11-13T03:08:35.232Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -34,7 +34,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T01:51:06.673Z"
+      "fetchedAt": "2026-11-13T03:08:35.232Z"
     },
     {
       "schoolId": "wasatch-national",
@@ -196,6 +196,18 @@
           "scheduleStatus": null
         },
         {
+          "id": "26fbef1fb1c4bfe5e67fc5f3a435ae49",
+          "schoolId": "providence-tn-varsity",
+          "season": 2027,
+          "date": "2026-12-11",
+          "opponent": "MTCS",
+          "sourceUrl": "https://providencechristian.com/calendar/athletics-calendar-list/",
+          "state": "pre",
+          "venue": "home",
+          "timeZone": "America/Chicago",
+          "scheduleStatus": null
+        },
+        {
           "id": "mp-de8b9ac4-6932-45be-83de-283181f60e63",
           "season": 2027,
           "schoolId": "providence-tn-varsity",
@@ -223,16 +235,6 @@
           "opponent": "Memphis University School",
           "venue": "unknown",
           "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/memphis-university-school-vs-providence-christian-academy-murfreesboro/12-4-2026/?c=fc89b273-dc37-4fc5-b596-a2b1edd5c3ef",
-          "state": "pre"
-        },
-        {
-          "id": "mp-ec39b4af-fad2-4e95-9994-5e223c69a4ca",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2026-12-11",
-          "opponent": "MTCHS*",
-          "venue": "unknown",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/middle-tennessee-christian-murfreesboro-vs-providence-christian-academy-murfreesboro/12-11-2026/?c=ec39b4af-fad2-4e95-9994-5e223c69a4ca",
           "state": "pre"
         },
         {
@@ -377,7 +379,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T01:51:06.673Z"
+      "fetchedAt": "2026-11-13T03:08:35.232Z"
     },
     {
       "schoolId": "veritas-national",
@@ -450,7 +452,431 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T01:51:06.673Z"
+      "fetchedAt": "2026-11-13T03:08:35.232Z"
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
+      "games": [
+        {
+          "id": "neprep-9752513",
+          "sourceNativeId": "neprep-9752513",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-11-06",
+          "opponent": "Rocktop Basketball Academy (NJ)",
+          "location": "Notre Dame",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "localTime": "19:00",
+          "state": "post",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/games",
+          "schoolScore": 102,
+          "opponentScore": 79
+        },
+        {
+          "id": "neprep-9808149",
+          "sourceNativeId": "neprep-9808149",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-11-13",
+          "opponent": "Southeastern Prep Academy National (FL)",
+          "location": "Boo Williams",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "localTime": "15:00",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9808148",
+          "sourceNativeId": "neprep-9808148",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-11-14",
+          "opponent": "One Way Basketball Institute (FL)",
+          "location": "Boo Williams",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "localTime": "10:00",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9752664",
+          "sourceNativeId": "neprep-9752664",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-11-16",
+          "opponent": "Blair Academy (NJ)",
+          "location": "Blair",
+          "venue": "away",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9534381",
+          "sourceNativeId": "neprep-9534381",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-11-18",
+          "opponent": "Vermont Academy",
+          "location": "Vermont Acad",
+          "venue": "away",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9534420",
+          "sourceNativeId": "neprep-9534420",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-11-20",
+          "opponent": "Peddie School (NJ)",
+          "location": "Mercersburg",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9534434",
+          "sourceNativeId": "neprep-9534434",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-11-21",
+          "opponent": "Hill School (PA)",
+          "location": "Mercersburg",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "localTime": "12:00",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9159073",
+          "sourceNativeId": "neprep-9159073",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-11-22",
+          "opponent": "Mercersburg Academy (PA)",
+          "location": "Mercersburg",
+          "venue": "away",
+          "timeZone": "America/New_York",
+          "localTime": "13:30",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9860994",
+          "sourceNativeId": "neprep-9860994",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-12-04",
+          "opponent": "CATS Academy National (MA)",
+          "location": "Dana Barros",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "localTime": "18:20",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9534476",
+          "sourceNativeId": "neprep-9534476",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-12-05",
+          "opponent": "Wilbraham and Monson Academy (MA)",
+          "location": "Dana Barros",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9752685",
+          "sourceNativeId": "neprep-9752685",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-12-06",
+          "opponent": "Darrow School AAA (NY)",
+          "location": "Dana Barros",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9839906",
+          "sourceNativeId": "neprep-9839906",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-12-12",
+          "opponent": "St James Performance Academy Prep (VA)",
+          "location": "Notre Dame",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9808150",
+          "sourceNativeId": "neprep-9808150",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-12-12",
+          "opponent": "Prince Georges Christian Academy (MD)",
+          "location": "WRA",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9534480",
+          "sourceNativeId": "neprep-9534480",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-12-15",
+          "opponent": "Perkiomen School National (PA)",
+          "location": "Perkiomen",
+          "venue": "away",
+          "timeZone": "America/New_York",
+          "localTime": "17:30",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9752703",
+          "sourceNativeId": "neprep-9752703",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-12-27",
+          "opponent": "Andrews Osborne Academy (OH)",
+          "location": "New Heights",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9752732",
+          "sourceNativeId": "neprep-9752732",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-12-28",
+          "opponent": "Bridgeport Prep National (CT)",
+          "location": "New Heights",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9872620",
+          "sourceNativeId": "neprep-9872620",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-12-29",
+          "opponent": "Broome Street Academy National (NY)",
+          "location": "Notre Dame",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9810928",
+          "sourceNativeId": "neprep-9810928",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-12-30",
+          "opponent": "Shots With Patience (NY)",
+          "location": "Notre Dame",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "localTime": "12:00",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9808152",
+          "sourceNativeId": "neprep-9808152",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2027-01-09",
+          "opponent": "Andrews Osborne Academy (OH)",
+          "location": "Perkiomen",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9534520",
+          "sourceNativeId": "neprep-9534520",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2027-01-12",
+          "opponent": "Redemption Christian PG National (NY)",
+          "location": "Redemption Chr",
+          "venue": "away",
+          "timeZone": "America/New_York",
+          "localTime": "17:30",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9534613",
+          "sourceNativeId": "neprep-9534613",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2027-01-17",
+          "opponent": "St Andrews School Prep (RI)",
+          "location": "AIC",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9534648",
+          "sourceNativeId": "neprep-9534648",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2027-01-18",
+          "opponent": "Brimmer & May School 1 (MA)",
+          "location": "AIC",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9534698",
+          "sourceNativeId": "neprep-9534698",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2027-01-20",
+          "opponent": "Albany Academy (NY)",
+          "location": "Albany Academy",
+          "venue": "away",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9462425",
+          "sourceNativeId": "neprep-9462425",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2027-01-23",
+          "opponent": "Garden State Academy National (NJ)",
+          "location": "Notre Dame",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "localTime": "14:00",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9752744",
+          "sourceNativeId": "neprep-9752744",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2027-01-24",
+          "opponent": "Our Saviour Lutheran School National (NY)",
+          "location": "St Francis",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "localTime": "17:00",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9534728",
+          "sourceNativeId": "neprep-9534728",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2027-01-27",
+          "opponent": "Redemption Christian PG National (NY)",
+          "location": "Notre Dame",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "localTime": "19:00",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9755072",
+          "sourceNativeId": "neprep-9755072",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2027-01-30",
+          "opponent": "Top Flight Basketball (OH)",
+          "location": "Notre Dame",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9534733",
+          "sourceNativeId": "neprep-9534733",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2027-01-31",
+          "opponent": "St Albans Prep (NY)",
+          "location": "Notre Dame",
+          "venue": "home",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9808154",
+          "sourceNativeId": "neprep-9808154",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2027-02-06",
+          "opponent": "NC Good Better Best Academy (NC)",
+          "location": "Massanutten",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9534736",
+          "sourceNativeId": "neprep-9534736",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2027-02-13",
+          "opponent": "Western Reserve Academy (OH)",
+          "location": "WRA",
+          "venue": "away",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9811050",
+          "sourceNativeId": "neprep-9811050",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2027-02-21",
+          "opponent": "Shots With Patience (NY)",
+          "location": "TBD",
+          "venue": "unknown",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        }
+      ],
+      "mode": "automatic",
+      "fetchedAt": "2026-11-13T03:08:35.232Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -631,7 +1057,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T01:51:06.673Z"
+      "fetchedAt": "2026-11-13T03:08:35.232Z"
     },
     {
       "schoolId": "phelps-national",
@@ -763,7 +1189,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T01:51:06.673Z"
+      "fetchedAt": "2026-11-13T03:08:35.232Z"
     },
     {
       "schoolId": "peddie-varsity",
@@ -808,6 +1234,20 @@
           "timeZone": "America/New_York",
           "localTime": "11:45",
           "sourceNativeId": "peddie-47022",
+          "scheduleStatus": null
+        },
+        {
+          "id": "peddie-47025",
+          "schoolId": "peddie-varsity",
+          "season": 2027,
+          "date": "2026-12-04",
+          "opponent": "The Kiski School (PA)",
+          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
+          "state": "pre",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "localTime": "19:00",
+          "sourceNativeId": "peddie-47025",
           "scheduleStatus": null
         },
         {
@@ -1032,7 +1472,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T01:51:06.673Z"
+      "fetchedAt": "2026-11-13T03:08:35.232Z"
     }
   ],
   "sources": [
@@ -1069,7 +1509,7 @@
       "source": "official",
       "status": "ok",
       "message": null,
-      "games": 5
+      "games": 6
     },
     {
       "schoolId": "providence-tn-varsity",
@@ -1082,6 +1522,12 @@
       "source": "maxpreps-identity",
       "status": "warning",
       "message": "same-date opponent conflict: 2026-11-19; official McMallie; supplement McCallie; manual identity check required"
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-12-11; official MTCS; supplement MTCHS*; manual identity check required"
     },
     {
       "schoolId": "providence-tn-varsity",
@@ -1113,10 +1559,10 @@
     },
     {
       "schoolId": "notre-dame-prep-ny",
-      "source": "official",
-      "status": "pending",
-      "message": "awaiting a verified schedule for this exact squad",
-      "games": 0
+      "source": "neprep",
+      "status": "ok",
+      "message": "exact Elmira prep squad; explicit Finals only",
+      "games": 31
     },
     {
       "schoolId": "link-hs-elite",
@@ -1144,7 +1590,7 @@
       "source": "official",
       "status": "ok",
       "message": null,
-      "games": 18
+      "games": 19
     },
     {
       "schoolId": "peddie-varsity",
