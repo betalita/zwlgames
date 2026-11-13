@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-12T18:57:15.019Z",
+  "generatedAt": "2026-11-13T01:43:40.788Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -18,10 +18,23 @@
           "state": "pre",
           "opponentSchoolId": "bella-vista",
           "bootstrap": true
+        },
+        {
+          "id": "bv-calendar-07lv8qfl25l68g81r50fh5qefu",
+          "sourceNativeId": "bv-calendar-07lv8qfl25l68g81r50fh5qefu",
+          "schoolId": "bella-vista",
+          "season": 2027,
+          "date": "2026-11-12",
+          "localTime": "19:00",
+          "timeZone": "America/Phoenix",
+          "sourceUrl": "https://www.bellavistacollegeprep.com/news-events/school-calendar.cfm",
+          "state": "pre",
+          "opponent": "Elite Sports Academy",
+          "venue": "unknown"
         }
       ],
-      "mode": "verified-seed",
-      "fetchedAt": "2026-11-11T00:00:00.000Z"
+      "mode": "automatic",
+      "fetchedAt": "2026-11-13T01:43:40.788Z"
     },
     {
       "schoolId": "wasatch-national",
@@ -366,7 +379,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-12T18:57:15.019Z"
+      "fetchedAt": "2026-11-13T01:43:40.788Z"
     },
     {
       "schoolId": "veritas-national",
@@ -439,7 +452,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-12T18:57:15.019Z"
+      "fetchedAt": "2026-11-13T01:43:40.788Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -620,7 +633,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-12T18:57:15.019Z"
+      "fetchedAt": "2026-11-13T01:43:40.788Z"
     },
     {
       "schoolId": "phelps-national",
@@ -752,7 +765,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-12T18:57:15.019Z"
+      "fetchedAt": "2026-11-13T01:43:40.788Z"
     },
     {
       "schoolId": "peddie-varsity",
@@ -1021,15 +1034,15 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-12T18:57:15.019Z"
+      "fetchedAt": "2026-11-13T01:43:40.788Z"
     }
   ],
   "sources": [
     {
       "schoolId": "bella-vista",
-      "source": "verified-seed",
+      "source": "school-ical",
       "status": "ok",
-      "message": "2026-11-11 transcription; source availability rechecked",
+      "message": null,
       "games": 1
     },
     {
