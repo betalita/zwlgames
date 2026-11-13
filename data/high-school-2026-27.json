@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-13T12:41:44.708Z",
+  "generatedAt": "2026-11-13T18:32:02.818Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -34,7 +34,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T12:41:44.708Z"
+      "fetchedAt": "2026-11-13T18:32:02.818Z"
     },
     {
       "schoolId": "wasatch-national",
@@ -379,7 +379,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T12:41:44.708Z"
+      "fetchedAt": "2026-11-13T18:32:02.818Z"
     },
     {
       "schoolId": "veritas-national",
@@ -452,7 +452,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T12:41:44.708Z"
+      "fetchedAt": "2026-11-13T18:32:02.818Z"
     },
     {
       "schoolId": "notre-dame-prep-ny",
@@ -471,7 +471,8 @@
           "state": "post",
           "sourceUrl": "https://www.neprepbasketball.net/team/272487/games",
           "schoolScore": 102,
-          "opponentScore": 79
+          "opponentScore": 79,
+          "players": []
         },
         {
           "id": "neprep-9808149",
@@ -498,6 +499,20 @@
           "venue": "neutral",
           "timeZone": "America/New_York",
           "localTime": "10:00",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9920300",
+          "sourceNativeId": "neprep-9920300",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-11-15",
+          "opponent": "Shining Stars Sports Academy (VA)",
+          "location": "Boo Williams",
+          "venue": "neutral",
+          "timeZone": "America/New_York",
+          "localTime": "09:00",
           "state": "pre",
           "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
         },
@@ -574,7 +589,7 @@
           "schoolId": "notre-dame-prep-ny",
           "season": 2027,
           "date": "2026-12-04",
-          "opponent": "CATS Academy National (MA)",
+          "opponent": "CATS Academy National HS (MA)",
           "location": "Dana Barros",
           "venue": "neutral",
           "timeZone": "America/New_York",
@@ -609,19 +624,6 @@
           "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
         },
         {
-          "id": "neprep-9839906",
-          "sourceNativeId": "neprep-9839906",
-          "schoolId": "notre-dame-prep-ny",
-          "season": 2027,
-          "date": "2026-12-12",
-          "opponent": "St James Performance Academy Prep (VA)",
-          "location": "Notre Dame",
-          "venue": "home",
-          "timeZone": "America/New_York",
-          "state": "pre",
-          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
-        },
-        {
           "id": "neprep-9808150",
           "sourceNativeId": "neprep-9808150",
           "schoolId": "notre-dame-prep-ny",
@@ -630,6 +632,19 @@
           "opponent": "Prince Georges Christian Academy (MD)",
           "location": "WRA",
           "venue": "neutral",
+          "timeZone": "America/New_York",
+          "state": "pre",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+        },
+        {
+          "id": "neprep-9839906",
+          "sourceNativeId": "neprep-9839906",
+          "schoolId": "notre-dame-prep-ny",
+          "season": 2027,
+          "date": "2026-12-12",
+          "opponent": "St James Performance Academy Prep (VA)",
+          "location": "Notre Dame",
+          "venue": "home",
           "timeZone": "America/New_York",
           "state": "pre",
           "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
@@ -876,7 +891,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T03:08:35.232Z"
+      "fetchedAt": "2026-11-13T18:32:02.818Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1057,7 +1072,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T12:41:44.708Z"
+      "fetchedAt": "2026-11-13T18:32:02.818Z"
     },
     {
       "schoolId": "phelps-national",
@@ -1189,7 +1204,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T12:41:44.708Z"
+      "fetchedAt": "2026-11-13T18:32:02.818Z"
     },
     {
       "schoolId": "peddie-varsity",
@@ -1472,7 +1487,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T12:41:44.708Z"
+      "fetchedAt": "2026-11-13T18:32:02.818Z"
     }
   ],
   "sources": [
@@ -1566,9 +1581,10 @@
     },
     {
       "schoolId": "notre-dame-prep-ny",
-      "source": "official",
-      "status": "error",
-      "message": "NEPrep results matchup ambiguous"
+      "source": "neprep",
+      "status": "ok",
+      "message": "exact Elmira prep squad; explicit Finals only",
+      "games": 32
     },
     {
       "schoolId": "link-hs-elite",
@@ -1664,8 +1680,8 @@
     "bella-vista:bv-calendar-07lv8qfl25l68g81r50fh5qefu": {
       "startsAt": "2026-11-13 02:00:00",
       "sourceDate": "2026-11-12",
-      "lastCheckedAt": "2026-11-13T12:41:44.708Z",
-      "attempts": 1
+      "lastCheckedAt": "2026-11-13T18:32:02.818Z",
+      "attempts": 2
     }
   }
 }
