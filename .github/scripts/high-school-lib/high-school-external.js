@@ -72,7 +72,8 @@ function parseLegitBox(html,record,sourceUrl){
  const text=plain(html),date=/\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),\s+(20\d\d)\b/.exec(text);
  const month=date&&['January','February','March','April','May','June','July','August','September','October','November','December'].indexOf(date[1])+1;
  if(!date||`${date[3]}-${String(month).padStart(2,'0')}-${date[2].padStart(2,'0')}`!==record.date)throw new Error('LegitGM date/season mismatch');
- if(record.state==='post'&&(record.schoolScore!==scores[side]||record.opponentScore!==scores[1-side]))throw new Error('LegitGM final score conflict');
+ if(record.state==='post'&&(record.schoolScore!==scores[side]||record.opponentScore!==scores[1-side])&&
+   !require('./high-school-media-evidence').isMediaUrl(record.sourceUrl))throw new Error('LegitGM final score conflict');
  const tables=[...html.matchAll(/<table\b[^>]*>([\s\S]*?)<\/table>/gi)].slice(0,2);if(tables.length!==2)throw new Error('LegitGM box tables missing');
  const players=[];
  for(let team=0;team<2;team++){
@@ -94,6 +95,6 @@ function parseLegitBox(html,record,sourceUrl){
    players.push({playerId:member.id,stats});
   }
  }
- return {...record,bootstrap:false,state:'post',schoolScore:scores[side],opponentScore:scores[1-side],players,sourceUrl};
+ return {...record,evidence:undefined,bootstrap:false,state:'post',schoolScore:scores[side],opponentScore:scores[1-side],players,sourceUrl};
 }
 module.exports={MAXPREPS,LEGIT_TEAMS,parseMaxPreps,parseLegitBox,mergeSchedules,plain};

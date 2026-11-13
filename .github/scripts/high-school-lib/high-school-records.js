@@ -3,16 +3,22 @@
 const { createHash } = require('node:crypto');
 const { chinaDate } = require('./transform');
 const { LEAGUE, SEASON, SCHOOLS, HIGH_SCHOOL_PLAYERS } = require('./high-school-roster');
+const { isMediaUrl, validateMediaRecord } = require('./high-school-media-evidence');
 
 const extraHosts = ['nikeeyblscholastic.com', 'grindsession.com', 'grindsession.sportstrack.app',
   'www.maxpreps.com', 'legitgm.com', 'tssaasports.com', 'www.mshsaa.org', 'www.bellavistacollegeprep.com', 'www.neprepbasketball.net'];
+// Reviewed media evidence is approved per article and school, not per domain.
+const verifiedMediaSources = new Map([
+  ['https://m.zhibo8.com/news/web/nba/2026-11-13/6af68b22f283fnative.htm', 'bella-vista'],
+]);
 
-function sourceUrl(value, schoolId) {
+function sourceUrl(value, schoolId, allowMedia = false) {
   let url;
   try { url = new URL(value); } catch { throw new Error('invalid high school source URL'); }
   const hosts = [...Object.values(SCHOOLS).map(school => new URL(school.url).hostname), ...extraHosts];
   if (url.protocol !== 'https:' || url.username || url.password || url.port && url.port !== '443' ||
-      !hosts.includes(url.hostname) || url.href.length > 500) throw new Error('unapproved high school source URL');
+      (!hosts.includes(url.hostname) && verifiedMediaSources.get(url.href) !== schoolId && !(allowMedia && isMediaUrl(url.href))) ||
+      url.href.length > 500) throw new Error('unapproved high school source URL');
   return url.href;
 }
 
@@ -75,7 +81,8 @@ function normalizeRecord(record) {
     throw new Error('invalid opponent school');
   if (typeof record.id !== 'string' || !/^[a-zA-Z0-9_-]{1,48}$/.test(record.id)) throw new Error('invalid stable game id');
   if (typeof record.opponent !== 'string' || !record.opponent.trim() || record.opponent.length > 120 || /[<>]/.test(record.opponent)) throw new Error('invalid opponent');
-  const source = sourceUrl(record.sourceUrl, record.schoolId);
+  const source = sourceUrl(record.sourceUrl, record.schoolId, Boolean(record.evidence));
+  validateMediaRecord(record);
   if (record.location != null && (typeof record.location !== 'string' || record.location.length > 200)) throw new Error('invalid game location');
   const time = gameTime(record);
   if (record.scheduleStatus) time.timeKnown = false;
@@ -99,20 +106,28 @@ function normalizeRecord(record) {
       if (!row.reason?.trim() || row.reason.length > 120 || row.stats != null) throw new Error('explicit DNP requires reason and no stats');
       return { ...identity, state: 'dnp', reason: row.reason.trim(), stats: null };
     }
-    if (row?.stats) return { ...identity, state: 'ready', stats: statsMap(row.stats,
-      member.schoolId === record.schoolId ? record.schoolScore : record.opponentScore) };
+    if (row?.stats) {
+      const stats=statsMap(row.stats,member.schoolId === record.schoolId ? record.schoolScore : record.opponentScore);
+      let statSources;
+      if(row.statSources){
+        if(typeof row.statSources!=='object'||Array.isArray(row.statSources)||Object.keys(row.statSources).some(k=>!Object.hasOwn(stats,k)))throw Error('invalid statistic provenance');
+        statSources=Object.fromEntries(Object.entries(row.statSources).map(([key,url])=>[key,sourceUrl(url,record.schoolId,Boolean(record.evidence))]));
+      }
+      return { ...identity,state:'ready',stats,...(statSources?{statSources}:{} ) };
+    }
     return { ...identity, state: 'missing', reason: '赛后个人统计待更新', stats: null };
   });
   const metadata = { timeKnown: time.timeKnown, sourceDate: record.date, sourceDateLabel: '美国当地日期', sourceRecordId: record.id,
     sourceSchoolId: record.schoolId, neutralSite: record.venue === 'neutral', homeAwayKnown: record.venue !== 'unknown',
     sourceObservedId: record.id,
     sourceNativeId: record.sourceNativeId || null, scheduleStatus: record.scheduleStatus || null,
-    sourceUrl: source, dataSource: 'high-school-official', liveSupported: false,
+    sourceUrl: source, dataSource: isMediaUrl(source) ? 'verified-media-import' : 'high-school-official', liveSupported: false,
     venue: record.venue, location: record.location || (record.venue === 'home' ? SCHOOLS[record.schoolId].location : null), timeZone: time.timeZone };
-  const school = { id: record.schoolId, name: SCHOOLS[record.schoolId].name, ...metadata,
+  const school = { id: record.schoolId, name: SCHOOLS[record.schoolId].name, logo: SCHOOLS[record.schoolId].logo, ...metadata,
     score: isFinal ? String(record.schoolScore) : null, winner: isFinal ? record.schoolScore > record.opponentScore : null };
   const opponent = { id: record.opponentSchoolId || 'hs-opp-' + createHash('sha256').update(record.opponent.trim().toLowerCase()).digest('hex').slice(0, 20),
-    name: record.opponent.trim(), ...metadata, score: isFinal ? String(record.opponentScore) : null,
+    name: record.opponent.trim(), logo: SCHOOLS[record.opponentSchoolId]?.logo || null,
+    ...metadata, score: isFinal ? String(record.opponentScore) : null,
     winner: isFinal ? record.opponentScore > record.schoolScore : null };
   const home = record.venue === 'away' ? opponent : school;
   const away = record.venue === 'away' ? school : opponent;
@@ -121,7 +136,8 @@ function normalizeRecord(record) {
     state: record.state, name: `${away.name} at ${home.name}`,
     statusText: record.scheduleStatus === 'cancelled' ? '比赛取消' : record.scheduleStatus === 'postponed' ? '比赛延期（时间待确认）' :
       isFinal ? '比赛结束' : time.timeKnown ? '未开始（无直播）' : '时间待定（美国当地日期）',
-    period: 0, players, schoolId: record.schoolId, sourceUrl: source };
+    period: 0, players, schoolId: record.schoolId, sourceUrl: source,
+    ...(record.evidence?{evidence:record.evidence}:{} ) };
 }
 
 module.exports = { normalizeRecord, gameTime, sourceUrl, statsMap };

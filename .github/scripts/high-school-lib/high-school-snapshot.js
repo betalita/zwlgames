@@ -32,6 +32,8 @@ function validateSnapshot(input,now=new Date()) {
       if((record?.schoolId!==school.schoolId&&record?.opponentSchoolId!==school.schoolId)||ids.has(record.id))throw new Error('snapshot school/game mismatch or duplicate');
       if(record.bootstrap===true&&!reviewedSeed(record))throw new Error('unverified bootstrap record');
       ids.add(record.id);const game=normalizeRecord(record);
+      if(record.evidence&&Date.parse(record.evidence.publishedAt)>Math.min(now.getTime(),published)+300000)
+        throw new Error('media evidence published after snapshot');
       if(game.state==='post'&&(game.timeKnown ? Date.parse(game.startsAt.replace(' ','T')+'Z')>now.getTime()
         : record.date>new Intl.DateTimeFormat('en-CA',{timeZone:game.timeZone,year:'numeric',month:'2-digit',day:'2-digit'}).format(now)))
         throw new Error('future high school final');

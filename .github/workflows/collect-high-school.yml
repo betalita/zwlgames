@@ -1,9 +1,16 @@
 name: Collect high school basketball
 on:
   workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        options: [full, postgame]
+        default: full
   schedule:
     # UTC 21:20 / 11:20 = Beijing 05:20 / 19:20.
     - cron: '20 21,11 * * *'
+    # Cheap due-work probe; source requests only for games in their check window.
+    - cron: '7,27,47 * * * *'
   push:
     branches: [master]
     paths:
@@ -11,6 +18,8 @@ on:
       - '.github/scripts/high-school-collector*'
       - '.github/scripts/high-school-parsers*'
       - '.github/scripts/high-school-bella-vista*'
+      - '.github/scripts/high-school-media*'
+      - '.github/scripts/high-school-postgame*'
       - '.github/scripts/high-school-neprep*'
       - '.github/scripts/fixtures/**'
       - '.github/scripts/high-school-lib/**'
@@ -31,9 +40,17 @@ jobs:
         with:
           node-version: '20'
       - name: Verify collectors
+        if: github.event_name != 'schedule'
         run: node --test .github/scripts/*.test.cjs
       - name: Collect verified high school sources
-        run: node .github/scripts/high-school-collector.cjs
+        env:
+          COLLECT_MODE: ${{ github.event.inputs.mode || (github.event_name == 'schedule' && github.event.schedule == '7,27,47 * * * *' && 'postgame') || 'full' }}
+        run: |
+          if [ "$COLLECT_MODE" = postgame ]; then
+            node .github/scripts/high-school-collector.cjs --postgame
+          else
+            node .github/scripts/high-school-collector.cjs
+          fi
       - name: Publish high school snapshot only
         run: |
           git config user.name 'github-actions[bot]'

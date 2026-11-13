@@ -2,11 +2,13 @@
   "high-school-roster.js": "c9497552d1c80a3cda61603c76ff82972ab9b0ad31b2b603de489bdfaab17dc5",
   "high-school-sources.js": "fb4194f426daa452a027b73192ac6546e0ed4443e2ecfc7a12f3938766f9c1ec",
   "high-school-schedule-seeds.js": "6286054684ec31cdd91740e419332270d84c91a829d9b178838c4e2f50182f25",
-  "high-school-records.js": "3bd1a7c4d11bf06ed0f8532d7ef0e052b481a22af6a4333097dae02363507f41",
-  "high-school-snapshot.js": "6edc2e7e44da939e99ada8ac3e74f6f1b1b9d55c8ba958e11d137149a2cdc5cf",
-  "high-school-external.js": "7ffc9aa3d43d007e2a0d7169b896ecaf84e77e85e772bf93ffb808c2dd972842",
+  "high-school-records.js": "f59021e8248632d202f1585e9c879512be071629aa3be7ca3cc4d7118cd5d3bc",
+  "high-school-snapshot.js": "a673f29bb0f0a13e45b9f2bd4132fa1c21cc00954881da30ac4f6aaa1cc51360",
+  "high-school-external.js": "faae15f02d30d3084ac82923db9d53a8fce6f4bfe841ccd962510870afc236cf",
   "official-source-fetch.js": "2bcbd1b587bc93ed4c743dd2651fb024f98cea0e8babdeadb0c5af25ef09bde7",
   "transform.js": "59276a8d3ddb7af2f20b86503efc0ebd2934f5cc320bcf8c39c70a2e58077302",
   "high-school-bella-vista.js": "f1d17cd5e20ee6851ff959e6a04b6a24e26a745b09f5a8fc94673b1bc92d3c84",
-  "high-school-neprep.js": "df7d19434d68bc7a9e0aadc20365188db456dcf3d940ac25bc27a8c04b710514"
+  "high-school-neprep.js": "df7d19434d68bc7a9e0aadc20365188db456dcf3d940ac25bc27a8c04b710514",
+  "high-school-postgame.js": "49c4be027dd8877fca41aef93e105f48ce0a9c6db7602d180f7da9dd5dbbc7b5",
+  "high-school-media-evidence.js": "675c2b2170a29e3bbb00f5878e0ae159f92d59825aae06e0ee85439b39b70d01"
 }
