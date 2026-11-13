@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-13T03:08:35.232Z",
+  "generatedAt": "2026-11-13T12:41:44.708Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -34,7 +34,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T03:08:35.232Z"
+      "fetchedAt": "2026-11-13T12:41:44.708Z"
     },
     {
       "schoolId": "wasatch-national",
@@ -379,7 +379,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T03:08:35.232Z"
+      "fetchedAt": "2026-11-13T12:41:44.708Z"
     },
     {
       "schoolId": "veritas-national",
@@ -452,7 +452,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T03:08:35.232Z"
+      "fetchedAt": "2026-11-13T12:41:44.708Z"
     },
     {
       "schoolId": "notre-dame-prep-ny",
@@ -1057,7 +1057,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T03:08:35.232Z"
+      "fetchedAt": "2026-11-13T12:41:44.708Z"
     },
     {
       "schoolId": "phelps-national",
@@ -1189,7 +1189,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T03:08:35.232Z"
+      "fetchedAt": "2026-11-13T12:41:44.708Z"
     },
     {
       "schoolId": "peddie-varsity",
@@ -1472,7 +1472,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T03:08:35.232Z"
+      "fetchedAt": "2026-11-13T12:41:44.708Z"
     }
   ],
   "sources": [
@@ -1488,6 +1488,13 @@
       "source": "legitgm",
       "status": "pending",
       "message": "no verified current matchup/player statistics found",
+      "games": 0
+    },
+    {
+      "schoolId": "bella-vista",
+      "source": "verified-media",
+      "status": "pending",
+      "message": "no unambiguous current report",
       "games": 0
     },
     {
@@ -1559,10 +1566,9 @@
     },
     {
       "schoolId": "notre-dame-prep-ny",
-      "source": "neprep",
-      "status": "ok",
-      "message": "exact Elmira prep squad; explicit Finals only",
-      "games": 31
+      "source": "official",
+      "status": "error",
+      "message": "NEPrep results matchup ambiguous"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1653,5 +1659,13 @@
       "message": null,
       "games": 14
     }
-  ]
+  ],
+  "postgameChecks": {
+    "bella-vista:bv-calendar-07lv8qfl25l68g81r50fh5qefu": {
+      "startsAt": "2026-11-13 02:00:00",
+      "sourceDate": "2026-11-12",
+      "lastCheckedAt": "2026-11-13T12:41:44.708Z",
+      "attempts": 1
+    }
+  }
 }
