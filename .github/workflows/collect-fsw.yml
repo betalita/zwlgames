@@ -17,6 +17,7 @@ on:
       - '.github/scripts/fsw-details.test.cjs'
       - '.github/scripts/fsw-publication.cjs'
       - '.github/scripts/fsw-publication.test.cjs'
+      - '.github/scripts/fsw-workflow-publication.test.cjs'
       - '.github/scripts/fsw-collection-gate.cjs'
       - '.github/scripts/fsw-collection-gate.test.cjs'
       - '.github/scripts/fixtures/**'
@@ -67,6 +68,7 @@ jobs:
             exit 0
           fi
           git commit -m '更新 FSW 赛程索引和单场比赛数据'
+          git pull --rebase origin master
           git push origin HEAD:master
       - name: Preserve snapshot artifact
         if: always() && steps.gate.outputs.collect == 'true'
