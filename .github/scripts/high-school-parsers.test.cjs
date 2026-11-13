@@ -57,3 +57,13 @@ test('LegitGM accepts only the current matchup and an exact tracked-player row w
  const missing=parseLegitBox(box().replace('Jay Zhang','Unrelated Zhang'),game,'https://legitgm.com/stats/game/abc/print');
  assert.deepEqual(missing.players,[]);
 });
+
+
+test('Peddie hosted doubleheaders exclude other schools and identify its own opponent',()=>{
+ const fs=require('node:fs'),path=require('node:path');
+ const html=fs.readFileSync(path.join(__dirname,'fixtures/peddie-hosted-tournament.html'),'utf8');
+ const games=require('./high-school-lib/high-school-sources').parseSchoolSchedule('peddie-varsity',html);
+ assert.equal(games.length,2);
+ assert.equal(games[0].id,'peddie-47025');assert.equal(games[0].opponent,'The Kiski School (PA)');
+ assert.equal(games[1].id,'peddie-47051');assert.equal(games[1].venue,'away');
+});

@@ -106,3 +106,44 @@ test('publication fails without a fresh automatic school and leaves the old file
   assert.equal(await fs.readFile(file,'utf8'),'previous publication');
  }finally{await fs.rm(dir,{recursive:true,force:true});}
 });
+
+const fixture=name=>require('node:fs').readFileSync(require('node:path').join(__dirname,'fixtures',name),'utf8');
+const ndFetch=async url=>{
+ if(url==='https://www.neprepbasketball.net/team/272487/schedule')return fixture('neprep-notre-dame-schedule.html');
+ if(url==='https://www.neprepbasketball.net/team/272487/games')return fixture('neprep-notre-dame-games.html');
+ throw new Error('unavailable');
+};
+test('Notre Dame discovers named current-season games with stable IDs and explicit team-first finals',async()=>{
+ const snapshot=await collect({now,fetchText:ndFetch});
+ const entry=snapshot.schools.find(s=>s.schoolId==='notre-dame-prep-ny');
+ assert.ok(entry,'verified NEPrep schedule must be collected');assert.equal(entry.mode,'automatic');
+ assert.equal(entry.games.length,31);assert.ok(entry.games.every(g=>g.localTime!=='01:11'));
+ const final=entry.games.find(g=>g.sourceNativeId==='neprep-9752513');
+ assert.equal(final.id,'neprep-9752513');assert.equal(final.state,'post');
+ assert.equal(final.schoolScore,102);assert.equal(final.opponentScore,79);assert.equal(final.localTime,'19:00');
+ assert.equal(final.sourceUrl,'https://www.neprepbasketball.net/team/272487/games');
+ const normalized=require('./high-school-lib/high-school-records').normalizeRecord(final);
+ assert.equal(normalized.players[0].playerId,'zhangziyi');assert.equal(normalized.players[0].state,'missing');
+ assert.equal(normalized.dateKey,'2026-11-07');
+ const neutral=entry.games.find(g=>g.opponent.startsWith('Southeastern'));
+ assert.equal(neutral.venue,'neutral');assert.equal(neutral.localTime,'15:00');
+ const unknown=entry.games.find(g=>g.opponent==='Blair Academy (NJ)');
+ assert.equal(unknown.localTime,undefined);assert.equal(unknown.state,'pre');
+});
+test('Notre Dame rejects wrong team/season and retains original freshness when either endpoint fails',async()=>{
+ const previous=await collect({now,fetchText:ndFetch});
+ assert.ok(previous.schools.some(s=>s.schoolId==='notre-dame-prep-ny'));
+ for(const mode of ['wrong-team','wrong-season','missing-results','bad-final']){
+  const later=new Date('2026-11-13T04:00:00Z');
+  const result=await collect({now:later,previous,fetchText:async url=>{
+   let html=await ndFetch(url);
+   if(mode==='wrong-team')html=html.replaceAll('272487','261675');
+   if(mode==='wrong-season')html=html.replaceAll('2026-2027','2025-2026');
+   if(mode==='missing-results'&&url.endsWith('/games'))throw new Error('HTTP 503');
+   if(mode==='bad-final'&&url.endsWith('/games'))html=html.replace('102 - 79','70 - 79');
+   return html;
+  }});
+  assert.equal(result.schools.find(s=>s.schoolId==='notre-dame-prep-ny').fetchedAt,now.toISOString(),mode);
+  assert.ok(result.sources.some(s=>s.schoolId==='notre-dame-prep-ny'&&s.status==='error'),mode);
+ }
+});

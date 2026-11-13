@@ -5,7 +5,7 @@ const { chinaDate } = require('./transform');
 const { LEAGUE, SEASON, SCHOOLS, HIGH_SCHOOL_PLAYERS } = require('./high-school-roster');
 
 const extraHosts = ['nikeeyblscholastic.com', 'grindsession.com', 'grindsession.sportstrack.app',
-  'www.maxpreps.com', 'legitgm.com', 'tssaasports.com', 'www.mshsaa.org', 'www.bellavistacollegeprep.com'];
+  'www.maxpreps.com', 'legitgm.com', 'tssaasports.com', 'www.mshsaa.org', 'www.bellavistacollegeprep.com', 'www.neprepbasketball.net'];
 
 function sourceUrl(value, schoolId) {
   let url;

@@ -7,6 +7,7 @@ const {validateSnapshot,SEED_VERIFIED_AT}=require('./high-school-lib/high-school
 const {fetchOfficialSource}=require('./high-school-lib/official-source-fetch');
 const {MAXPREPS,LEGIT_TEAMS,parseMaxPreps,parseLegitBox,mergeSchedules}=require('./high-school-lib/high-school-external');
 const {collectBellaVista}=require('./high-school-lib/high-school-bella-vista');
+const {collectNotreDame}=require('./high-school-lib/high-school-neprep');
 const FILE='data/high-school-2026-27.json';
 const day=value=>new Date(value).toISOString().slice(0,10);
 const same=(a,b)=>a.id===b.id||a.schoolId===b.schoolId&&a.date===b.date&&a.opponent.toLowerCase()===b.opponent.toLowerCase();
@@ -53,6 +54,7 @@ async function collect({now=new Date(),previous=null,fetchText=defaultFetch}={})
     const seeds=SEEDS.filter(r=>r.schoolId===schoolId||r.opponentSchoolId===schoolId).map(r=>({...r,bootstrap:true}));
     records=mergeSchedules(seeds,calendar);
    }
+   else if(schoolId==='notre-dame-prep-ny')records=await collectNotreDame(read,report);
    else if(school.adapter){records=parseSchoolSchedule(schoolId,await read(school.url));report('official','ok',null,records.length);}
    else if(school.seed){
     records=SEEDS.filter(r=>r.schoolId===schoolId||r.opponentSchoolId===schoolId).map(r=>({...r,bootstrap:true}));

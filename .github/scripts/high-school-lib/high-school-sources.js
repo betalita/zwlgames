@@ -110,9 +110,19 @@ function parseSchoolSchedule(schoolId, html) {
       const cells = [...row.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(m => plain(m[1]));
       if (cells[0] !== 'Boys Varsity Basketball' || cells.length < 4) continue;
       const text = cells[1], date = dateFrom(cells[2], SEASON);
-      const opponent = text.replace(/^.*\s[–-]\s*vs\.?\s*/i,'').replace(/^(?:at|vs\.?)\s+/i,'').trim();
+      let opponent = text.replace(/^(?:at|vs\.?)\s+/i,'').trim();
+      // Tournament titles can include other schools' games hosted by Peddie.
+      // Only an explicit two-team matchup containing Peddie belongs here.
+      const matchupText = opponent.replace(/^.*?\s[–-]\s*/, '').replace(/^vs\.?\s+/i, '');
+      const matchup = matchupText.split(/\s+vs\.?\s+/i);
+      const tournament = matchup.length > 1 || matchupText !== opponent;
+      opponent = matchupText;
+      if (matchup.length > 1) {
+        const isPeddie = value => /^(?:the )?peddie(?: school)?(?: \(NJ\))?$/i.test(value.trim());
+        if (matchup.length !== 2 || matchup.filter(isPeddie).length !== 1) continue;
+        opponent = matchup.find(value => !isPeddie(value)).trim();
+      }
       if (!date || placeholder(opponent)) continue;
-      const tournament = /\bvs\.?\s/i.test(text.replace(/^(?:at|vs\.?)\s+/i,''));
       const nativeId = row.match(/data-bs-target="#modal-name-(\d+)"/i)?.[1];
       games.push(base(schoolId, date, opponent, { localTime: localTime(cells[3]),
         venue: tournament ? 'neutral' : /^at\s/i.test(text) ? 'away' : 'home',

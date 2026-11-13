@@ -16,7 +16,7 @@ const SCHOOLS = {
   // Player/coach identity: RecruitTheBronx prospect 45154; the school confirms
   // James Cray and its separate prep program. Never use the CA namesake or NY varsity schedule.
   'notre-dame-prep-ny': { name: 'Notre Dame Prep (Elmira, NY)', nameZh: '圣母预备高中（纽约埃尔迈拉）', location: 'Elmira, NY',
-    url: 'https://www.notredamehighschool.com/boys-prep-basketball', timeZone: 'America/New_York' },
+    url: 'https://www.notredamehighschool.com/boys-prep-basketball', timeZone: 'America/New_York', snapshotOnly: true },
   'link-hs-elite': { name: 'Link Academy HS Elite', nameZh: '林克学院高中精英队', location: 'Branson, MO',
     url: 'https://linkhoops.com/hs-elite-schedule', timeZone: 'America/Chicago', adapter: 'link' },
   'patrick-school': { name: 'The Patrick School', nameZh: '帕特里克高中', location: 'Hillside, NJ',
@@ -46,7 +46,8 @@ function sourceCatalog() {
   return HIGH_SCHOOL_PLAYERS.map(player => ({ playerId: player.id, name: player.name,
     schoolId: player.schoolId, school: SCHOOLS[player.schoolId].name, season: SEASON,
     sourceUrl: SCHOOLS[player.schoolId].url, live: false,
-    scheduleMode: SCHOOLS[player.schoolId].adapter ? 'official-html' :
+    scheduleMode: SCHOOLS[player.schoolId].snapshotOnly ? 'verified-snapshot' :
+      SCHOOLS[player.schoolId].adapter ? 'official-html' :
       SCHOOLS[player.schoolId].seed ? 'verified-seed' : 'verified-import',
     ...(SCHOOLS[player.schoolId].seed ? { seedVerifiedAt: '2026-11-11' } : {}),
     playerStatsMode: 'verified-import',
