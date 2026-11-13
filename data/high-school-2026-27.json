@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-13T01:43:40.788Z",
+  "generatedAt": "2026-11-13T01:51:06.673Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -34,7 +34,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T01:43:40.788Z"
+      "fetchedAt": "2026-11-13T01:51:06.673Z"
     },
     {
       "schoolId": "wasatch-national",
@@ -196,18 +196,6 @@
           "scheduleStatus": null
         },
         {
-          "id": "26fbef1fb1c4bfe5e67fc5f3a435ae49",
-          "schoolId": "providence-tn-varsity",
-          "season": 2027,
-          "date": "2026-12-11",
-          "opponent": "MTCS",
-          "sourceUrl": "https://providencechristian.com/calendar/athletics-calendar-list/",
-          "state": "pre",
-          "venue": "home",
-          "timeZone": "America/Chicago",
-          "scheduleStatus": null
-        },
-        {
           "id": "mp-de8b9ac4-6932-45be-83de-283181f60e63",
           "season": 2027,
           "schoolId": "providence-tn-varsity",
@@ -235,6 +223,16 @@
           "opponent": "Memphis University School",
           "venue": "unknown",
           "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/memphis-university-school-vs-providence-christian-academy-murfreesboro/12-4-2026/?c=fc89b273-dc37-4fc5-b596-a2b1edd5c3ef",
+          "state": "pre"
+        },
+        {
+          "id": "mp-ec39b4af-fad2-4e95-9994-5e223c69a4ca",
+          "season": 2027,
+          "schoolId": "providence-tn-varsity",
+          "date": "2026-12-11",
+          "opponent": "MTCHS*",
+          "venue": "unknown",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/middle-tennessee-christian-murfreesboro-vs-providence-christian-academy-murfreesboro/12-11-2026/?c=ec39b4af-fad2-4e95-9994-5e223c69a4ca",
           "state": "pre"
         },
         {
@@ -379,7 +377,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T01:43:40.788Z"
+      "fetchedAt": "2026-11-13T01:51:06.673Z"
     },
     {
       "schoolId": "veritas-national",
@@ -452,7 +450,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T01:43:40.788Z"
+      "fetchedAt": "2026-11-13T01:51:06.673Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -633,7 +631,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T01:43:40.788Z"
+      "fetchedAt": "2026-11-13T01:51:06.673Z"
     },
     {
       "schoolId": "phelps-national",
@@ -765,7 +763,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T01:43:40.788Z"
+      "fetchedAt": "2026-11-13T01:51:06.673Z"
     },
     {
       "schoolId": "peddie-varsity",
@@ -1034,7 +1032,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-13T01:43:40.788Z"
+      "fetchedAt": "2026-11-13T01:51:06.673Z"
     }
   ],
   "sources": [
@@ -1071,7 +1069,7 @@
       "source": "official",
       "status": "ok",
       "message": null,
-      "games": 6
+      "games": 5
     },
     {
       "schoolId": "providence-tn-varsity",
@@ -1084,12 +1082,6 @@
       "source": "maxpreps-identity",
       "status": "warning",
       "message": "same-date opponent conflict: 2026-11-19; official McMallie; supplement McCallie; manual identity check required"
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "maxpreps-identity",
-      "status": "warning",
-      "message": "same-date opponent conflict: 2026-12-11; official MTCS; supplement MTCHS*; manual identity check required"
     },
     {
       "schoolId": "providence-tn-varsity",
