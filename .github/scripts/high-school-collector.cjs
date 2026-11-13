@@ -6,6 +6,7 @@ const {parseSchoolSchedule}=require('./high-school-lib/high-school-sources');
 const {validateSnapshot,SEED_VERIFIED_AT}=require('./high-school-lib/high-school-snapshot');
 const {fetchOfficialSource}=require('./high-school-lib/official-source-fetch');
 const {MAXPREPS,LEGIT_TEAMS,parseMaxPreps,parseLegitBox,mergeSchedules}=require('./high-school-lib/high-school-external');
+const {collectBellaVista}=require('./high-school-lib/high-school-bella-vista');
 const FILE='data/high-school-2026-27.json';
 const day=value=>new Date(value).toISOString().slice(0,10);
 const same=(a,b)=>a.id===b.id||a.schoolId===b.schoolId&&a.date===b.date&&a.opponent.toLowerCase()===b.opponent.toLowerCase();
@@ -37,7 +38,7 @@ function publishSchool(previous,current,now){
 }
 async function defaultFetch(url){
  const result=await fetchOfficialSource(url,new URL(url).hostname,{timeoutMs:20000,maxBytes:3*1024*1024});
- if(!result.contentType.includes('text/html')&&!result.contentType.includes('application/pdf'))throw new Error('source content type');
+ if(!['text/html','application/pdf','text/calendar'].includes(result.contentType))throw new Error('source content type');
  return result.body.toString('utf8');
 }
 async function collect({now=new Date(),previous=null,fetchText=defaultFetch}={}){
@@ -47,7 +48,12 @@ async function collect({now=new Date(),previous=null,fetchText=defaultFetch}={})
   const old=previous?.schools?.find(s=>s.schoolId===schoolId);let records=null;
   const report=(source,status,message,games)=>sources.push({schoolId,source,status,message,games});
   try{
-   if(school.adapter){records=parseSchoolSchedule(schoolId,await read(school.url));report('official','ok',null,records.length);}
+   if(schoolId==='bella-vista'){
+    const calendar=await collectBellaVista(read,report);
+    const seeds=SEEDS.filter(r=>r.schoolId===schoolId||r.opponentSchoolId===schoolId).map(r=>({...r,bootstrap:true}));
+    records=mergeSchedules(seeds,calendar);
+   }
+   else if(school.adapter){records=parseSchoolSchedule(schoolId,await read(school.url));report('official','ok',null,records.length);}
    else if(school.seed){
     records=SEEDS.filter(r=>r.schoolId===schoolId||r.opponentSchoolId===schoolId).map(r=>({...r,bootstrap:true}));
     if(!records.length)throw new Error('verified seeds missing');

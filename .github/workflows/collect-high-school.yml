@@ -10,6 +10,7 @@ on:
       - '.github/workflows/collect-high-school.yml'
       - '.github/scripts/high-school-collector*'
       - '.github/scripts/high-school-parsers*'
+      - '.github/scripts/high-school-bella-vista*'
       - '.github/scripts/high-school-lib/**'
 permissions:
   contents: write

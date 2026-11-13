@@ -30,7 +30,7 @@ async function fetchOfficialSource(value, allowedHost, { fetchImpl = fetch, time
       if (!response.ok) throw new Error(`official source HTTP ${response.status}`);
       phase = 'body';
       const contentType = (response.headers.get('content-type') || '').split(';')[0].toLowerCase();
-      if (!['text/html', 'text/plain', 'application/pdf'].includes(contentType))
+      if (!['text/html', 'text/plain', 'application/pdf', 'text/calendar'].includes(contentType))
         throw new Error(`unsupported official source content type: ${contentType}`);
       const declared = Number(response.headers.get('content-length'));
       if (Number.isFinite(declared) && declared > maxBytes) throw new Error('official source size limit exceeded');
