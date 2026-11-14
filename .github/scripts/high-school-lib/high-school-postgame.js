@@ -1,6 +1,6 @@
 'use strict';
 const MINUTE=60000,HOUR=60*MINUTE;
-const CHECK_MINUTES=[120,140,160,180,240,360,480,720,1440,2880,4320];
+const CHECK_MINUTES=[120,140,160,180,240,360,480,720,1440,2880,4320,5760,7200,8640,10080];
 const REQUIRED_STATS=['MIN','PTS','REB','AST','FG','3PT','FT','STL','BLK','TO','PF'];
 const decode=value=>typeof value==='string'?JSON.parse(value):value;
 const timestamp=value=>value instanceof Date?value.getTime():Date.parse(String(value||'').replace(' ','T').replace(/Z?$/,'Z'));
@@ -24,9 +24,9 @@ function schedule(game){
  if(game.time_known!==true){
   if(!/^\d{4}-\d\d-\d\d$/.test(game.source_date||''))return null;
   const first=Date.parse(game.source_date+'T00:00:00Z')+36*HOUR;
-  return {first,end:first+49*HOUR,checks:[0,6,12,24,48].map(hour=>first+hour*HOUR)};
+  return {first,end:first+169*HOUR,checks:[0,6,12,24,48,72,96,120,144,168].map(hour=>first+hour*HOUR)};
  }
- return {first:start+120*MINUTE,end:start+73*HOUR,checks:CHECK_MINUTES.map(minutes=>start+minutes*MINUTE)};
+ return {first:start+120*MINUTE,end:start+169*HOUR,checks:CHECK_MINUTES.map(minutes=>start+minutes*MINUTE)};
 }
 function nextHighSchoolSyncAt(game,now=new Date()){
  const slots=schedule(game),current=now.getTime();
@@ -50,4 +50,10 @@ function recoverHighSchoolDeadline(game,now=new Date()){
  const next=slots.checks.find(at=>at>last);
  return next==null?null:new Date(Math.max(current,next));
 }
-module.exports={CHECK_MINUTES,REQUIRED_STATS,nextHighSchoolSyncAt,recoverHighSchoolDeadline,highSchoolTiming,timestamp};
+function highSchoolCheckpointAt(game,now=new Date()){
+ const slots=schedule(game);if(!slots||now.getTime()>=slots.end)return null;
+ const last=timestamp(game.last_checked_at);
+ const next=Number.isFinite(last)?slots.checks.find(at=>at>last):slots.first;
+ return next==null?null:new Date(next);
+}
+module.exports={CHECK_MINUTES,REQUIRED_STATS,nextHighSchoolSyncAt,recoverHighSchoolDeadline,highSchoolCheckpointAt,highSchoolTiming,timestamp};
