@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-14T01:27:33.723Z",
+  "generatedAt": "2026-11-14T02:02:50.220Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -34,7 +34,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-14T01:27:33.723Z"
+      "fetchedAt": "2026-11-14T02:02:50.220Z"
     },
     {
       "schoolId": "wasatch-national",
@@ -379,7 +379,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-14T01:27:33.723Z"
+      "fetchedAt": "2026-11-14T02:02:50.220Z"
     },
     {
       "schoolId": "veritas-national",
@@ -452,7 +452,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-14T01:27:33.723Z"
+      "fetchedAt": "2026-11-14T02:02:50.220Z"
     },
     {
       "schoolId": "notre-dame-prep-ny",
@@ -894,7 +894,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-14T01:27:33.723Z"
+      "fetchedAt": "2026-11-14T02:02:50.220Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1075,7 +1075,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-14T01:27:33.723Z"
+      "fetchedAt": "2026-11-14T02:02:50.220Z"
     },
     {
       "schoolId": "phelps-national",
@@ -1207,7 +1207,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-14T01:27:33.723Z"
+      "fetchedAt": "2026-11-14T02:02:50.220Z"
     },
     {
       "schoolId": "peddie-varsity",
@@ -1500,7 +1500,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-14T01:27:33.723Z"
+      "fetchedAt": "2026-11-14T02:02:50.220Z"
     }
   ],
   "sources": [
@@ -1516,6 +1516,13 @@
       "source": "legitgm",
       "status": "pending",
       "message": "no verified current matchup/player statistics found",
+      "games": 0
+    },
+    {
+      "schoolId": "bella-vista",
+      "source": "verified-media",
+      "status": "pending",
+      "message": "no unambiguous current report",
       "games": 0
     },
     {
@@ -1593,6 +1600,13 @@
       "games": 32
     },
     {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "verified-media",
+      "status": "pending",
+      "message": "no unambiguous current report",
+      "games": 0
+    },
+    {
       "schoolId": "link-hs-elite",
       "source": "official",
       "status": "ok",
@@ -1612,6 +1626,13 @@
       "status": "ok",
       "message": null,
       "games": 9
+    },
+    {
+      "schoolId": "phelps-national",
+      "source": "verified-media",
+      "status": "pending",
+      "message": "no unambiguous current report",
+      "games": 0
     },
     {
       "schoolId": "peddie-varsity",
@@ -1704,14 +1725,54 @@
     "bella-vista:bv-calendar-07lv8qfl25l68g81r50fh5qefu": {
       "startsAt": "2026-11-13 02:00:00",
       "sourceDate": "2026-11-12",
-      "lastCheckedAt": "2026-11-13T18:32:02.818Z",
-      "attempts": 2
+      "lastCheckedAt": "2026-11-14T02:02:50.220Z",
+      "attempts": 3
     },
     "notre-dame-prep-ny:neprep-9808149": {
       "startsAt": "2026-11-13 20:00:00",
       "sourceDate": "2026-11-13",
-      "lastCheckedAt": "2026-11-14T00:51:48.052Z",
+      "lastCheckedAt": "2026-11-14T02:02:50.220Z",
+      "attempts": 2
+    },
+    "phelps-national:phelps-8518": {
+      "startsAt": "2026-11-07 21:00:00",
+      "sourceDate": "2026-11-07",
+      "lastCheckedAt": "2026-11-14T02:02:50.220Z",
       "attempts": 1
+    }
+  },
+  "schoolChecks": {
+    "bella-vista": {
+      "attemptedAt": "2026-11-14T02:02:50.220Z",
+      "status": "ok"
+    },
+    "wasatch-national": {
+      "attemptedAt": "2026-11-14T02:02:50.220Z",
+      "status": "ok"
+    },
+    "providence-tn-varsity": {
+      "attemptedAt": "2026-11-14T02:02:50.220Z",
+      "status": "ok"
+    },
+    "veritas-national": {
+      "attemptedAt": "2026-11-14T02:02:50.220Z",
+      "status": "ok"
+    },
+    "notre-dame-prep-ny": {
+      "attemptedAt": "2026-11-14T02:02:50.220Z",
+      "status": "ok"
+    },
+    "link-hs-elite": {
+      "attemptedAt": "2026-11-14T02:02:50.220Z",
+      "status": "ok"
+    },
+    "phelps-national": {
+      "attemptedAt": "2026-11-14T02:02:50.220Z",
+      "status": "ok"
+    },
+    "peddie-varsity": {
+      "attemptedAt": "2026-11-14T02:02:50.220Z",
+      "status": "ok"
     }
   }
 }
