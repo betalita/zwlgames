@@ -20,6 +20,11 @@ function validateSnapshot(input,now=new Date()) {
   if(!input||input.schemaVersion!==1||input.league!==LEAGUE||input.season!==SEASON||
     !Array.isArray(input.schools)||input.schools.length>9)throw new Error('invalid high school snapshot identity');
   const published=timestamp(input.generatedAt,now),seen=new Set();
+  if(input.schoolChecks){
+    if(typeof input.schoolChecks!=='object'||Array.isArray(input.schoolChecks)||Object.keys(input.schoolChecks).length>9)throw Error('invalid school checks');
+    for(const [id,check]of Object.entries(input.schoolChecks))if(!Object.hasOwn(SCHOOLS,id)||
+      !['ok','source_error'].includes(check?.status)||timestamp(check.attemptedAt,now)>published+300000)throw Error('invalid school check');
+  }
   for(const school of input.schools){
     if(!SCHOOLS[school?.schoolId]||seen.has(school.schoolId)||!Array.isArray(school.games)||school.games.length>150)
       throw new Error('invalid snapshot school');
@@ -41,13 +46,16 @@ function validateSnapshot(input,now=new Date()) {
   }
   return input;
 }
-async function loadSnapshot(url,{fetchImpl=fetch,clock=()=>new Date()}={}) {
+async function loadSnapshot(url,{fetchImpl=fetch,clock=()=>new Date(),revision}={}) {
   if(url!==SNAPSHOT_URL)throw new Error('unsupported high school snapshot URL');
+  if(revision!==undefined&&!/^[a-f0-9]{40}$/.test(revision))throw Error('invalid high school snapshot revision');
+  const rawUrl=revision?SNAPSHOT_URL.replace('/master/','/'+revision+'/'):SNAPSHOT_URL;
+  const apiUrl=revision?API_URL.replace('ref=master','ref='+revision):API_URL;
   const read=async endpoint=>{
     const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),12000);
     try{
       const response=await fetchImpl(endpoint,{redirect:'error',signal:controller.signal,headers:{
-        Accept:endpoint===API_URL?'application/vnd.github.raw+json':'application/json',
+        Accept:endpoint===apiUrl?'application/vnd.github.raw+json':'application/json',
         'User-Agent':'cnhoops-high-school-sync','X-GitHub-Api-Version':'2022-11-28'}});
       if(!response.ok)throw new Error(`snapshot HTTP ${response.status}`);
       if(Number(response.headers.get('content-length'))>1024*1024)throw new Error('snapshot size limit');
@@ -56,8 +64,8 @@ async function loadSnapshot(url,{fetchImpl=fetch,clock=()=>new Date()}={}) {
       return validateSnapshot(JSON.parse(Buffer.concat(chunks).toString('utf8')),clock());
     }finally{clearTimeout(timer);}
   };
-  try{return await read(SNAPSHOT_URL);}catch(rawError){
-    try{return await read(API_URL);}catch(apiError){throw new Error(`high school snapshot unavailable: Raw ${rawError.message}; API ${apiError.message}`);}
+  try{return await read(rawUrl);}catch(rawError){
+    try{return await read(apiUrl);}catch(apiError){throw new Error(`high school snapshot unavailable: Raw ${rawError.message}; API ${apiError.message}`);}
   }
 }
 module.exports={SNAPSHOT_URL,validateSnapshot,loadSnapshot,SEED_VERIFIED_AT};

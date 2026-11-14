@@ -15,7 +15,22 @@ test('all registered schools participate, future and fully checked games do not 
  const previous=snapshot();previous.postgameChecks={'bella-vista:fixture-zhangyuchen':{startsAt:'2026-11-13 02:00:00',sourceDate:'2026-11-12',lastCheckedAt:now.toISOString()}};
  assert.equal(dueSchools(previous,now).size,0);
  assert.equal(dueSchools(previous,new Date('2026-11-13T04:40:00Z')).size,1);
- assert.equal(dueSchools(snapshot(),new Date('2026-11-17T00:00:00Z')).size,0);
+ assert.equal(dueSchools(snapshot(),new Date('2026-11-21T00:00:00Z')).size,0);
+});
+test('actual school checks advance on failure without claiming successful source freshness',async()=>{
+ const previous=snapshot();const r=await collect({now,previous,postgameOnly:true,fetchText:async()=>{throw Error('HTTP 503');}});
+ assert.deepEqual(r.schoolChecks['bella-vista'],{attemptedAt:now.toISOString(),status:'source_error'});
+ assert.equal(r.schools[0].fetchedAt,previous.schools[0].fetchedAt);
+ assert.equal(dueSchools(previous,new Date('2026-11-17T02:00:00Z')).size,1);
+});
+test('dispatch scope cannot fetch or charge other due schools and no-read schools get no false heartbeat',async()=>{
+ const previous=snapshot(HIGH_SCHOOL_PLAYERS.slice(0,3).map(row));const calls=[];
+ const r=await collect({now,previous,postgameOnly:true,schoolIds:['providence-tn-varsity'],fetchText:async u=>{calls.push(u);throw Error('source unavailable');}});
+ assert.deepEqual(Object.keys(r.schoolChecks),['providence-tn-varsity']);
+ assert.ok(!calls.some(u=>u.includes('bellavista')||u.includes('wasatch')));
+ await assert.rejects(collect({now,previous,postgameOnly:true,schoolIds:['unknown'],fetchText:async()=>{throw Error('must not read');}}),/scope/);
+ const empty=await collect({now,fetchText:async()=>{throw Error('unavailable');}});
+ assert.equal(empty.schoolChecks['patrick-school'],undefined);
 });
 test('three simultaneous schools each receive a reserved media quota and rotate older articles',async()=>{
  const members=HIGH_SCHOOL_PLAYERS.slice(0,3),previous=snapshot(members.map(row));const requested=[];

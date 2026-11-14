@@ -65,16 +65,22 @@ async function defaultFetch(url){
  if(!['text/html','application/pdf','text/calendar'].includes(result.contentType))throw new Error('source content type');
  return result.body.toString('utf8');
 }
-async function collect({now=new Date(),previous=null,fetchText=defaultFetch,postgameOnly=false}={}){
+async function collect({now=new Date(),previous=null,fetchText=defaultFetch,postgameOnly=false,schoolIds}={}){
+ if(schoolIds!==undefined&&(!postgameOnly||!Array.isArray(schoolIds)||!schoolIds.length||schoolIds.length>3||
+  new Set(schoolIds).size!==schoolIds.length||schoolIds.some(id=>!Object.hasOwn(SCHOOLS,id))))throw Error('invalid high school dispatch scope');
  const due=dueSchools(previous,now);
  if(postgameOnly&&!due.size)return previous;
  const sources=[],schools=[],cache=new Map();
  const lastCheck=schoolId=>Math.min(...[...(due.get(schoolId)||[])].map(key=>Date.parse(previous?.postgameChecks?.[key]?.lastCheckedAt)||0));
- const selected=new Set([...due.keys()].sort((a,b)=>lastCheck(a)-lastCheck(b)).slice(0,3));
+ const selected=new Set([...due.keys()].filter(id=>!schoolIds||schoolIds.includes(id)).sort((a,b)=>lastCheck(a)-lastCheck(b)).slice(0,3));
  let mediaReads=0;
  const postgameChecks={...(previous?.postgameChecks||{})};
- const read=url=>{if(!cache.has(url))cache.set(url,fetchText(url));return cache.get(url);};
+ const schoolChecks=Object.fromEntries(Object.entries(previous?.schoolChecks||{}).filter(([id,check])=>
+  Object.hasOwn(SCHOOLS,id)&&now.getTime()-Date.parse(check.attemptedAt)<72*3600000));
+ const accessed=new Set();let activeSchool=null;
+ const read=url=>{if(activeSchool)accessed.add(activeSchool);if(!cache.has(url))cache.set(url,fetchText(url));return cache.get(url);};
  for(const [schoolId,school] of Object.entries(SCHOOLS)){
+  activeSchool=schoolId;
   const old=previous?.schools?.find(s=>s.schoolId===schoolId);let records=null;
   if(postgameOnly&&!selected.has(schoolId)){const retained=publishSchool(old,null,now);if(retained)schools.push(retained);continue;}
   const report=(source,status,message,games)=>sources.push({schoolId,source,status,message,games});
@@ -158,6 +164,7 @@ async function collect({now=new Date(),previous=null,fetchText=defaultFetch,post
     }
    }catch(error){report('verified-media','error',error.message);}
   }
+  if(accessed.has(schoolId))schoolChecks[schoolId]={attemptedAt:now.toISOString(),status:records?.length?'ok':'source_error'};
   try{
    const entry=publishSchool(old,records?.length?{schoolId,games:records}:null,now);
    if(entry)schools.push(entry);
@@ -167,7 +174,7 @@ async function collect({now=new Date(),previous=null,fetchText=defaultFetch,post
   }
  }
  for(const [key,check]of Object.entries(postgameChecks))if(now.getTime()-Date.parse(check.lastCheckedAt)>8*86400000)delete postgameChecks[key];
- const result={schemaVersion:1,league:LEAGUE,season:SEASON,generatedAt:now.toISOString(),schools,sources,postgameChecks};
+ const result={schemaVersion:1,league:LEAGUE,season:SEASON,generatedAt:now.toISOString(),schools,sources,postgameChecks,schoolChecks};
  validateSnapshot(result,now);return result;
 }
 async function publishSnapshot(snapshot,{file=FILE,now=new Date(),allowCheckpoints=false}={}){
@@ -181,7 +188,8 @@ async function publishSnapshot(snapshot,{file=FILE,now=new Date(),allowCheckpoin
 async function main(){
  let previous=null;
  try{previous=JSON.parse(await fs.readFile(FILE,'utf8'));}catch(error){if(error.code!=='ENOENT')throw error;}
- const snapshot=await collect({previous,postgameOnly:process.argv.includes('--postgame')});
+ const schoolIds=process.env.HIGH_SCHOOL_IDS?process.env.HIGH_SCHOOL_IDS.split(','):undefined;
+ const snapshot=await collect({previous,postgameOnly:process.argv.includes('--postgame'),schoolIds});
  if(snapshot===previous){console.log('No high school postgame checks due; no source requests or publication.');return;}
  console.log(JSON.stringify({sources:snapshot.sources},null,2));
  await publishSnapshot(snapshot,{allowCheckpoints:process.argv.includes('--postgame')});

@@ -6,6 +6,10 @@ on:
         type: choice
         options: [full, postgame]
         default: full
+      school_ids:
+        description: Optional comma-separated registered school IDs, at most three (postgame only)
+        type: string
+        default: ''
   schedule:
     # UTC 21:20 / 11:20 = Beijing 05:20 / 19:20.
     - cron: '20 21,11 * * *'
@@ -45,6 +49,7 @@ jobs:
       - name: Collect verified high school sources
         env:
           COLLECT_MODE: ${{ github.event.inputs.mode || (github.event_name == 'schedule' && github.event.schedule == '7,27,47 * * * *' && 'postgame') || 'full' }}
+          HIGH_SCHOOL_IDS: ${{ github.event.inputs.school_ids || '' }}
         run: |
           if [ "$COLLECT_MODE" = postgame ]; then
             node .github/scripts/high-school-collector.cjs --postgame
@@ -52,6 +57,7 @@ jobs:
             node .github/scripts/high-school-collector.cjs
           fi
       - name: Publish high school snapshot only
+        id: publish
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -60,8 +66,17 @@ jobs:
           git commit -m 'Update verified high school basketball snapshot'
           git pull --rebase origin master
           git push origin HEAD:master
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Notify high school backend only
+        if: steps.publish.outputs.changed == 'true'
+        env:
+          HIGH_SCHOOL_CALLBACK_URL: ${{ secrets.HIGH_SCHOOL_CALLBACK_URL }}
+          HIGH_SCHOOL_CALLBACK_TOKEN: ${{ secrets.HIGH_SCHOOL_CALLBACK_TOKEN }}
+          HIGH_SCHOOL_SNAPSHOT_REVISION: ${{ steps.publish.outputs.revision }}
+        run: node .github/scripts/high-school-notify.cjs
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: always() && steps.publish.outputs.changed == 'true'
         with:
           name: high-school-snapshot-${{ github.run_id }}-${{ github.run_attempt }}
           path: data/high-school-2026-27.json
