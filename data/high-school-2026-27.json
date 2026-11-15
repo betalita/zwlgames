@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-15T02:55:35.689Z",
+  "generatedAt": "2026-11-15T03:01:05.002Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -34,7 +34,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T02:25:32.025Z"
+      "fetchedAt": "2026-11-15T03:01:05.002Z"
     },
     {
       "schoolId": "wasatch-national",
@@ -379,7 +379,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T01:04:31.551Z"
+      "fetchedAt": "2026-11-15T03:01:05.002Z"
     },
     {
       "schoolId": "veritas-national",
@@ -452,7 +452,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T01:04:31.551Z"
+      "fetchedAt": "2026-11-15T03:01:05.002Z"
     },
     {
       "schoolId": "notre-dame-prep-ny",
@@ -502,8 +502,10 @@
           "venue": "neutral",
           "timeZone": "America/New_York",
           "localTime": "10:00",
-          "state": "pre",
-          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+          "state": "post",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/games",
+          "schoolScore": 72,
+          "opponentScore": 71
         },
         {
           "id": "neprep-9920300",
@@ -627,12 +629,12 @@
           "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
         },
         {
-          "id": "neprep-9808150",
-          "sourceNativeId": "neprep-9808150",
+          "id": "neprep-9925103",
+          "sourceNativeId": "neprep-9925103",
           "schoolId": "notre-dame-prep-ny",
           "season": 2027,
           "date": "2026-12-12",
-          "opponent": "Prince Georges Christian Academy (MD)",
+          "opponent": "St James Performance Academy Prep (VA)",
           "location": "WRA",
           "venue": "neutral",
           "timeZone": "America/New_York",
@@ -673,7 +675,7 @@
           "season": 2027,
           "date": "2026-12-27",
           "opponent": "Andrews Osborne Academy (OH)",
-          "location": "New Heights",
+          "location": "Achievement1st",
           "venue": "neutral",
           "timeZone": "America/New_York",
           "state": "pre",
@@ -716,19 +718,6 @@
           "venue": "home",
           "timeZone": "America/New_York",
           "localTime": "12:00",
-          "state": "pre",
-          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
-        },
-        {
-          "id": "neprep-9808152",
-          "sourceNativeId": "neprep-9808152",
-          "schoolId": "notre-dame-prep-ny",
-          "season": 2027,
-          "date": "2027-01-09",
-          "opponent": "Andrews Osborne Academy (OH)",
-          "location": "Perkiomen",
-          "venue": "neutral",
-          "timeZone": "America/New_York",
           "state": "pre",
           "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
         },
@@ -854,19 +843,6 @@
           "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
         },
         {
-          "id": "neprep-9808154",
-          "sourceNativeId": "neprep-9808154",
-          "schoolId": "notre-dame-prep-ny",
-          "season": 2027,
-          "date": "2027-02-06",
-          "opponent": "NC Good Better Best Academy (NC)",
-          "location": "Massanutten",
-          "venue": "neutral",
-          "timeZone": "America/New_York",
-          "state": "pre",
-          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
-        },
-        {
           "id": "neprep-9534736",
           "sourceNativeId": "neprep-9534736",
           "schoolId": "notre-dame-prep-ny",
@@ -894,7 +870,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-14T08:10:52.172Z"
+      "fetchedAt": "2026-11-15T03:01:05.002Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1075,7 +1051,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T02:55:35.689Z"
+      "fetchedAt": "2026-11-15T03:01:05.002Z"
     },
     {
       "schoolId": "phelps-national",
@@ -1207,7 +1183,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T01:04:31.551Z"
+      "fetchedAt": "2026-11-15T03:01:05.002Z"
     },
     {
       "schoolId": "peddie-varsity",
@@ -1500,10 +1476,105 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T01:04:31.551Z"
+      "fetchedAt": "2026-11-15T03:01:05.002Z"
     }
   ],
   "sources": [
+    {
+      "schoolId": "bella-vista",
+      "source": "school-ical",
+      "status": "ok",
+      "message": null,
+      "games": 1
+    },
+    {
+      "schoolId": "bella-vista",
+      "source": "legitgm",
+      "status": "pending",
+      "message": "no verified current matchup/player statistics found",
+      "games": 0
+    },
+    {
+      "schoolId": "wasatch-national",
+      "source": "verified-seed",
+      "status": "ok",
+      "message": "2026-11-11 transcription; source availability rechecked",
+      "games": 8
+    },
+    {
+      "schoolId": "wasatch-national",
+      "source": "legitgm",
+      "status": "pending",
+      "message": "no verified current matchup/player statistics found",
+      "games": 0
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "official",
+      "status": "ok",
+      "message": null,
+      "games": 6
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-11-17; official MBA; supplement Montgomery Bell Academy; manual identity check required"
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-11-19; official McMallie; supplement McCallie; manual identity check required"
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-12-11; official MTCS; supplement MTCHS*; manual identity check required"
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "maxpreps",
+      "status": "ok",
+      "message": null,
+      "games": 23
+    },
+    {
+      "schoolId": "veritas-national",
+      "source": "verified-seed",
+      "status": "ok",
+      "message": "2026-11-11 transcription; source availability rechecked",
+      "games": 4
+    },
+    {
+      "schoolId": "veritas-national",
+      "source": "maxpreps",
+      "status": "ok",
+      "message": null,
+      "games": 2
+    },
+    {
+      "schoolId": "veritas-national",
+      "source": "legitgm",
+      "status": "pending",
+      "message": "no verified current matchup/player statistics found",
+      "games": 0
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "neprep",
+      "status": "ok",
+      "message": "exact Elmira prep squad; explicit Finals only",
+      "games": 30
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "verified-media",
+      "status": "pending",
+      "message": "no unambiguous current report",
+      "games": 0
+    },
     {
       "schoolId": "link-hs-elite",
       "source": "official",
@@ -1512,11 +1583,111 @@
       "games": 14
     },
     {
-      "schoolId": "link-hs-elite",
+      "schoolId": "patrick-school",
+      "source": "official",
+      "status": "pending",
+      "message": "awaiting a verified schedule for this exact squad",
+      "games": 0
+    },
+    {
+      "schoolId": "phelps-national",
+      "source": "official",
+      "status": "ok",
+      "message": null,
+      "games": 9
+    },
+    {
+      "schoolId": "phelps-national",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
       "games": 0
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "official",
+      "status": "ok",
+      "message": null,
+      "games": 19
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-11-22; official Virginia Episcopal School (VA); supplement Virginia Episcopal School***; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-12-12; official Milton Academy; supplement Malvern Prep; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-12-15; official Malvern Preparatory School; supplement Hun*; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-12-15; official Malvern Preparatory School; supplement Malvern Prep; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-01-09; official The Lawrenceville School; supplement Lawrenceville School*; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-01-13; official The Hun School of Princeton; supplement Hun*; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-01-16; official The Hill School; supplement Hill School*; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-01-20; official Perkiomen School (National Team); supplement Perkiomen School; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-01-30; official The Haverford School; supplement Haverford School; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-02-03; official Perkiomen School (Prep Team); supplement Perkiomen School; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-02-04; official Hightstown High School; supplement Perkiomen School; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-02-04; official Hightstown High School; supplement Hightstown; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps",
+      "status": "ok",
+      "message": null,
+      "games": 20
     }
   ],
   "postgameChecks": {
@@ -1541,14 +1712,14 @@
     "notre-dame-prep-ny:neprep-9808148": {
       "startsAt": "2026-11-14 15:00:00",
       "sourceDate": "2026-11-14",
-      "lastCheckedAt": "2026-11-14T23:24:26.013Z",
-      "attempts": 5
+      "lastCheckedAt": "2026-11-15T03:01:05.002Z",
+      "attempts": 6
     },
     "phelps-national:phelps-8519": {
       "startsAt": "2026-11-14 21:00:00",
       "sourceDate": "2026-11-14",
-      "lastCheckedAt": "2026-11-15T01:04:31.551Z",
-      "attempts": 5
+      "lastCheckedAt": "2026-11-15T03:01:05.002Z",
+      "attempts": 6
     },
     "link-hs-elite:4d1728a993b443be7b0012853d5f8dcc": {
       "startsAt": "2026-11-14 23:45:00",
@@ -1559,35 +1730,35 @@
   },
   "schoolChecks": {
     "bella-vista": {
-      "attemptedAt": "2026-11-15T02:25:32.025Z",
+      "attemptedAt": "2026-11-15T03:01:05.002Z",
       "status": "ok"
     },
     "wasatch-national": {
-      "attemptedAt": "2026-11-15T01:04:31.551Z",
+      "attemptedAt": "2026-11-15T03:01:05.002Z",
       "status": "ok"
     },
     "providence-tn-varsity": {
-      "attemptedAt": "2026-11-15T01:04:31.551Z",
+      "attemptedAt": "2026-11-15T03:01:05.002Z",
       "status": "ok"
     },
     "veritas-national": {
-      "attemptedAt": "2026-11-15T01:04:31.551Z",
+      "attemptedAt": "2026-11-15T03:01:05.002Z",
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-15T01:04:31.551Z",
-      "status": "source_error"
+      "attemptedAt": "2026-11-15T03:01:05.002Z",
+      "status": "ok"
     },
     "link-hs-elite": {
-      "attemptedAt": "2026-11-15T02:55:35.689Z",
+      "attemptedAt": "2026-11-15T03:01:05.002Z",
       "status": "ok"
     },
     "phelps-national": {
-      "attemptedAt": "2026-11-15T01:04:31.551Z",
+      "attemptedAt": "2026-11-15T03:01:05.002Z",
       "status": "ok"
     },
     "peddie-varsity": {
-      "attemptedAt": "2026-11-15T01:04:31.551Z",
+      "attemptedAt": "2026-11-15T03:01:05.002Z",
       "status": "ok"
     }
   }
