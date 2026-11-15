@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-15T18:13:01.578Z",
+  "generatedAt": "2026-11-15T20:13:08.541Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -909,7 +909,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T18:13:01.578Z"
+      "fetchedAt": "2026-11-15T20:13:08.541Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1570,8 +1570,8 @@
     "notre-dame-prep-ny:neprep-9808149": {
       "startsAt": "2026-11-13 20:00:00",
       "sourceDate": "2026-11-13",
-      "lastCheckedAt": "2026-11-14T23:24:26.013Z",
-      "attempts": 5
+      "lastCheckedAt": "2026-11-15T20:13:08.541Z",
+      "attempts": 6
     },
     "phelps-national:phelps-8518": {
       "startsAt": "2026-11-07 21:00:00",
@@ -1600,8 +1600,8 @@
     "notre-dame-prep-ny:neprep-9920300": {
       "startsAt": "2026-11-15 14:00:00",
       "sourceDate": "2026-11-15",
-      "lastCheckedAt": "2026-11-15T18:13:01.578Z",
-      "attempts": 4
+      "lastCheckedAt": "2026-11-15T20:13:08.541Z",
+      "attempts": 5
     }
   },
   "schoolChecks": {
@@ -1622,7 +1622,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-15T18:13:01.578Z",
+      "attemptedAt": "2026-11-15T20:13:08.541Z",
       "status": "ok"
     },
     "link-hs-elite": {
