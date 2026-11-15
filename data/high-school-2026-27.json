@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-15T05:16:54.826Z",
+  "generatedAt": "2026-11-15T05:57:48.216Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1087,7 +1087,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T04:53:27.652Z"
+      "fetchedAt": "2026-11-15T05:57:48.216Z"
     },
     {
       "schoolId": "phelps-national",
@@ -1517,14 +1517,14 @@
   ],
   "sources": [
     {
-      "schoolId": "phelps-national",
+      "schoolId": "link-hs-elite",
       "source": "official",
       "status": "ok",
       "message": null,
-      "games": 9
+      "games": 14
     },
     {
-      "schoolId": "phelps-national",
+      "schoolId": "link-hs-elite",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -1565,8 +1565,8 @@
     "link-hs-elite:4d1728a993b443be7b0012853d5f8dcc": {
       "startsAt": "2026-11-14 23:45:00",
       "sourceDate": "2026-11-14",
-      "lastCheckedAt": "2026-11-15T04:02:56.545Z",
-      "attempts": 4
+      "lastCheckedAt": "2026-11-15T05:57:48.216Z",
+      "attempts": 5
     }
   },
   "schoolChecks": {
@@ -1591,7 +1591,7 @@
       "status": "ok"
     },
     "link-hs-elite": {
-      "attemptedAt": "2026-11-15T04:53:27.652Z",
+      "attemptedAt": "2026-11-15T05:57:48.216Z",
       "status": "ok"
     },
     "phelps-national": {
