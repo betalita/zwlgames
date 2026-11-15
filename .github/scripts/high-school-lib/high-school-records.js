@@ -12,12 +12,21 @@ const verifiedMediaSources = new Map([
   ['https://m.zhibo8.com/news/web/nba/2026-11-13/6af68b22f283fnative.htm', 'bella-vista'],
 ]);
 
+// Joint EPL/Notre Dame post, reviewed 2026-11-15 against the match report.
+// Approve only this post and fixture; other Instagram URLs remain untrusted.
+const reviewedPrimaryResults = new Map([
+  ['https://www.instagram.com/p/Dfuxw3_Jftf/', {
+    schoolId: 'notre-dame-prep-ny', id: 'neprep-9808148', date: '2026-11-14',
+    opponent: 'One Way Basketball Institute (FL)', state: 'post', schoolScore: 73, opponentScore: 72,
+  }],
+]);
+
 function sourceUrl(value, schoolId, allowMedia = false) {
   let url;
   try { url = new URL(value); } catch { throw new Error('invalid high school source URL'); }
   const hosts = [...Object.values(SCHOOLS).map(school => new URL(school.url).hostname), ...extraHosts];
   if (url.protocol !== 'https:' || url.username || url.password || url.port && url.port !== '443' ||
-      (!hosts.includes(url.hostname) && verifiedMediaSources.get(url.href) !== schoolId && !(allowMedia && isMediaUrl(url.href))) ||
+      (!hosts.includes(url.hostname) && verifiedMediaSources.get(url.href) !== schoolId && reviewedPrimaryResults.get(url.href)?.schoolId !== schoolId && !(allowMedia && isMediaUrl(url.href))) ||
       url.href.length > 500) throw new Error('unapproved high school source URL');
   return url.href;
 }
@@ -82,6 +91,12 @@ function normalizeRecord(record) {
   if (typeof record.id !== 'string' || !/^[a-zA-Z0-9_-]{1,48}$/.test(record.id)) throw new Error('invalid stable game id');
   if (typeof record.opponent !== 'string' || !record.opponent.trim() || record.opponent.length > 120 || /[<>]/.test(record.opponent)) throw new Error('invalid opponent');
   const source = sourceUrl(record.sourceUrl, record.schoolId, Boolean(record.evidence));
+  const reviewed = reviewedPrimaryResults.get(source);
+  if (reviewed && Object.entries(reviewed).some(([key,value]) => record[key] !== value))
+    throw new Error('reviewed primary result mismatch');
+  if (reviewed && (record.players || []).some(row => row.stats && Object.keys(row.stats).some(key =>
+    !record.evidence || !isMediaUrl(row.statSources?.[key]) || row.statSources[key] !== record.evidence.sourceUrl)))
+    throw new Error('reviewed result statistics require separate media evidence');
   validateMediaRecord(record);
   if (record.location != null && (typeof record.location !== 'string' || record.location.length > 200)) throw new Error('invalid game location');
   const time = gameTime(record);
@@ -111,7 +126,11 @@ function normalizeRecord(record) {
       let statSources;
       if(row.statSources){
         if(typeof row.statSources!=='object'||Array.isArray(row.statSources)||Object.keys(row.statSources).some(k=>!Object.hasOwn(stats,k)))throw Error('invalid statistic provenance');
-        statSources=Object.fromEntries(Object.entries(row.statSources).map(([key,url])=>[key,sourceUrl(url,record.schoolId,Boolean(record.evidence))]));
+        statSources=Object.fromEntries(Object.entries(row.statSources).map(([key,url])=>{
+          const approved=sourceUrl(url,record.schoolId,Boolean(record.evidence));
+          if(reviewedPrimaryResults.has(approved))throw new Error('score-only source cannot prove player statistics');
+          return [key,approved];
+        }));
       }
       return { ...identity,state:'ready',stats,...(statSources?{statSources}:{} ) };
     }
