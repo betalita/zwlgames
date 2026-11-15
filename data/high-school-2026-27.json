@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-15T01:55:30.616Z",
+  "generatedAt": "2026-11-15T02:25:32.025Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -34,7 +34,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T01:04:31.551Z"
+      "fetchedAt": "2026-11-15T02:25:32.025Z"
     },
     {
       "schoolId": "wasatch-national",
@@ -1075,7 +1075,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T01:55:30.616Z"
+      "fetchedAt": "2026-11-15T02:25:32.025Z"
     },
     {
       "schoolId": "phelps-national",
@@ -1505,6 +1505,27 @@
   ],
   "sources": [
     {
+      "schoolId": "bella-vista",
+      "source": "school-ical",
+      "status": "ok",
+      "message": null,
+      "games": 1
+    },
+    {
+      "schoolId": "bella-vista",
+      "source": "legitgm",
+      "status": "pending",
+      "message": "no verified current matchup/player statistics found",
+      "games": 0
+    },
+    {
+      "schoolId": "bella-vista",
+      "source": "verified-media",
+      "status": "pending",
+      "message": "no unambiguous current report",
+      "games": 0
+    },
+    {
       "schoolId": "link-hs-elite",
       "source": "official",
       "status": "ok",
@@ -1523,8 +1544,8 @@
     "bella-vista:bv-calendar-07lv8qfl25l68g81r50fh5qefu": {
       "startsAt": "2026-11-13 02:00:00",
       "sourceDate": "2026-11-12",
-      "lastCheckedAt": "2026-11-14T02:02:50.220Z",
-      "attempts": 3
+      "lastCheckedAt": "2026-11-15T02:25:32.025Z",
+      "attempts": 4
     },
     "notre-dame-prep-ny:neprep-9808149": {
       "startsAt": "2026-11-13 20:00:00",
@@ -1553,13 +1574,13 @@
     "link-hs-elite:4d1728a993b443be7b0012853d5f8dcc": {
       "startsAt": "2026-11-14 23:45:00",
       "sourceDate": "2026-11-14",
-      "lastCheckedAt": "2026-11-15T01:55:30.616Z",
-      "attempts": 1
+      "lastCheckedAt": "2026-11-15T02:25:32.025Z",
+      "attempts": 2
     }
   },
   "schoolChecks": {
     "bella-vista": {
-      "attemptedAt": "2026-11-15T01:04:31.551Z",
+      "attemptedAt": "2026-11-15T02:25:32.025Z",
       "status": "ok"
     },
     "wasatch-national": {
@@ -1579,7 +1600,7 @@
       "status": "source_error"
     },
     "link-hs-elite": {
-      "attemptedAt": "2026-11-15T01:55:30.616Z",
+      "attemptedAt": "2026-11-15T02:25:32.025Z",
       "status": "ok"
     },
     "phelps-national": {
