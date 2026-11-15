@@ -13,3 +13,5 @@
 本地测试：`node --test .github/scripts/*.test.cjs`。`node .github/scripts/high-school-collector.cjs --postgame` 执行定向补查；不传参数执行完整扫描。
 
 **发布顺序：先部署 cnhoops 后端的新证据契约和稀疏调度，再推送本采集器。** 老后端只允许逐篇登记的新闻 URL，会拒绝新的通用证据快照。两种模式共享 `high-school-publication` 并发锁和发布前 rebase，不能并发覆盖快照。`high-school-lib/manifest.json` 记录受控同步文件的 SHA-256；不从同级仓库运行时加载依赖。
+
+2026-11-15 修复 Notre Dame Prep NY 的 NEPrep 重复未来对阵：非终场卡片按美国日期和对手分组核对数量，保留各条原生赛程 ID，不将重复安排配上比分；唯一匹配的明确 Final 继续采集。缺卡、多卡、未知对阵、错校/错季、终场比分不符，以及无法唯一对应原生比赛的 Final 仍拒绝刷新，保留上次有效数据。该修复仅涉及海外采集器，不改后端、个人统计规则和检查频率。
