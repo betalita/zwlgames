@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-15T04:02:56.545Z",
+  "generatedAt": "2026-11-15T04:04:17.781Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -27,14 +27,49 @@
           "date": "2026-11-12",
           "localTime": "19:00",
           "timeZone": "America/Phoenix",
-          "sourceUrl": "https://www.bellavistacollegeprep.com/news-events/school-calendar.cfm",
-          "state": "pre",
+          "sourceUrl": "https://news.zhibo8.com/nba/2026-11-13/6af68b22f283fnative.htm",
+          "state": "post",
           "opponent": "Elite Sports Academy",
-          "venue": "unknown"
+          "venue": "unknown",
+          "bootstrap": false,
+          "schoolScore": 78,
+          "opponentScore": 58,
+          "players": [
+            {
+              "playerId": "zhangyuchen",
+              "stats": {
+                "MIN": "15",
+                "PTS": "6",
+                "REB": "3",
+                "AST": "2",
+                "STL": "1",
+                "FG": "2-3"
+              },
+              "statSources": {
+                "MIN": "https://news.zhibo8.com/nba/2026-11-13/6af68b22f283fnative.htm",
+                "PTS": "https://news.zhibo8.com/nba/2026-11-13/6af68b22f283fnative.htm",
+                "REB": "https://news.zhibo8.com/nba/2026-11-13/6af68b22f283fnative.htm",
+                "AST": "https://news.zhibo8.com/nba/2026-11-13/6af68b22f283fnative.htm",
+                "STL": "https://news.zhibo8.com/nba/2026-11-13/6af68b22f283fnative.htm",
+                "FG": "https://news.zhibo8.com/nba/2026-11-13/6af68b22f283fnative.htm"
+              }
+            }
+          ],
+          "evidence": {
+            "sourceUrl": "https://news.zhibo8.com/nba/2026-11-13/6af68b22f283fnative.htm",
+            "title": "逐渐适应！张宇辰热身赛替补出战15分钟 3投2中拿下6分3板2助1断",
+            "publishedAt": "2026-11-13T04:12:58.000Z",
+            "paragraphs": [
+              "直播吧11月13日讯 美高篮球季前热身赛，贝拉维斯塔预科学院以78-58战胜精英体育学院。",
+              "贝拉维斯塔预科学院的中国旅美小将张宇辰替补登场15分钟，全场3投2中，拿下6分3篮板2助攻1抢断，攻防两端均有发挥。"
+            ],
+            "bodyHash": "5476ca3484d78ef9efc57f4056379ade538df8645a2405121045379c791e50ee",
+            "kind": "media-report"
+          }
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T03:01:05.002Z"
+      "fetchedAt": "2026-11-15T04:04:17.781Z"
     },
     {
       "schoolId": "wasatch-national",
@@ -379,7 +414,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T03:01:05.002Z"
+      "fetchedAt": "2026-11-15T04:04:17.781Z"
     },
     {
       "schoolId": "veritas-national",
@@ -452,7 +487,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T03:01:05.002Z"
+      "fetchedAt": "2026-11-15T04:04:17.781Z"
     },
     {
       "schoolId": "notre-dame-prep-ny",
@@ -505,7 +540,8 @@
           "state": "post",
           "sourceUrl": "https://www.neprepbasketball.net/team/272487/games",
           "schoolScore": 72,
-          "opponentScore": 71
+          "opponentScore": 71,
+          "players": []
         },
         {
           "id": "neprep-9920300",
@@ -870,7 +906,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T03:01:05.002Z"
+      "fetchedAt": "2026-11-15T04:04:17.781Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1051,7 +1087,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T04:02:56.545Z"
+      "fetchedAt": "2026-11-15T04:04:17.781Z"
     },
     {
       "schoolId": "phelps-national",
@@ -1183,7 +1219,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T03:01:05.002Z"
+      "fetchedAt": "2026-11-15T04:04:17.781Z"
     },
     {
       "schoolId": "peddie-varsity",
@@ -1476,10 +1512,138 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T03:01:05.002Z"
+      "fetchedAt": "2026-11-15T04:04:17.781Z"
     }
   ],
   "sources": [
+    {
+      "schoolId": "bella-vista",
+      "source": "school-ical",
+      "status": "ok",
+      "message": null,
+      "games": 1
+    },
+    {
+      "schoolId": "bella-vista",
+      "source": "legitgm",
+      "status": "pending",
+      "message": "no verified current matchup/player statistics found",
+      "games": 0
+    },
+    {
+      "schoolId": "bella-vista",
+      "source": "verified-media",
+      "status": "ok",
+      "message": null,
+      "games": 1
+    },
+    {
+      "schoolId": "wasatch-national",
+      "source": "verified-seed",
+      "status": "ok",
+      "message": "2026-11-11 transcription; source availability rechecked",
+      "games": 8
+    },
+    {
+      "schoolId": "wasatch-national",
+      "source": "legitgm",
+      "status": "pending",
+      "message": "no verified current matchup/player statistics found",
+      "games": 0
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "official",
+      "status": "ok",
+      "message": null,
+      "games": 6
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-11-17; official MBA; supplement Montgomery Bell Academy; manual identity check required"
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-11-19; official McMallie; supplement McCallie; manual identity check required"
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-12-11; official MTCS; supplement MTCHS*; manual identity check required"
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "maxpreps",
+      "status": "ok",
+      "message": null,
+      "games": 23
+    },
+    {
+      "schoolId": "veritas-national",
+      "source": "verified-seed",
+      "status": "ok",
+      "message": "2026-11-11 transcription; source availability rechecked",
+      "games": 4
+    },
+    {
+      "schoolId": "veritas-national",
+      "source": "maxpreps",
+      "status": "ok",
+      "message": null,
+      "games": 2
+    },
+    {
+      "schoolId": "veritas-national",
+      "source": "legitgm",
+      "status": "pending",
+      "message": "no verified current matchup/player statistics found",
+      "games": 0
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "neprep",
+      "status": "ok",
+      "message": "exact Elmira prep squad; explicit Finals only",
+      "games": 30
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "media-article",
+      "status": "warning",
+      "reason": "final_score_conflict",
+      "sourceUrl": "https://news.zhibo8.com/nba/2026-11-15/6af90ea67768cnative.htm",
+      "gameId": "neprep-9808148",
+      "storedScore": [
+        72,
+        71
+      ],
+      "reportedScore": [
+        73,
+        72
+      ],
+      "candidate": {
+        "players": [
+          {
+            "playerId": "zhangziyi",
+            "stats": {
+              "PTS": "28"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "verified-media",
+      "status": "pending",
+      "message": "no unambiguous current report",
+      "games": 0
+    },
     {
       "schoolId": "link-hs-elite",
       "source": "official",
@@ -1493,6 +1657,113 @@
       "status": "pending",
       "message": "no unambiguous current report",
       "games": 0
+    },
+    {
+      "schoolId": "patrick-school",
+      "source": "official",
+      "status": "pending",
+      "message": "awaiting a verified schedule for this exact squad",
+      "games": 0
+    },
+    {
+      "schoolId": "phelps-national",
+      "source": "official",
+      "status": "ok",
+      "message": null,
+      "games": 9
+    },
+    {
+      "schoolId": "phelps-national",
+      "source": "verified-media",
+      "status": "pending",
+      "message": "no unambiguous current report",
+      "games": 0
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "official",
+      "status": "ok",
+      "message": null,
+      "games": 19
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-11-22; official Virginia Episcopal School (VA); supplement Virginia Episcopal School***; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-12-12; official Milton Academy; supplement Malvern Prep; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-12-15; official Malvern Preparatory School; supplement Hun*; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-12-15; official Malvern Preparatory School; supplement Malvern Prep; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-01-09; official The Lawrenceville School; supplement Lawrenceville School*; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-01-13; official The Hun School of Princeton; supplement Hun*; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-01-16; official The Hill School; supplement Hill School*; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-01-20; official Perkiomen School (National Team); supplement Perkiomen School; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-01-30; official The Haverford School; supplement Haverford School; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-02-03; official Perkiomen School (Prep Team); supplement Perkiomen School; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-02-04; official Hightstown High School; supplement Perkiomen School; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2027-02-04; official Hightstown High School; supplement Hightstown; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps",
+      "status": "ok",
+      "message": null,
+      "games": 20
     }
   ],
   "postgameChecks": {
@@ -1535,35 +1806,35 @@
   },
   "schoolChecks": {
     "bella-vista": {
-      "attemptedAt": "2026-11-15T03:01:05.002Z",
+      "attemptedAt": "2026-11-15T04:04:17.781Z",
       "status": "ok"
     },
     "wasatch-national": {
-      "attemptedAt": "2026-11-15T03:01:05.002Z",
+      "attemptedAt": "2026-11-15T04:04:17.781Z",
       "status": "ok"
     },
     "providence-tn-varsity": {
-      "attemptedAt": "2026-11-15T03:01:05.002Z",
+      "attemptedAt": "2026-11-15T04:04:17.781Z",
       "status": "ok"
     },
     "veritas-national": {
-      "attemptedAt": "2026-11-15T03:01:05.002Z",
+      "attemptedAt": "2026-11-15T04:04:17.781Z",
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-15T03:01:05.002Z",
+      "attemptedAt": "2026-11-15T04:04:17.781Z",
       "status": "ok"
     },
     "link-hs-elite": {
-      "attemptedAt": "2026-11-15T04:02:56.545Z",
+      "attemptedAt": "2026-11-15T04:04:17.781Z",
       "status": "ok"
     },
     "phelps-national": {
-      "attemptedAt": "2026-11-15T03:01:05.002Z",
+      "attemptedAt": "2026-11-15T04:04:17.781Z",
       "status": "ok"
     },
     "peddie-varsity": {
-      "attemptedAt": "2026-11-15T03:01:05.002Z",
+      "attemptedAt": "2026-11-15T04:04:17.781Z",
       "status": "ok"
     }
   }
