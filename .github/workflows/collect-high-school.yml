@@ -23,6 +23,7 @@ on:
       - '.github/scripts/high-school-parsers*'
       - '.github/scripts/high-school-bella-vista*'
       - '.github/scripts/high-school-media*'
+      - '.github/scripts/high-school-notify*'
       - '.github/scripts/high-school-postgame*'
       - '.github/scripts/high-school-neprep*'
       - '.github/scripts/fixtures/**'
