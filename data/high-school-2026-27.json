@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-15T04:04:17.781Z",
+  "generatedAt": "2026-11-15T04:09:56.921Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -69,7 +69,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T04:04:17.781Z"
+      "fetchedAt": "2026-11-15T04:09:56.921Z"
     },
     {
       "schoolId": "wasatch-national",
@@ -414,7 +414,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T04:04:17.781Z"
+      "fetchedAt": "2026-11-15T04:09:56.921Z"
     },
     {
       "schoolId": "veritas-national",
@@ -487,7 +487,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T04:04:17.781Z"
+      "fetchedAt": "2026-11-15T04:09:56.921Z"
     },
     {
       "schoolId": "notre-dame-prep-ny",
@@ -906,7 +906,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T04:04:17.781Z"
+      "fetchedAt": "2026-11-15T04:09:56.921Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1087,7 +1087,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T04:04:17.781Z"
+      "fetchedAt": "2026-11-15T04:09:56.921Z"
     },
     {
       "schoolId": "phelps-national",
@@ -1219,7 +1219,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T04:04:17.781Z"
+      "fetchedAt": "2026-11-15T04:09:56.921Z"
     },
     {
       "schoolId": "peddie-varsity",
@@ -1512,7 +1512,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T04:04:17.781Z"
+      "fetchedAt": "2026-11-15T04:09:56.921Z"
     }
   ],
   "sources": [
@@ -1806,35 +1806,35 @@
   },
   "schoolChecks": {
     "bella-vista": {
-      "attemptedAt": "2026-11-15T04:04:17.781Z",
+      "attemptedAt": "2026-11-15T04:09:56.921Z",
       "status": "ok"
     },
     "wasatch-national": {
-      "attemptedAt": "2026-11-15T04:04:17.781Z",
+      "attemptedAt": "2026-11-15T04:09:56.921Z",
       "status": "ok"
     },
     "providence-tn-varsity": {
-      "attemptedAt": "2026-11-15T04:04:17.781Z",
+      "attemptedAt": "2026-11-15T04:09:56.921Z",
       "status": "ok"
     },
     "veritas-national": {
-      "attemptedAt": "2026-11-15T04:04:17.781Z",
+      "attemptedAt": "2026-11-15T04:09:56.921Z",
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-15T04:04:17.781Z",
+      "attemptedAt": "2026-11-15T04:09:56.921Z",
       "status": "ok"
     },
     "link-hs-elite": {
-      "attemptedAt": "2026-11-15T04:04:17.781Z",
+      "attemptedAt": "2026-11-15T04:09:56.921Z",
       "status": "ok"
     },
     "phelps-national": {
-      "attemptedAt": "2026-11-15T04:04:17.781Z",
+      "attemptedAt": "2026-11-15T04:09:56.921Z",
       "status": "ok"
     },
     "peddie-varsity": {
-      "attemptedAt": "2026-11-15T04:04:17.781Z",
+      "attemptedAt": "2026-11-15T04:09:56.921Z",
       "status": "ok"
     }
   }
