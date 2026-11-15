@@ -1,9 +1,9 @@
 'use strict';
 const {createHash}=require('node:crypto');
 const {SCHOOLS,HIGH_SCHOOL_PLAYERS,SEASON}=require('./high-school-roster');
-const EXTRA_SCHOOLS={'bella-vista':['贝拉维斯塔预科学院','CIA Bella Vista']};
-// This translation was checked against the school's ESA fixture and the report.
-const OPPONENT_ALIASES={'Elite Sports Academy':['精英体育学院']};
+const EXTRA_SCHOOLS={'bella-vista':['贝拉维斯塔预科学院','CIA Bella Vista'],'notre-dame-prep-ny':['Notre Dame Prep']};
+// Aliases are reviewed against registered fixtures and the corresponding reports.
+const OPPONENT_ALIASES={'Elite Sports Academy':['精英体育学院'],'One Way Basketball Institute (FL)':['One Way Academy']};
 const decoded=value=>String(value||'').normalize('NFKC');
 function isMediaUrl(value){
  try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password&&!u.port&&!u.search&&!u.hash&&
@@ -39,12 +39,12 @@ function scoreIn(e,record){
   const text=decoded(raw);
   if(/回顾|上一场|上轮|此前|曾经|去年|去年同期|上赛季|明日|明天|将于|预告|预测|预计|有望|如果|假如|模拟|半场|首节|第一节|第二节|第三节|前三节|截至|暂时|进行中/.test(text))continue;
   if(record.schoolId==='bella-vista'&&/BV Academy|BV Open|BV Power|Bella Vista (?:National|Open|Power)|女子|女队/i.test(text))continue;
-  for(const m of text.matchAll(/(\d{1,3})\s*[-:–]\s*(\d{1,3})\s*(战胜|击败|不敌|负于|输给)/g)){
+  for(const m of text.matchAll(/(\d{1,3})\s*[-:–]\s*(\d{1,3})\s*(战胜|击败|险胜|不敌|负于|输给)/g)){
    const before=text.slice(0,m.index).split(/[，,。;；!！]/).at(-1).trim().replace(/^(?:最终|本场|此役)\s*/,'').replace(/以\s*$/,'').trim();
    const after=text.slice(m.index+m[0].length).split(/[，,。;；!！]/)[0].trim();
    const exact=(text,names)=>names.some(n=>decoded(text).toLowerCase()===decoded(n).toLowerCase());
    const a=Number(m[1]),b=Number(m[2]);
-   if(a===b||a>250||b>250||((/战胜|击败/.test(m[3]))!==(a>b)))continue;
+   if(a===b||a>250||b>250||((/战胜|击败|险胜/.test(m[3]))!==(a>b)))continue;
    if(exact(before,school)&&exact(after,opponent))found.push([a,b]);
    if(exact(before,opponent)&&exact(after,school))found.push([b,a]);
   }
@@ -60,21 +60,27 @@ function playerStats(e,member,record,score){
  if(/上一场|上轮|此前|场均|上赛季|明日|预计|队友|另外|此外|另有|其他球员|其余球员|全队|对手|分别/.test(text)||HIGH_SCHOOL_PLAYERS.some(p=>p.id!==member.id&&contains(text,p.name)))return null;
  const nameAt=text.indexOf(member.name),prefix=text.slice(0,nameAt);
  const schoolName=aliases(record).map(decoded).find(n=>prefix.startsWith(n));
- if(!schoolName||!/^(?:的|中国|旅美|小将|球员|后卫|前锋|中锋)*$/.test(prefix.slice(schoolName.length)))return null;
+ const subject=/^(?:的|中国|旅美|小将|球员|后卫|前锋|中锋)*$/;
+ if(!(schoolName&&subject.test(prefix.slice(schoolName.length)))){
+  // A scoreboard clause can establish the school, but the following clause
+  // must explicitly name this player without introducing another subject.
+  const clause=prefix.split(/[，,。;；!！]/).at(-1).trim();
+  if(!subject.test(clause)||!scoreIn({paragraphs:[prefix]},record))return null;
+ }
  const suffix=text.slice(nameAt+member.name.length);
  // Statistical clauses must retain this player's subject. Unknown subjects,
  // including untracked teammates, cannot inherit the preceding player's name.
  for(const clause of suffix.split(/[，,。;；!！]/).map(s=>s.trim()).filter(Boolean)){
   const grammar=/^(?:(?:替补|首发|出场|登场|出战|上场|全场|投篮|得到|拿下|贡献|获得|砍下|最终|命中率|命中|三分|罚球|分钟|篮板|助攻|抢断|盖帽|失误|犯规|投|中|分|板|罚|次|个)|\d+(?:\.\d+)?|\s|[-+%/])+$/;
-  if(!grammar.test(clause)&&!new Set(['攻防两端均有发挥','表现出色','发挥出色','效率出色','表现稳定','发挥稳定']).has(clause))return null;
+  if(!grammar.test(clause)&&!new Set(['攻防两端均有发挥','表现出色','发挥出色','效率出色','表现稳定','发挥稳定','贡献绝杀']).has(clause))return null;
  }
  const stats={};
  const patterns={MIN:/(\d{1,2}(?:\.\d)?)\s*分钟/,PTS:/(\d{1,3})\s*分(?!钟)/,REB:/(\d{1,3})\s*(?:个)?篮板/,AST:/(\d{1,3})\s*(?:次)?助攻/,STL:/(\d{1,3})\s*(?:次)?抢断/,BLK:/(\d{1,3})\s*(?:次)?盖帽/,TO:/(\d{1,3})\s*(?:次)?失误/,PF:/(\d{1,3})\s*(?:次)?犯规/};
- for(const [key,re]of Object.entries(patterns)){const matches=[...text.matchAll(new RegExp('(?<![\\d.])'+re.source,'g'))];if(matches.length>1)return null;if(matches[0])stats[key]=matches[0][1];}
- const fg=/(?:全场|投篮)\s*(\d{1,3})\s*投\s*(\d{1,3})\s*中/.exec(text);
+ for(const [key,re]of Object.entries(patterns)){const matches=[...suffix.matchAll(new RegExp('(?<![\\d.])'+re.source,'g'))];if(matches.length>1)return null;if(matches[0])stats[key]=matches[0][1];}
+ const fg=/(?:全场|投篮)\s*(\d{1,3})\s*投\s*(\d{1,3})\s*中/.exec(suffix);
  if(fg)stats.FG=`${fg[2]}-${fg[1]}`;
  for(const [label,re]of [['3PT',/三分\s*(\d{1,3})\s*投\s*(\d{1,3})\s*中/],['FT',/罚球\s*(\d{1,3})\s*罚\s*(\d{1,3})\s*中/]]){
-  const m=re.exec(text);if(m)stats[label]=`${m[2]}-${m[1]}`;
+  const m=re.exec(suffix);if(m)stats[label]=`${m[2]}-${m[1]}`;
  }
  if(stats.PTS==null)return null;
  try{return require('./high-school-records').statsMap(stats,score);}catch{return null;}
@@ -84,29 +90,44 @@ function matchRecord(e,record){
  const {gameTime}=require('./high-school-records');let time;try{time=gameTime(record);}catch{return null;}
  const published=Date.parse(e.publishedAt),start=Date.parse(time.startsAt.replace(' ','T')+'Z');
  const chinaDay=new Date(published+8*3600000).toISOString().slice(0,10);
- const explicitLocal=new RegExp('(?:美国)?当地时间\\s*(?:'+record.date.slice(0,4)+'年)?'+Number(record.date.slice(5,7))+'月'+Number(record.date.slice(8,10))+'日').test(e.paragraphs.join(' '));
- if(time.timeKnown ? published<start||published>start+73*3600000||chinaDay!==time.dateKey&&!explicitLocal : !explicitLocal)return null;
+ const localDates=[...e.paragraphs.join(' ').matchAll(/(?:美国)?当地时间\s*(?:(20\d\d)年)?(\d{1,2})月(\d{1,2})日/g)];
+ const explicitLocal=localDates.length>0&&localDates.every(m=>(!m[1]||m[1]===record.date.slice(0,4))&&Number(m[2])===Number(record.date.slice(5,7))&&Number(m[3])===Number(record.date.slice(8,10)));
+ if(localDates.length&&!explicitLocal)return null;
+ const nextDay=new Date(Date.parse(time.dateKey+'T00:00:00Z')+86400000).toISOString().slice(0,10);
+ const nearbyDay=chinaDay===time.dateKey||chinaDay===nextDay&&published-start<=36*3600000;
+ if(time.timeKnown ? published<start||published>start+73*3600000||!nearbyDay&&!explicitLocal : !explicitLocal)return null;
  const score=scoreIn(e,record);if(!score)return null;
- if(record.state==='post'&&(record.schoolScore!==score[0]||record.opponentScore!==score[1]))return null;
  const candidates=HIGH_SCHOOL_PLAYERS.filter(p=>p.schoolId===record.schoolId).map(member=>({member,stats:playerStats(e,member,record,score[0])})).filter(p=>p.stats);
  if(!candidates.length)return null;
- const players=(record.players||[]).map(p=>({...p,stats:p.stats?{...p.stats}:undefined,statSources:p.stats?Object.fromEntries(Object.keys(p.stats).map(k=>[k,p.statSources?.[k]||record.sourceUrl])):undefined}));
- for(const {member,stats}of candidates){
-  const prior=players.find(p=>p.playerId===member.id);
-  if(prior?.dnp||Object.entries(stats).some(([k,v])=>prior?.stats?.[k]!=null&&String(prior.stats[k])!==v))return null;
-  const sources=Object.fromEntries(Object.keys(stats).map(k=>[k,prior?.statSources?.[k]||e.sourceUrl]));
-  if(prior){prior.stats={...prior.stats,...stats};prior.statSources={...prior.statSources,...sources};}
-  else players.push({playerId:member.id,stats,statSources:sources});
- }
+ const players=candidates.map(({member,stats})=>({playerId:member.id,stats,statSources:Object.fromEntries(Object.keys(stats).map(k=>[k,e.sourceUrl]))}));
  return {...record,bootstrap:false,state:'post',schoolScore:score[0],opponentScore:score[1],players,
   sourceUrl:record.state==='post'?record.sourceUrl:e.sourceUrl,evidence:{...e,kind:'media-report'}};
 }
-function mediaResult(e,records,now=null){
- if(!validEvidence(e)||/预告|回顾|上一场|上赛季|明日|明天|场均/.test(e.title)||now&&Date.parse(e.publishedAt)>now.getTime()+300000)return null;
- const unique=new Map(records.map(r=>[`${r.schoolId}:${r.id}`,r]));
- const matches=[...unique.values()].map(r=>matchRecord(e,r)).filter(Boolean);
- return matches.length===1?matches[0]:null;
+function mergePlayerStats(record,candidate){
+ const players=(record.players||[]).map(p=>({...p,stats:p.stats?{...p.stats}:undefined,statSources:p.stats?Object.fromEntries(Object.keys(p.stats).map(k=>[k,p.statSources?.[k]||record.sourceUrl])):undefined}));
+ for(const row of candidate.players){
+  const prior=players.find(p=>p.playerId===row.playerId);
+  if(prior?.dnp||Object.entries(row.stats).some(([k,v])=>prior?.stats?.[k]!=null&&String(prior.stats[k])!==v))return null;
+  const sources=Object.fromEntries(Object.keys(row.stats).map(k=>[k,prior?.statSources?.[k]||row.statSources[k]]));
+  if(prior){prior.stats={...prior.stats,...row.stats};prior.statSources={...prior.statSources,...sources};}
+  else players.push({...row,statSources:sources});
+ }
+ return {...candidate,players};
 }
+function inspectMediaResult(e,records,now=null){
+ if(!validEvidence(e)||/预告|回顾|上一场|上赛季|明日|明天|场均/.test(e.title)||now&&Date.parse(e.publishedAt)>now.getTime()+300000)return {result:null,reason:'invalid_evidence'};
+ const unique=new Map(records.map(r=>[`${r.schoolId}:${r.id}`,r]));
+ const matches=[...unique.values()].map(record=>({record,candidate:matchRecord(e,record)})).filter(m=>m.candidate);
+ if(matches.length!==1)return {result:null,reason:matches.length?'ambiguous_fixture':'unmatched_report'};
+ const {record,candidate}=matches[0];
+ if(record.state==='post'&&(record.schoolScore!==candidate.schoolScore||record.opponentScore!==candidate.opponentScore))
+  return {result:null,reason:'final_score_conflict',candidate,storedScore:[record.schoolScore,record.opponentScore],reportedScore:[candidate.schoolScore,candidate.opponentScore]};
+ // Resolve fixture identity before applying stored-statistic protection. A
+ // conflicting prior stat must never disambiguate two possible fixtures.
+ const result=mergePlayerStats(record,candidate);
+ return {result,reason:result?null:'player_stat_conflict'};
+}
+function mediaResult(e,records,now=null){return inspectMediaResult(e,records,now).result;}
 function validateMediaRecord(record){
  const evidence=record.evidence;
  if(!evidence)return;
@@ -121,4 +142,4 @@ function validateMediaRecord(record){
  }
  if(isMediaUrl(record.sourceUrl)&&!(record.players||[]).some(p=>p.statSources&&Object.values(p.statSources).includes(record.sourceUrl)))throw Error('media evidence provenance missing');
 }
-module.exports={mediaResult,isMediaUrl,validateMediaRecord};
+module.exports={mediaResult,inspectMediaResult,isMediaUrl,validateMediaRecord};

@@ -17,7 +17,7 @@ function parseMediaPage(input,sourceUrl){
  const html=String(input).replace(/<script\b[^>]*>[\s\S]*?<\/script>|<style\b[^>]*>[\s\S]*?<\/style>/gi,'');
  const title=plain(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i.exec(html)?.[1]||'');
  const stamp=/(?:class=["'][^"']*(?:createtime|media-time)[^"']*["'][^>]*>|ms-controller=["']title_controller["'][^>]*>)\s*(20\d\d-\d\d-\d\d \d\d:\d\d:\d\d)/i.exec(html)?.[1];
- const opening=/<div\b(?=[^>]*\bid=["']content["'])[^>]*>/i.exec(html);
+ const opening=/<div\b(?=[^>]*\bid=["'](?:content|signals)["'])[^>]*>/i.exec(html);
  if(!title||!stamp||!opening)return null;
  let depth=1,end=null;
  const rest=html.slice(opening.index+opening[0].length);

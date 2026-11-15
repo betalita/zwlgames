@@ -11,7 +11,7 @@ const {collectNotreDame}=require('./high-school-lib/high-school-neprep');
 const {HIGH_SCHOOL_PLAYERS}=require('./high-school-lib/high-school-roster');
 const {normalizeRecord}=require('./high-school-lib/high-school-records');
 const {recoverHighSchoolDeadline,highSchoolTiming}=require('./high-school-lib/high-school-postgame');
-const {mediaResult,isMediaUrl}=require('./high-school-lib/high-school-media-evidence');
+const {inspectMediaResult,isMediaUrl}=require('./high-school-lib/high-school-media-evidence');
 const {LISTING,parseMediaListing,parseMediaPage}=require('./high-school-media.cjs');
 const FILE='data/high-school-2026-27.json';
 const day=value=>new Date(value).toISOString().slice(0,10);
@@ -69,6 +69,9 @@ async function collect({now=new Date(),previous=null,fetchText=defaultFetch,post
  if(schoolIds!==undefined&&(!postgameOnly||!Array.isArray(schoolIds)||!schoolIds.length||schoolIds.length>3||
   new Set(schoolIds).size!==schoolIds.length||schoolIds.some(id=>!Object.hasOwn(SCHOOLS,id))))throw Error('invalid high school dispatch scope');
  const due=dueSchools(previous,now);
+ // A full refresh also checks recent incomplete fixtures between postgame
+ // checkpoints. Cheap postgame probes retain their no-work/no-request behavior.
+ const mediaDue=postgameOnly?due:dueSchools(previous?{...previous,postgameChecks:{}}:null,now);
  if(postgameOnly&&!due.size)return previous;
  const sources=[],schools=[],cache=new Map();
  const lastCheck=schoolId=>Math.min(...[...(due.get(schoolId)||[])].map(key=>Date.parse(previous?.postgameChecks?.[key]?.lastCheckedAt)||0));
@@ -130,13 +133,13 @@ async function collect({now=new Date(),previous=null,fetchText=defaultFetch,post
   }
   // Media may only supplement an already known exact fixture. A single cached
   // listing is shared across every due school; only followed articles are read.
-  if(due.has(schoolId)){
+  if(mediaDue.has(schoolId)){
    try{
     const baseRecords=records?.length?records:old?.games;
     if(baseRecords?.length){
      const members=HIGH_SCHOOL_PLAYERS.filter(p=>p.schoolId===schoolId);
      const allLinks=parseMediaListing(await read(LISTING),members.flatMap(p=>[p.name,p.englishName,...(p.aliases||[])]));
-     const attempts=Math.min(...[...due.get(schoolId)].map(key=>previous?.postgameChecks?.[key]?.attempts||0));
+     const attempts=Math.min(...[...mediaDue.get(schoolId)].map(key=>previous?.postgameChecks?.[key]?.attempts||0));
      const quota=postgameOnly?2:1;
      const offset=allLinks.length?(attempts*quota)%allLinks.length:0;
      const links=[...allLinks.slice(offset),...allLinks.slice(0,offset)].slice(0,quota);
@@ -145,10 +148,17 @@ async function collect({now=new Date(),previous=null,fetchText=defaultFetch,post
       if(!cache.has(link.url)&&mediaReads>=(postgameOnly?6:HIGH_SCHOOL_PLAYERS.length))break;
       if(!cache.has(link.url))mediaReads++;
       try{
-       const evidence=parseMediaPage(await read(link.url),link.url);if(!evidence)continue;
-       const candidate=mediaResult(evidence,baseRecords,now);if(!candidate||!due.get(schoolId).has(checkKey(candidate)))continue;
+       const evidence=parseMediaPage(await read(link.url),link.url);
+       const inspection=evidence?inspectMediaResult(evidence,baseRecords,now):{result:null,reason:'article_parse_failed'};
+       if(!inspection.result){
+        const {reason,candidate,storedScore,reportedScore}=inspection;
+        sources.push({schoolId,source:'media-article',status:'warning',reason,sourceUrl:link.url,
+         ...(candidate?{gameId:candidate.id,storedScore,reportedScore,candidate:{players:candidate.players.map(p=>({playerId:p.playerId,stats:p.stats}))}}:{})});
+        continue;
+       }
+       const candidate=inspection.result;if(!mediaDue.get(schoolId).has(checkKey(candidate)))continue;
        if(!proposals.has(candidate.id))proposals.set(candidate.id,[]);proposals.get(candidate.id).push(candidate);
-      }catch(error){report('media-article','warning',error.message,0);}
+      }catch(error){sources.push({schoolId,source:'media-article',status:'warning',reason:'article_fetch_failed',sourceUrl:link.url,message:error.message});}
      }
      let imported=0;
      for(const [id,candidates]of proposals){

@@ -79,3 +79,36 @@ test('postgame no-op has zero external reads; due schools share one listing and 
  assert.ok(!calls.some(u=>u.includes('linkhoops.com')));
  assert.equal(dueSchools(result,now).size,0);
 });
+test('desktop signals body is parsed without recommendation statistics leaking',()=>{
+ const page='<h1>张子一砍下28分</h1><span ms-controller="title_controller">2026-11-15 09:55:20 {{info|html}}</span><div id="signals" class="content"><p><div class="video_box"></div></p><p>美高赛事，Notre Dame Prep以73-72险胜One Way Academy，中国小将张子一贡献绝杀，全场砍下28分。</p><p>张子一现年16岁，身高2米08。</p></div><p>推荐：张子一99分20篮板</p><script>fake 100分</script>';
+ const e=parseMediaPage(page,'https://news.zhibo8.com/nba/2026-11-15/6af90ea67768cnative.htm');assert.ok(e);assert.equal(e.paragraphs.length,2);assert.ok(!e.paragraphs.join(' ').includes('99'));
+});
+test('conflicting next-day media is recorded with candidate points while official final stays intact',async()=>{
+ const game={id:'neprep-9808148',schoolId:'notre-dame-prep-ny',season:2027,date:'2026-11-14',localTime:'10:00',timeZone:'America/New_York',opponent:'One Way Basketball Institute (FL)',venue:'unknown',state:'post',schoolScore:72,opponentScore:71,sourceUrl:'https://www.neprepbasketball.net/team/272487/schedule'};
+ const previous=snapshot([game]);previous.generatedAt=previous.schools[0].fetchedAt='2026-11-15T01:00:00.000Z';
+ const articleUrl='https://news.zhibo8.com/nba/2026-11-15/6af90ea67768cnative.htm';
+ const result=await collect({now:new Date('2026-11-15T02:20:00Z'),previous,postgameOnly:true,fetchText:async u=>{
+  if(u==='https://news.zhibo8.com/nba/')return `<a href="${articleUrl}">张子一砍下28分</a>`;
+  if(u===articleUrl)return '<h1>张子一砍下28分</h1><span ms-controller="title_controller">2026-11-15 09:55:20</span><div id="signals"><p>美高赛事，Notre Dame Prep以73-72险胜One Way Academy，中国小将张子一贡献绝杀，全场砍下28分。</p></div>';
+  throw Error('official source unavailable');
+ }});
+ const retained=result.schools[0].games[0];assert.equal(retained.schoolScore,72);assert.equal(retained.players,undefined);
+ const conflict=result.sources.find(s=>s.reason==='final_score_conflict');assert.ok(conflict);assert.equal(conflict.sourceUrl,articleUrl);assert.deepEqual(conflict.candidate.players[0].stats,{PTS:'28'});assert.deepEqual(conflict.storedScore,[72,71]);assert.deepEqual(conflict.reportedScore,[73,72]);
+});
+test('an agreeing next-day report supplements points with evidence and leaves other statistics absent',async()=>{
+ const game={id:'neprep-9808148',schoolId:'notre-dame-prep-ny',season:2027,date:'2026-11-14',localTime:'10:00',timeZone:'America/New_York',opponent:'One Way Basketball Institute (FL)',venue:'unknown',state:'post',schoolScore:73,opponentScore:72,sourceUrl:'https://www.neprepbasketball.net/team/272487/schedule'};
+ const previous=snapshot([game]);previous.generatedAt=previous.schools[0].fetchedAt='2026-11-15T01:00:00.000Z';
+ const articleUrl='https://news.zhibo8.com/nba/2026-11-15/6af90ea67768cnative.htm';
+ const result=await collect({now:new Date('2026-11-15T02:20:00Z'),previous,postgameOnly:true,fetchText:async u=>{
+  if(u==='https://news.zhibo8.com/nba/')return `<a href="${articleUrl}">张子一砍下28分</a>`;
+  if(u===articleUrl)return '<h1>张子一砍下28分</h1><span ms-controller="title_controller">2026-11-15 09:55:20</span><div id="signals"><p>美高赛事，Notre Dame Prep以73-72险胜One Way Academy，中国小将张子一贡献绝杀，全场砍下28分。</p></div>';
+  throw Error('official source unavailable');
+ }});
+ const saved=result.schools[0].games[0];assert.equal(saved.id,game.id);assert.equal(saved.sourceUrl,game.sourceUrl);assert.deepEqual(saved.players[0].stats,{PTS:'28'});assert.equal(saved.players[0].statSources.PTS,articleUrl);assert.ok(saved.evidence);assert.ok(result.sources.some(s=>s.source==='verified-media'&&s.status==='ok'));
+});
+test('full refresh checks recent missing media data even between scheduled postgame checkpoints',async()=>{
+ const previous=snapshot();previous.postgameChecks={'bella-vista:fixture-zhangyuchen':{startsAt:'2026-11-13 02:00:00',sourceDate:'2026-11-12',lastCheckedAt:now.toISOString()}};
+ assert.equal(dueSchools(previous,now).size,0);
+ const result=await collect({now,previous,fetchText:async u=>{if(u==='https://news.zhibo8.com/nba/')return `<a href="${url}">张宇辰拿下6分</a>`;if(u===url)return html;throw Error('official source outage');}});
+ assert.equal(result.schools.find(s=>s.schoolId==='bella-vista')?.games[0].players?.[0].stats.PTS,'6');
+});
