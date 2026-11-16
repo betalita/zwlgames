@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-16T18:44:40.629Z",
+  "generatedAt": "2026-11-16T20:14:43.117Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -909,7 +909,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-16T15:43:35.060Z"
+      "fetchedAt": "2026-11-16T20:14:43.117Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1520,14 +1520,40 @@
   ],
   "sources": [
     {
-      "schoolId": "link-hs-elite",
-      "source": "official",
+      "schoolId": "notre-dame-prep-ny",
+      "source": "neprep",
       "status": "ok",
-      "message": null,
-      "games": 14
+      "message": "exact Elmira prep squad; explicit Finals only",
+      "games": 30
     },
     {
-      "schoolId": "link-hs-elite",
+      "schoolId": "notre-dame-prep-ny",
+      "source": "media-article",
+      "status": "warning",
+      "reason": "final_score_conflict",
+      "sourceUrl": "https://news.zhibo8.com/nba/2026-11-15/6af90ea67768cnative.htm",
+      "gameId": "neprep-9808148",
+      "storedScore": [
+        72,
+        71
+      ],
+      "reportedScore": [
+        73,
+        72
+      ],
+      "candidate": {
+        "players": [
+          {
+            "playerId": "zhangziyi",
+            "stats": {
+              "PTS": "28"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -1544,8 +1570,8 @@
     "notre-dame-prep-ny:neprep-9808149": {
       "startsAt": "2026-11-13 20:00:00",
       "sourceDate": "2026-11-13",
-      "lastCheckedAt": "2026-11-15T20:13:08.541Z",
-      "attempts": 6
+      "lastCheckedAt": "2026-11-16T20:14:43.117Z",
+      "attempts": 7
     },
     "phelps-national:phelps-8518": {
       "startsAt": "2026-11-07 21:00:00",
@@ -1602,7 +1628,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-16T15:43:35.060Z",
+      "attemptedAt": "2026-11-16T20:14:43.117Z",
       "status": "ok"
     },
     "link-hs-elite": {
