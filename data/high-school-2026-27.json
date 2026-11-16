@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-15T21:57:39.918Z",
+  "generatedAt": "2026-11-16T00:03:08.391Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -909,7 +909,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T20:13:08.541Z"
+      "fetchedAt": "2026-11-16T00:03:08.391Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1090,7 +1090,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-15T21:57:39.918Z"
+      "fetchedAt": "2026-11-16T00:03:08.391Z"
     },
     {
       "schoolId": "phelps-national",
@@ -1520,6 +1520,46 @@
   ],
   "sources": [
     {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "neprep",
+      "status": "ok",
+      "message": "exact Elmira prep squad; explicit Finals only",
+      "games": 30
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "media-article",
+      "status": "warning",
+      "reason": "final_score_conflict",
+      "sourceUrl": "https://news.zhibo8.com/nba/2026-11-15/6af90ea67768cnative.htm",
+      "gameId": "neprep-9808148",
+      "storedScore": [
+        72,
+        71
+      ],
+      "reportedScore": [
+        73,
+        72
+      ],
+      "candidate": {
+        "players": [
+          {
+            "playerId": "zhangziyi",
+            "stats": {
+              "PTS": "28"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "verified-media",
+      "status": "pending",
+      "message": "no unambiguous current report",
+      "games": 0
+    },
+    {
       "schoolId": "link-hs-elite",
       "source": "official",
       "status": "ok",
@@ -1568,20 +1608,20 @@
     "link-hs-elite:4d1728a993b443be7b0012853d5f8dcc": {
       "startsAt": "2026-11-14 23:45:00",
       "sourceDate": "2026-11-14",
-      "lastCheckedAt": "2026-11-15T11:57:57.428Z",
-      "attempts": 7
+      "lastCheckedAt": "2026-11-16T00:03:08.391Z",
+      "attempts": 8
     },
     "notre-dame-prep-ny:neprep-9920300": {
       "startsAt": "2026-11-15 14:00:00",
       "sourceDate": "2026-11-15",
-      "lastCheckedAt": "2026-11-15T20:13:08.541Z",
-      "attempts": 5
+      "lastCheckedAt": "2026-11-16T00:03:08.391Z",
+      "attempts": 6
     },
     "link-hs-elite:20e308fef76f087a1c4eedd963c3e40d": {
       "startsAt": "2026-11-15 18:30:00",
       "sourceDate": "2026-11-15",
-      "lastCheckedAt": "2026-11-15T21:57:39.918Z",
-      "attempts": 1
+      "lastCheckedAt": "2026-11-16T00:03:08.391Z",
+      "attempts": 2
     }
   },
   "schoolChecks": {
@@ -1602,11 +1642,11 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-15T20:13:08.541Z",
+      "attemptedAt": "2026-11-16T00:03:08.391Z",
       "status": "ok"
     },
     "link-hs-elite": {
-      "attemptedAt": "2026-11-15T21:57:39.918Z",
+      "attemptedAt": "2026-11-16T00:03:08.391Z",
       "status": "ok"
     },
     "phelps-national": {
