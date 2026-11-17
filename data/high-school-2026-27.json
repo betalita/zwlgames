@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-17T12:10:43.788Z",
+  "generatedAt": "2026-11-17T14:11:47.572Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -912,7 +912,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-17T12:10:43.788Z"
+      "fetchedAt": "2026-11-17T14:11:47.572Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1603,8 +1603,8 @@
     "notre-dame-prep-ny:neprep-9920300": {
       "startsAt": "2026-11-15 14:00:00",
       "sourceDate": "2026-11-15",
-      "lastCheckedAt": "2026-11-16T14:13:33.275Z",
-      "attempts": 8
+      "lastCheckedAt": "2026-11-17T14:11:47.572Z",
+      "attempts": 9
     },
     "link-hs-elite:20e308fef76f087a1c4eedd963c3e40d": {
       "startsAt": "2026-11-15 18:30:00",
@@ -1637,7 +1637,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-17T12:10:43.788Z",
+      "attemptedAt": "2026-11-17T14:11:47.572Z",
       "status": "ok"
     },
     "link-hs-elite": {
