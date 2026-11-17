@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-16T23:59:39.542Z",
+  "generatedAt": "2026-11-17T02:14:49.291Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -69,7 +69,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-16T21:03:15.898Z"
+      "fetchedAt": "2026-11-17T02:14:49.291Z"
     },
     {
       "schoolId": "wasatch-national",
@@ -1520,26 +1520,33 @@
   ],
   "sources": [
     {
-      "schoolId": "link-hs-elite",
-      "source": "official",
+      "schoolId": "bella-vista",
+      "source": "school-ical",
       "status": "ok",
       "message": null,
-      "games": 14
+      "games": 1
     },
     {
-      "schoolId": "link-hs-elite",
-      "source": "verified-media",
+      "schoolId": "bella-vista",
+      "source": "legitgm",
       "status": "pending",
-      "message": "no unambiguous current report",
+      "message": "no verified current matchup/player statistics found",
       "games": 0
+    },
+    {
+      "schoolId": "bella-vista",
+      "source": "verified-media",
+      "status": "ok",
+      "message": null,
+      "games": 1
     }
   ],
   "postgameChecks": {
     "bella-vista:bv-calendar-07lv8qfl25l68g81r50fh5qefu": {
       "startsAt": "2026-11-13 02:00:00",
       "sourceDate": "2026-11-12",
-      "lastCheckedAt": "2026-11-16T02:13:06.823Z",
-      "attempts": 5
+      "lastCheckedAt": "2026-11-17T02:14:49.291Z",
+      "attempts": 6
     },
     "notre-dame-prep-ny:neprep-9808149": {
       "startsAt": "2026-11-13 20:00:00",
@@ -1586,7 +1593,7 @@
   },
   "schoolChecks": {
     "bella-vista": {
-      "attemptedAt": "2026-11-16T21:03:15.898Z",
+      "attemptedAt": "2026-11-17T02:14:49.291Z",
       "status": "ok"
     },
     "wasatch-national": {
