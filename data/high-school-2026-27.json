@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-17T18:11:54.065Z",
+  "generatedAt": "2026-11-17T18:41:48.337Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1093,7 +1093,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-17T03:55:18.968Z"
+      "fetchedAt": "2026-11-17T18:41:48.337Z"
     },
     {
       "schoolId": "phelps-national",
@@ -1523,40 +1523,14 @@
   ],
   "sources": [
     {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "neprep",
+      "schoolId": "link-hs-elite",
+      "source": "official",
       "status": "ok",
-      "message": "exact Elmira prep squad; explicit Finals only",
-      "games": 30
+      "message": null,
+      "games": 14
     },
     {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "media-article",
-      "status": "warning",
-      "reason": "final_score_conflict",
-      "sourceUrl": "https://news.zhibo8.com/nba/2026-11-15/6af90ea67768cnative.htm",
-      "gameId": "neprep-9808148",
-      "storedScore": [
-        72,
-        71
-      ],
-      "reportedScore": [
-        73,
-        72
-      ],
-      "candidate": {
-        "players": [
-          {
-            "playerId": "zhangziyi",
-            "stats": {
-              "PTS": "28"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "schoolId": "notre-dame-prep-ny",
+      "schoolId": "link-hs-elite",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -1609,8 +1583,8 @@
     "link-hs-elite:20e308fef76f087a1c4eedd963c3e40d": {
       "startsAt": "2026-11-15 18:30:00",
       "sourceDate": "2026-11-15",
-      "lastCheckedAt": "2026-11-16T18:44:40.629Z",
-      "attempts": 6
+      "lastCheckedAt": "2026-11-17T18:41:48.337Z",
+      "attempts": 7
     },
     "notre-dame-prep-ny:neprep-9752664": {
       "startsAt": "2026-11-16 12:00:00",
@@ -1641,7 +1615,7 @@
       "status": "ok"
     },
     "link-hs-elite": {
-      "attemptedAt": "2026-11-17T03:55:18.968Z",
+      "attemptedAt": "2026-11-17T18:41:48.337Z",
       "status": "ok"
     },
     "phelps-national": {
