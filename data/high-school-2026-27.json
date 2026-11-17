@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-17T20:01:19.397Z",
+  "generatedAt": "2026-11-17T21:11:49.318Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1225,7 +1225,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-17T19:52:06.139Z"
+      "fetchedAt": "2026-11-17T21:11:49.318Z"
     },
     {
       "schoolId": "peddie-varsity",
@@ -1523,40 +1523,14 @@
   ],
   "sources": [
     {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "neprep",
+      "schoolId": "phelps-national",
+      "source": "official",
       "status": "ok",
-      "message": "exact Elmira prep squad; explicit Finals only",
-      "games": 30
+      "message": null,
+      "games": 9
     },
     {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "media-article",
-      "status": "warning",
-      "reason": "final_score_conflict",
-      "sourceUrl": "https://news.zhibo8.com/nba/2026-11-15/6af90ea67768cnative.htm",
-      "gameId": "neprep-9808148",
-      "storedScore": [
-        72,
-        71
-      ],
-      "reportedScore": [
-        73,
-        72
-      ],
-      "candidate": {
-        "players": [
-          {
-            "playerId": "zhangziyi",
-            "stats": {
-              "PTS": "28"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "schoolId": "notre-dame-prep-ny",
+      "schoolId": "phelps-national",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -1591,8 +1565,8 @@
     "phelps-national:phelps-8519": {
       "startsAt": "2026-11-14 21:00:00",
       "sourceDate": "2026-11-14",
-      "lastCheckedAt": "2026-11-16T21:03:15.898Z",
-      "attempts": 10
+      "lastCheckedAt": "2026-11-17T21:11:49.318Z",
+      "attempts": 11
     },
     "link-hs-elite:4d1728a993b443be7b0012853d5f8dcc": {
       "startsAt": "2026-11-14 23:45:00",
@@ -1645,7 +1619,7 @@
       "status": "ok"
     },
     "phelps-national": {
-      "attemptedAt": "2026-11-17T19:52:06.139Z",
+      "attemptedAt": "2026-11-17T21:11:49.318Z",
       "status": "ok"
     },
     "peddie-varsity": {
