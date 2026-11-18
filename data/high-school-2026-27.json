@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-18T00:26:53.395Z",
+  "generatedAt": "2026-11-18T02:12:37.704Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -69,7 +69,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-17T19:52:06.139Z"
+      "fetchedAt": "2026-11-18T02:12:37.704Z"
     },
     {
       "schoolId": "wasatch-national",
@@ -1523,40 +1523,21 @@
   ],
   "sources": [
     {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "neprep",
+      "schoolId": "bella-vista",
+      "source": "school-ical",
       "status": "ok",
-      "message": "exact Elmira prep squad; explicit Finals only",
-      "games": 30
+      "message": null,
+      "games": 1
     },
     {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "media-article",
-      "status": "warning",
-      "reason": "final_score_conflict",
-      "sourceUrl": "https://news.zhibo8.com/nba/2026-11-15/6af90ea67768cnative.htm",
-      "gameId": "neprep-9808148",
-      "storedScore": [
-        72,
-        71
-      ],
-      "reportedScore": [
-        73,
-        72
-      ],
-      "candidate": {
-        "players": [
-          {
-            "playerId": "zhangziyi",
-            "stats": {
-              "PTS": "28"
-            }
-          }
-        ]
-      }
+      "schoolId": "bella-vista",
+      "source": "legitgm",
+      "status": "pending",
+      "message": "no verified current matchup/player statistics found",
+      "games": 0
     },
     {
-      "schoolId": "notre-dame-prep-ny",
+      "schoolId": "bella-vista",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -1567,8 +1548,8 @@
     "bella-vista:bv-calendar-07lv8qfl25l68g81r50fh5qefu": {
       "startsAt": "2026-11-13 02:00:00",
       "sourceDate": "2026-11-12",
-      "lastCheckedAt": "2026-11-17T02:14:49.291Z",
-      "attempts": 6
+      "lastCheckedAt": "2026-11-18T02:12:37.704Z",
+      "attempts": 7
     },
     "notre-dame-prep-ny:neprep-9808149": {
       "startsAt": "2026-11-13 20:00:00",
@@ -1621,7 +1602,7 @@
   },
   "schoolChecks": {
     "bella-vista": {
-      "attemptedAt": "2026-11-17T19:52:06.139Z",
+      "attemptedAt": "2026-11-18T02:12:37.704Z",
       "status": "ok"
     },
     "wasatch-national": {
