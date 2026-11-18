@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-17T23:56:55.823Z",
+  "generatedAt": "2026-11-18T00:26:53.395Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -912,7 +912,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-17T20:01:19.397Z"
+      "fetchedAt": "2026-11-18T00:26:53.395Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1523,17 +1523,44 @@
   ],
   "sources": [
     {
-      "schoolId": "link-hs-elite",
-      "source": "official",
+      "schoolId": "notre-dame-prep-ny",
+      "source": "neprep",
       "status": "ok",
-      "message": null,
-      "games": 14
+      "message": "exact Elmira prep squad; explicit Finals only",
+      "games": 30
     },
     {
-      "schoolId": "link-hs-elite",
+      "schoolId": "notre-dame-prep-ny",
+      "source": "media-article",
+      "status": "warning",
+      "reason": "final_score_conflict",
+      "sourceUrl": "https://news.zhibo8.com/nba/2026-11-15/6af90ea67768cnative.htm",
+      "gameId": "neprep-9808148",
+      "storedScore": [
+        72,
+        71
+      ],
+      "reportedScore": [
+        73,
+        72
+      ],
+      "candidate": {
+        "players": [
+          {
+            "playerId": "zhangziyi",
+            "stats": {
+              "PTS": "28"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
       "source": "verified-media",
-      "status": "error",
-      "message": "fetch failed"
+      "status": "pending",
+      "message": "no unambiguous current report",
+      "games": 0
     }
   ],
   "postgameChecks": {
@@ -1588,8 +1615,8 @@
     "notre-dame-prep-ny:neprep-9752664": {
       "startsAt": "2026-11-16 12:00:00",
       "sourceDate": "2026-11-16",
-      "lastCheckedAt": "2026-11-17T18:11:54.065Z",
-      "attempts": 2
+      "lastCheckedAt": "2026-11-18T00:26:53.395Z",
+      "attempts": 3
     }
   },
   "schoolChecks": {
@@ -1610,7 +1637,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-17T20:01:19.397Z",
+      "attemptedAt": "2026-11-18T00:26:53.395Z",
       "status": "ok"
     },
     "link-hs-elite": {
