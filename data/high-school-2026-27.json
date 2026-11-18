@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-18T02:54:56.651Z",
+  "generatedAt": "2026-11-18T12:13:09.090Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -171,18 +171,6 @@
       "schoolId": "providence-tn-varsity",
       "games": [
         {
-          "id": "893cd8f10ecb412b69c5c7e279837c4c",
-          "schoolId": "providence-tn-varsity",
-          "season": 2027,
-          "date": "2026-11-17",
-          "opponent": "MBA",
-          "sourceUrl": "https://providencechristian.com/calendar/athletics-calendar-list/",
-          "state": "pre",
-          "venue": "away",
-          "timeZone": "America/Chicago",
-          "scheduleStatus": null
-        },
-        {
           "id": "7c8d3121ccaf8dc3fe69101e5508b2a3",
           "schoolId": "providence-tn-varsity",
           "season": 2027,
@@ -243,178 +231,18 @@
           "scheduleStatus": null
         },
         {
-          "id": "mp-de8b9ac4-6932-45be-83de-283181f60e63",
+          "id": "mp-7103774a-0aed-43c0-bb4a-c5e0464f22ff",
           "season": 2027,
           "schoolId": "providence-tn-varsity",
-          "date": "2026-11-23",
-          "opponent": "Columbia Central",
-          "venue": "unknown",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/columbia-central-vs-providence-christian-academy-murfreesboro/11-23-2026/?c=de8b9ac4-6932-45be-83de-283181f60e63",
-          "state": "pre"
-        },
-        {
-          "id": "mp-ea3813e1-3564-4f49-987e-de3c461a2740",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2026-11-24",
-          "opponent": "Brentwood",
-          "venue": "unknown",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/brentwood-vs-providence-christian-academy-murfreesboro/11-24-2026/?c=ea3813e1-3564-4f49-987e-de3c461a2740",
-          "state": "pre"
-        },
-        {
-          "id": "mp-fc89b273-dc37-4fc5-b596-a2b1edd5c3ef",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2026-12-04",
-          "opponent": "Memphis University School",
-          "venue": "unknown",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/memphis-university-school-vs-providence-christian-academy-murfreesboro/12-4-2026/?c=fc89b273-dc37-4fc5-b596-a2b1edd5c3ef",
-          "state": "pre"
-        },
-        {
-          "id": "mp-256348cf-e97d-4843-aee8-f03adb7b22c0",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2026-12-18",
-          "opponent": "Battle Ground Academy*",
-          "venue": "unknown",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/battle-ground-academy-franklin-vs-providence-christian-academy-murfreesboro/12-18-2026/?c=256348cf-e97d-4843-aee8-f03adb7b22c0",
-          "state": "pre"
-        },
-        {
-          "id": "mp-061d5ead-9b78-4d10-a5d7-d26741429166",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2027-01-05",
-          "opponent": "FCA*",
+          "date": "2026-11-17",
+          "opponent": "Montgomery Bell Academy",
           "venue": "away",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/franklin-christian-academy-vs-providence-christian-academy-murfreesboro/1-5-2027/?c=061d5ead-9b78-4d10-a5d7-d26741429166",
-          "state": "pre"
-        },
-        {
-          "id": "mp-132935c5-f508-4217-99c5-fa291cde5e05",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2027-01-08",
-          "opponent": "The Webb School*",
-          "venue": "unknown",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/providence-christian-academy-murfreesboro-vs-the-webb-school-bell-buckle/1-8-2027/?c=132935c5-f508-4217-99c5-fa291cde5e05",
-          "state": "pre"
-        },
-        {
-          "id": "mp-191d849a-e536-41c3-a69f-73877d375d69",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2027-01-09",
-          "opponent": "Grace Christian Academy*",
-          "venue": "unknown",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/grace-christian-academy-franklin-vs-providence-christian-academy-murfreesboro/1-9-2027/?c=191d849a-e536-41c3-a69f-73877d375d69",
-          "state": "pre"
-        },
-        {
-          "id": "mp-aca18d78-4189-4775-a5a7-1d7373b8bace",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2027-01-12",
-          "opponent": "Franklin Road Academy*",
-          "venue": "unknown",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/franklin-road-academy-nashville-vs-providence-christian-academy-murfreesboro/1-12-2027/?c=aca18d78-4189-4775-a5a7-1d7373b8bace",
-          "state": "pre"
-        },
-        {
-          "id": "mp-80b9f2c2-f3d7-4653-bf95-6b5fdd9a8ba6",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2027-01-15",
-          "opponent": "Zion Christian Academy*",
-          "venue": "unknown",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/providence-christian-academy-murfreesboro-vs-zion-christian-academy-columbia/1-15-2027/?c=80b9f2c2-f3d7-4653-bf95-6b5fdd9a8ba6",
-          "state": "pre"
-        },
-        {
-          "id": "mp-bbb1e976-73b3-4ccd-b010-a607dd47e959",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2027-01-16",
-          "opponent": "Briarcrest Christian",
-          "venue": "away",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/briarcrest-christian-eads-vs-providence-christian-academy-murfreesboro/1-16-2027/?c=bbb1e976-73b3-4ccd-b010-a607dd47e959",
-          "state": "pre"
-        },
-        {
-          "id": "mp-25c3e86c-102c-400a-961e-448e11f85e09",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2027-01-19",
-          "opponent": "Columbia Academy*",
-          "venue": "away",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/columbia-academy-vs-providence-christian-academy-murfreesboro/1-19-2027/?c=25c3e86c-102c-400a-961e-448e11f85e09",
-          "state": "pre"
-        },
-        {
-          "id": "mp-52b08bcb-1fac-4278-afc2-5c782eba01ee",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2027-01-22",
-          "opponent": "MTCHS*",
-          "venue": "away",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/middle-tennessee-christian-murfreesboro-vs-providence-christian-academy-murfreesboro/1-22-2027/?c=52b08bcb-1fac-4278-afc2-5c782eba01ee",
-          "state": "pre"
-        },
-        {
-          "id": "mp-94a4d9b4-d3a1-4cce-ab99-527c1d8fd7b1",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2027-01-26",
-          "opponent": "Battle Ground Academy*",
-          "venue": "away",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/battle-ground-academy-franklin-vs-providence-christian-academy-murfreesboro/1-26-2027/?c=94a4d9b4-d3a1-4cce-ab99-527c1d8fd7b1",
-          "state": "pre"
-        },
-        {
-          "id": "mp-596f8d26-b90c-494f-b854-e804a37577d9",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2027-01-29",
-          "opponent": "FCA*",
-          "venue": "unknown",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/franklin-christian-academy-vs-providence-christian-academy-murfreesboro/1-29-2027/?c=596f8d26-b90c-494f-b854-e804a37577d9",
-          "state": "pre"
-        },
-        {
-          "id": "mp-8df9751d-8386-46c1-b331-8ec09d2a162c",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2027-01-30",
-          "opponent": "Zion Christian Academy*",
-          "venue": "away",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/providence-christian-academy-murfreesboro-vs-zion-christian-academy-columbia/1-30-2027/?c=8df9751d-8386-46c1-b331-8ec09d2a162c",
-          "state": "pre"
-        },
-        {
-          "id": "mp-a24baa53-04a4-4554-bc12-5e1357fc7679",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2027-02-02",
-          "opponent": "The Webb School*",
-          "venue": "away",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/providence-christian-academy-murfreesboro-vs-the-webb-school-bell-buckle/2-2-2027/?c=a24baa53-04a4-4554-bc12-5e1357fc7679",
-          "state": "pre"
-        },
-        {
-          "id": "mp-492073a7-f8d0-492f-9329-5dde5024f9da",
-          "season": 2027,
-          "schoolId": "providence-tn-varsity",
-          "date": "2027-02-05",
-          "opponent": "Grace Christian Academy*",
-          "venue": "away",
-          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/grace-christian-academy-franklin-vs-providence-christian-academy-murfreesboro/2-5-2027/?c=492073a7-f8d0-492f-9329-5dde5024f9da",
+          "sourceUrl": "https://www.maxpreps.com/tn/basketball/game/montgomery-bell-academy-nashville-vs-providence-christian-academy-murfreesboro/11-17-2026/?c=7103774a-0aed-43c0-bb4a-c5e0464f22ff",
           "state": "pre"
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-18T02:54:56.651Z"
+      "fetchedAt": "2026-11-18T12:13:09.090Z"
     },
     {
       "schoolId": "veritas-national",
@@ -912,7 +740,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-18T02:54:56.651Z"
+      "fetchedAt": "2026-11-18T12:13:09.090Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1523,85 +1351,24 @@
   ],
   "sources": [
     {
-      "schoolId": "bella-vista",
-      "source": "school-ical",
+      "schoolId": "providence-tn-varsity",
+      "source": "official",
+      "status": "ok",
+      "message": null,
+      "games": 5
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "maxpreps",
       "status": "ok",
       "message": null,
       "games": 1
     },
     {
-      "schoolId": "bella-vista",
-      "source": "legitgm",
-      "status": "pending",
-      "message": "no verified current matchup/player statistics found",
-      "games": 0
-    },
-    {
-      "schoolId": "bella-vista",
+      "schoolId": "providence-tn-varsity",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
-      "games": 0
-    },
-    {
-      "schoolId": "wasatch-national",
-      "source": "verified-seed",
-      "status": "ok",
-      "message": "2026-11-11 transcription; source availability rechecked",
-      "games": 8
-    },
-    {
-      "schoolId": "wasatch-national",
-      "source": "legitgm",
-      "status": "pending",
-      "message": "no verified current matchup/player statistics found",
-      "games": 0
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "official",
-      "status": "ok",
-      "message": null,
-      "games": 6
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "maxpreps-identity",
-      "status": "warning",
-      "message": "same-date opponent conflict: 2026-11-19; official McMallie; supplement McCallie; manual identity check required"
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "maxpreps-identity",
-      "status": "warning",
-      "message": "same-date opponent conflict: 2026-12-11; official MTCS; supplement MTCHS*; manual identity check required"
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "maxpreps",
-      "status": "ok",
-      "message": null,
-      "games": 22
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "verified-seed",
-      "status": "ok",
-      "message": "2026-11-11 transcription; source availability rechecked",
-      "games": 4
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "maxpreps",
-      "status": "ok",
-      "message": null,
-      "games": 2
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "legitgm",
-      "status": "pending",
-      "message": "no verified current matchup/player statistics found",
       "games": 0
     },
     {
@@ -1643,121 +1410,6 @@
       "status": "pending",
       "message": "no unambiguous current report",
       "games": 0
-    },
-    {
-      "schoolId": "link-hs-elite",
-      "source": "official",
-      "status": "ok",
-      "message": null,
-      "games": 14
-    },
-    {
-      "schoolId": "link-hs-elite",
-      "source": "verified-media",
-      "status": "pending",
-      "message": "no unambiguous current report",
-      "games": 0
-    },
-    {
-      "schoolId": "patrick-school",
-      "source": "official",
-      "status": "pending",
-      "message": "awaiting a verified schedule for this exact squad",
-      "games": 0
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "official",
-      "status": "ok",
-      "message": null,
-      "games": 9
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "verified-media",
-      "status": "pending",
-      "message": "no unambiguous current report",
-      "games": 0
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "official",
-      "status": "ok",
-      "message": null,
-      "games": 19
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "maxpreps-identity",
-      "status": "warning",
-      "message": "same-date opponent conflict: 2026-11-22; official Virginia Episcopal School (VA); supplement Virginia Episcopal School***; manual identity check required"
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "maxpreps-identity",
-      "status": "warning",
-      "message": "same-date opponent conflict: 2026-12-12; official Milton Academy; supplement Malvern Prep; manual identity check required"
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "maxpreps-identity",
-      "status": "warning",
-      "message": "same-date opponent conflict: 2026-12-15; official Malvern Preparatory School; supplement Hun*; manual identity check required"
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "maxpreps-identity",
-      "status": "warning",
-      "message": "same-date opponent conflict: 2026-12-15; official Malvern Preparatory School; supplement Malvern Prep; manual identity check required"
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "maxpreps-identity",
-      "status": "warning",
-      "message": "same-date opponent conflict: 2027-01-09; official The Lawrenceville School; supplement Lawrenceville School*; manual identity check required"
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "maxpreps-identity",
-      "status": "warning",
-      "message": "same-date opponent conflict: 2027-01-13; official The Hun School of Princeton; supplement Hun*; manual identity check required"
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "maxpreps-identity",
-      "status": "warning",
-      "message": "same-date opponent conflict: 2027-01-16; official The Hill School; supplement Hill School*; manual identity check required"
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "maxpreps-identity",
-      "status": "warning",
-      "message": "same-date opponent conflict: 2027-01-20; official Perkiomen School (National Team); supplement Perkiomen School; manual identity check required"
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "maxpreps-identity",
-      "status": "warning",
-      "message": "same-date opponent conflict: 2027-01-30; official The Haverford School; supplement Haverford School; manual identity check required"
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "maxpreps-identity",
-      "status": "warning",
-      "message": "same-date opponent conflict: 2027-02-03; official Perkiomen School (Prep Team); supplement Perkiomen School; manual identity check required"
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "maxpreps-identity",
-      "status": "warning",
-      "message": "same-date opponent conflict: 2027-02-04; official Hightstown High School; supplement Hightstown; manual identity check required"
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "maxpreps",
-      "status": "ok",
-      "message": null,
-      "games": 19
     }
   ],
   "postgameChecks": {
@@ -1812,8 +1464,14 @@
     "notre-dame-prep-ny:neprep-9752664": {
       "startsAt": "2026-11-16 12:00:00",
       "sourceDate": "2026-11-16",
-      "lastCheckedAt": "2026-11-18T00:26:53.395Z",
-      "attempts": 3
+      "lastCheckedAt": "2026-11-18T12:13:09.090Z",
+      "attempts": 4
+    },
+    "providence-tn-varsity:893cd8f10ecb412b69c5c7e279837c4c": {
+      "startsAt": "2026-11-17 12:00:00",
+      "sourceDate": "2026-11-17",
+      "lastCheckedAt": "2026-11-18T12:13:09.090Z",
+      "attempts": 1
     }
   },
   "schoolChecks": {
@@ -1826,7 +1484,7 @@
       "status": "ok"
     },
     "providence-tn-varsity": {
-      "attemptedAt": "2026-11-18T02:54:56.651Z",
+      "attemptedAt": "2026-11-18T12:13:09.090Z",
       "status": "ok"
     },
     "veritas-national": {
@@ -1834,7 +1492,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-18T02:54:56.651Z",
+      "attemptedAt": "2026-11-18T12:13:09.090Z",
       "status": "ok"
     },
     "link-hs-elite": {
