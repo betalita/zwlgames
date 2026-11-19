@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-19T15:14:10.051Z",
+  "generatedAt": "2026-11-19T18:14:09.562Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -421,8 +421,8 @@
           "players": []
         },
         {
-          "id": "neprep-9534420",
-          "sourceNativeId": "neprep-9534420",
+          "id": "neprep-9967170",
+          "sourceNativeId": "neprep-9967170",
           "schoolId": "notre-dame-prep-ny",
           "season": 2027,
           "date": "2026-11-20",
@@ -430,6 +430,7 @@
           "location": "Mercersburg",
           "venue": "neutral",
           "timeZone": "America/New_York",
+          "localTime": "19:30",
           "state": "pre",
           "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
         },
@@ -743,7 +744,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-19T15:14:10.051Z"
+      "fetchedAt": "2026-11-19T18:14:09.562Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1444,8 +1445,8 @@
     "notre-dame-prep-ny:neprep-9534381": {
       "startsAt": "2026-11-18 12:00:00",
       "sourceDate": "2026-11-18",
-      "lastCheckedAt": "2026-11-19T12:14:07.179Z",
-      "attempts": 1
+      "lastCheckedAt": "2026-11-19T18:14:09.562Z",
+      "attempts": 2
     }
   },
   "schoolChecks": {
@@ -1466,7 +1467,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-19T15:14:10.051Z",
+      "attemptedAt": "2026-11-19T18:14:09.562Z",
       "status": "ok"
     },
     "link-hs-elite": {
