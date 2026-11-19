@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-19T00:13:15.723Z",
+  "generatedAt": "2026-11-19T01:04:57.605Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1053,7 +1053,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-19T00:13:15.723Z"
+      "fetchedAt": "2026-11-19T01:04:57.605Z"
     },
     {
       "schoolId": "peddie-varsity",
@@ -1235,41 +1235,6 @@
   ],
   "sources": [
     {
-      "schoolId": "providence-tn-varsity",
-      "source": "official",
-      "status": "ok",
-      "message": null,
-      "games": 5
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "maxpreps",
-      "status": "ok",
-      "message": null,
-      "games": 1
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "verified-media",
-      "status": "pending",
-      "message": "no unambiguous current report",
-      "games": 0
-    },
-    {
-      "schoolId": "link-hs-elite",
-      "source": "official",
-      "status": "ok",
-      "message": null,
-      "games": 14
-    },
-    {
-      "schoolId": "link-hs-elite",
-      "source": "verified-media",
-      "status": "pending",
-      "message": "no unambiguous current report",
-      "games": 0
-    },
-    {
       "schoolId": "phelps-national",
       "source": "official",
       "status": "ok",
@@ -1354,8 +1319,8 @@
     "phelps-national:phelps-8520": {
       "startsAt": "2026-11-18 21:00:00",
       "sourceDate": "2026-11-18",
-      "lastCheckedAt": "2026-11-19T00:13:15.723Z",
-      "attempts": 3
+      "lastCheckedAt": "2026-11-19T01:04:57.605Z",
+      "attempts": 4
     }
   },
   "schoolChecks": {
@@ -1384,7 +1349,7 @@
       "status": "ok"
     },
     "phelps-national": {
-      "attemptedAt": "2026-11-19T00:13:15.723Z",
+      "attemptedAt": "2026-11-19T01:04:57.605Z",
       "status": "ok"
     },
     "peddie-varsity": {
