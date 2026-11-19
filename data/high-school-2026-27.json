@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-19T09:12:48.223Z",
+  "generatedAt": "2026-11-19T12:14:07.179Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -242,7 +242,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-19T02:35:31.957Z"
+      "fetchedAt": "2026-11-19T12:14:07.179Z"
     },
     {
       "schoolId": "veritas-national",
@@ -417,7 +417,8 @@
           "state": "post",
           "sourceUrl": "https://www.neprepbasketball.net/team/272487/games",
           "schoolScore": 76,
-          "opponentScore": 81
+          "opponentScore": 81,
+          "players": []
         },
         {
           "id": "neprep-9534420",
@@ -742,7 +743,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-19T02:35:31.957Z"
+      "fetchedAt": "2026-11-19T12:14:07.179Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1353,17 +1354,39 @@
   ],
   "sources": [
     {
-      "schoolId": "phelps-national",
+      "schoolId": "providence-tn-varsity",
       "source": "official",
       "status": "ok",
       "message": null,
-      "games": 9
+      "games": 5
     },
     {
-      "schoolId": "phelps-national",
+      "schoolId": "providence-tn-varsity",
+      "source": "maxpreps",
+      "status": "ok",
+      "message": null,
+      "games": 1
+    },
+    {
+      "schoolId": "providence-tn-varsity",
       "source": "verified-media",
-      "status": "error",
-      "message": "fetch failed"
+      "status": "pending",
+      "message": "no unambiguous current report",
+      "games": 0
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "neprep",
+      "status": "ok",
+      "message": "exact Elmira prep squad; explicit Finals only",
+      "games": 30
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "verified-media",
+      "status": "pending",
+      "message": "no unambiguous current report",
+      "games": 0
     }
   ],
   "postgameChecks": {
@@ -1418,8 +1441,8 @@
     "notre-dame-prep-ny:neprep-9752664": {
       "startsAt": "2026-11-16 12:00:00",
       "sourceDate": "2026-11-16",
-      "lastCheckedAt": "2026-11-18T12:13:09.090Z",
-      "attempts": 4
+      "lastCheckedAt": "2026-11-19T12:14:07.179Z",
+      "attempts": 5
     },
     "providence-tn-varsity:893cd8f10ecb412b69c5c7e279837c4c": {
       "startsAt": "2026-11-17 12:00:00",
@@ -1430,14 +1453,20 @@
     "providence-tn-varsity:mp-7103774a-0aed-43c0-bb4a-c5e0464f22ff": {
       "startsAt": "2026-11-17 12:00:00",
       "sourceDate": "2026-11-17",
-      "lastCheckedAt": "2026-11-19T00:13:15.723Z",
-      "attempts": 2
+      "lastCheckedAt": "2026-11-19T12:14:07.179Z",
+      "attempts": 3
     },
     "phelps-national:phelps-8520": {
       "startsAt": "2026-11-18 21:00:00",
       "sourceDate": "2026-11-18",
       "lastCheckedAt": "2026-11-19T09:12:48.223Z",
       "attempts": 7
+    },
+    "notre-dame-prep-ny:neprep-9534381": {
+      "startsAt": "2026-11-18 12:00:00",
+      "sourceDate": "2026-11-18",
+      "lastCheckedAt": "2026-11-19T12:14:07.179Z",
+      "attempts": 1
     }
   },
   "schoolChecks": {
@@ -1450,7 +1479,7 @@
       "status": "ok"
     },
     "providence-tn-varsity": {
-      "attemptedAt": "2026-11-19T02:35:31.957Z",
+      "attemptedAt": "2026-11-19T12:14:07.179Z",
       "status": "ok"
     },
     "veritas-national": {
@@ -1458,7 +1487,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-19T02:35:31.957Z",
+      "attemptedAt": "2026-11-19T12:14:07.179Z",
       "status": "ok"
     },
     "link-hs-elite": {
