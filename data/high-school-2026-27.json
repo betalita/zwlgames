@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-20T00:14:18.165Z",
+  "generatedAt": "2026-11-20T02:14:23.348Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -69,7 +69,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-19T19:29:44.499Z"
+      "fetchedAt": "2026-11-20T02:14:23.348Z"
     },
     {
       "schoolId": "wasatch-national",
@@ -1367,14 +1367,21 @@
   ],
   "sources": [
     {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "neprep",
+      "schoolId": "bella-vista",
+      "source": "school-ical",
       "status": "ok",
-      "message": "exact Elmira prep squad; explicit Finals only",
-      "games": 30
+      "message": null,
+      "games": 1
     },
     {
-      "schoolId": "notre-dame-prep-ny",
+      "schoolId": "bella-vista",
+      "source": "legitgm",
+      "status": "pending",
+      "message": "no verified current matchup/player statistics found",
+      "games": 0
+    },
+    {
+      "schoolId": "bella-vista",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -1385,8 +1392,8 @@
     "bella-vista:bv-calendar-07lv8qfl25l68g81r50fh5qefu": {
       "startsAt": "2026-11-13 02:00:00",
       "sourceDate": "2026-11-12",
-      "lastCheckedAt": "2026-11-19T02:13:16.969Z",
-      "attempts": 8
+      "lastCheckedAt": "2026-11-20T02:14:23.348Z",
+      "attempts": 9
     },
     "notre-dame-prep-ny:neprep-9808149": {
       "startsAt": "2026-11-13 20:00:00",
@@ -1463,7 +1470,7 @@
   },
   "schoolChecks": {
     "bella-vista": {
-      "attemptedAt": "2026-11-19T19:29:44.499Z",
+      "attemptedAt": "2026-11-20T02:14:23.348Z",
       "status": "ok"
     },
     "wasatch-national": {
