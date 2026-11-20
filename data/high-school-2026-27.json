@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-20T20:13:31.889Z",
+  "generatedAt": "2026-11-20T21:13:36.031Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1067,7 +1067,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-20T19:07:12.371Z"
+      "fetchedAt": "2026-11-20T21:13:36.031Z"
     },
     {
       "schoolId": "peddie-varsity",
@@ -1365,14 +1365,14 @@
   ],
   "sources": [
     {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "neprep",
+      "schoolId": "phelps-national",
+      "source": "official",
       "status": "ok",
-      "message": "exact Elmira prep squad; explicit Finals only",
-      "games": 30
+      "message": null,
+      "games": 9
     },
     {
-      "schoolId": "notre-dame-prep-ny",
+      "schoolId": "phelps-national",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -1407,8 +1407,8 @@
     "phelps-national:phelps-8519": {
       "startsAt": "2026-11-14 21:00:00",
       "sourceDate": "2026-11-14",
-      "lastCheckedAt": "2026-11-19T21:14:15.108Z",
-      "attempts": 13
+      "lastCheckedAt": "2026-11-20T21:13:36.031Z",
+      "attempts": 14
     },
     "link-hs-elite:4d1728a993b443be7b0012853d5f8dcc": {
       "startsAt": "2026-11-14 23:45:00",
@@ -1449,8 +1449,8 @@
     "phelps-national:phelps-8520": {
       "startsAt": "2026-11-18 21:00:00",
       "sourceDate": "2026-11-18",
-      "lastCheckedAt": "2026-11-19T21:14:15.108Z",
-      "attempts": 8
+      "lastCheckedAt": "2026-11-20T21:13:36.031Z",
+      "attempts": 9
     },
     "notre-dame-prep-ny:neprep-9534381": {
       "startsAt": "2026-11-18 12:00:00",
@@ -1497,7 +1497,7 @@
       "status": "ok"
     },
     "phelps-national": {
-      "attemptedAt": "2026-11-20T19:07:12.371Z",
+      "attemptedAt": "2026-11-20T21:13:36.031Z",
       "status": "ok"
     },
     "peddie-varsity": {
