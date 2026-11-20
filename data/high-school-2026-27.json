@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-19T23:52:06.898Z",
+  "generatedAt": "2026-11-20T00:14:18.165Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -756,7 +756,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-19T20:14:07.965Z"
+      "fetchedAt": "2026-11-20T00:14:18.165Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1367,14 +1367,14 @@
   ],
   "sources": [
     {
-      "schoolId": "link-hs-elite",
-      "source": "official",
+      "schoolId": "notre-dame-prep-ny",
+      "source": "neprep",
       "status": "ok",
-      "message": null,
-      "games": 14
+      "message": "exact Elmira prep squad; explicit Finals only",
+      "games": 30
     },
     {
-      "schoolId": "link-hs-elite",
+      "schoolId": "notre-dame-prep-ny",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -1457,8 +1457,8 @@
     "notre-dame-prep-ny:neprep-9534381": {
       "startsAt": "2026-11-18 12:00:00",
       "sourceDate": "2026-11-18",
-      "lastCheckedAt": "2026-11-19T18:14:09.562Z",
-      "attempts": 2
+      "lastCheckedAt": "2026-11-20T00:14:18.165Z",
+      "attempts": 3
     }
   },
   "schoolChecks": {
@@ -1479,7 +1479,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-19T20:14:07.965Z",
+      "attemptedAt": "2026-11-20T00:14:18.165Z",
       "status": "ok"
     },
     "link-hs-elite": {
