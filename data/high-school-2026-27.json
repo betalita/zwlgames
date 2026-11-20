@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-20T12:13:34.089Z",
+  "generatedAt": "2026-11-20T14:13:28.467Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -754,7 +754,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-20T12:13:34.089Z"
+      "fetchedAt": "2026-11-20T14:13:28.467Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1365,27 +1365,6 @@
   ],
   "sources": [
     {
-      "schoolId": "providence-tn-varsity",
-      "source": "official",
-      "status": "ok",
-      "message": null,
-      "games": 5
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "maxpreps",
-      "status": "ok",
-      "message": null,
-      "games": 2
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "verified-media",
-      "status": "pending",
-      "message": "no unambiguous current report",
-      "games": 0
-    },
-    {
       "schoolId": "notre-dame-prep-ny",
       "source": "neprep",
       "status": "ok",
@@ -1440,8 +1419,8 @@
     "notre-dame-prep-ny:neprep-9920300": {
       "startsAt": "2026-11-15 14:00:00",
       "sourceDate": "2026-11-15",
-      "lastCheckedAt": "2026-11-19T14:14:12.714Z",
-      "attempts": 11
+      "lastCheckedAt": "2026-11-20T14:13:28.467Z",
+      "attempts": 12
     },
     "link-hs-elite:20e308fef76f087a1c4eedd963c3e40d": {
       "startsAt": "2026-11-15 18:30:00",
@@ -1504,7 +1483,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-20T12:13:34.089Z",
+      "attemptedAt": "2026-11-20T14:13:28.467Z",
       "status": "ok"
     },
     "link-hs-elite": {
