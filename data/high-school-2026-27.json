@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-21T03:13:43.619Z",
+  "generatedAt": "2026-11-21T03:30:08.714Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -444,7 +444,8 @@
           "state": "post",
           "sourceUrl": "https://www.neprepbasketball.net/team/272487/games",
           "schoolScore": 65,
-          "opponentScore": 70
+          "opponentScore": 70,
+          "players": []
         },
         {
           "id": "neprep-9534434",
@@ -756,7 +757,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-21T03:13:43.619Z"
+      "fetchedAt": "2026-11-21T03:30:08.714Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1362,7 +1363,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-21T03:13:43.619Z"
+      "fetchedAt": "2026-11-21T03:30:08.714Z"
     }
   ],
   "sources": [
@@ -1562,14 +1563,14 @@
     "notre-dame-prep-ny:neprep-9967170": {
       "startsAt": "2026-11-21 00:30:00",
       "sourceDate": "2026-11-20",
-      "lastCheckedAt": "2026-11-21T03:13:43.619Z",
-      "attempts": 2
+      "lastCheckedAt": "2026-11-21T03:30:08.714Z",
+      "attempts": 3
     },
     "peddie-varsity:peddie-47020": {
       "startsAt": "2026-11-21 00:30:00",
       "sourceDate": "2026-11-20",
-      "lastCheckedAt": "2026-11-21T03:13:43.619Z",
-      "attempts": 2
+      "lastCheckedAt": "2026-11-21T03:30:08.714Z",
+      "attempts": 3
     }
   },
   "schoolChecks": {
@@ -1590,7 +1591,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-21T03:13:43.619Z",
+      "attemptedAt": "2026-11-21T03:30:08.714Z",
       "status": "ok"
     },
     "link-hs-elite": {
@@ -1602,7 +1603,7 @@
       "status": "ok"
     },
     "peddie-varsity": {
-      "attemptedAt": "2026-11-21T03:13:43.619Z",
+      "attemptedAt": "2026-11-21T03:30:08.714Z",
       "status": "ok"
     }
   }
