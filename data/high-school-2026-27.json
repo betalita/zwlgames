@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-21T18:41:11.002Z",
+  "generatedAt": "2026-11-21T19:05:43.798Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1047,8 +1047,10 @@
           "venue": "neutral",
           "timeZone": "America/New_York",
           "localTime": "12:00",
-          "state": "pre",
-          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+          "state": "post",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/games",
+          "schoolScore": 74,
+          "opponentScore": 68
         },
         {
           "id": "neprep-9159073",
@@ -1346,7 +1348,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-21T17:58:30.915Z"
+      "fetchedAt": "2026-11-21T19:05:43.798Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1969,35 +1971,35 @@
   ],
   "sources": [
     {
-      "schoolId": "link-hs-elite",
-      "source": "official",
+      "schoolId": "notre-dame-prep-ny",
+      "source": "neprep",
       "status": "ok",
-      "message": null,
-      "games": 14
+      "message": "exact Elmira prep squad; explicit Finals only",
+      "games": 30
     },
     {
-      "schoolId": "link-hs-elite",
+      "schoolId": "notre-dame-prep-ny",
       "source": "zhibo8-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "link-hs-elite",
+      "schoolId": "notre-dame-prep-ny",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "link-hs-elite",
+      "schoolId": "notre-dame-prep-ny",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "link-hs-elite",
+      "schoolId": "notre-dame-prep-ny",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -2130,6 +2132,12 @@
       "sourceDate": "2026-11-20",
       "lastCheckedAt": "2026-11-21T12:11:08.659Z",
       "attempts": 2
+    },
+    "notre-dame-prep-ny:neprep-9534434": {
+      "startsAt": "2026-11-21 17:00:00",
+      "sourceDate": "2026-11-21",
+      "lastCheckedAt": "2026-11-21T19:05:43.798Z",
+      "attempts": 1
     }
   },
   "schoolChecks": {
@@ -2150,7 +2158,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-21T17:58:30.915Z",
+      "attemptedAt": "2026-11-21T19:05:43.798Z",
       "status": "ok"
     },
     "link-hs-elite": {
