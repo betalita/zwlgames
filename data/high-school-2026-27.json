@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-21T06:53:45.814Z",
+  "generatedAt": "2026-11-21T08:43:43.108Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -757,7 +757,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-21T06:53:45.814Z"
+      "fetchedAt": "2026-11-21T08:43:43.108Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1363,7 +1363,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-21T06:53:45.814Z"
+      "fetchedAt": "2026-11-21T08:43:43.108Z"
     }
   ],
   "sources": [
@@ -1393,6 +1393,12 @@
       "source": "maxpreps-identity",
       "status": "warning",
       "message": "same-date opponent conflict: 2026-11-22; official Virginia Episcopal School (VA); supplement Virginia Episcopal School***; manual identity check required"
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps-identity",
+      "status": "warning",
+      "message": "same-date opponent conflict: 2026-12-04; official The Kiski School (PA); supplement Kiski School; manual identity check required"
     },
     {
       "schoolId": "peddie-varsity",
@@ -1453,7 +1459,7 @@
       "source": "maxpreps",
       "status": "ok",
       "message": null,
-      "games": 18
+      "games": 19
     },
     {
       "schoolId": "peddie-varsity",
@@ -1563,14 +1569,14 @@
     "notre-dame-prep-ny:neprep-9967170": {
       "startsAt": "2026-11-21 00:30:00",
       "sourceDate": "2026-11-20",
-      "lastCheckedAt": "2026-11-21T06:53:45.814Z",
-      "attempts": 5
+      "lastCheckedAt": "2026-11-21T08:43:43.108Z",
+      "attempts": 6
     },
     "peddie-varsity:peddie-47020": {
       "startsAt": "2026-11-21 00:30:00",
       "sourceDate": "2026-11-20",
-      "lastCheckedAt": "2026-11-21T06:53:45.814Z",
-      "attempts": 5
+      "lastCheckedAt": "2026-11-21T08:43:43.108Z",
+      "attempts": 6
     }
   },
   "schoolChecks": {
@@ -1591,7 +1597,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-21T06:53:45.814Z",
+      "attemptedAt": "2026-11-21T08:43:43.108Z",
       "status": "ok"
     },
     "link-hs-elite": {
@@ -1603,7 +1609,7 @@
       "status": "ok"
     },
     "peddie-varsity": {
-      "attemptedAt": "2026-11-21T06:53:45.814Z",
+      "attemptedAt": "2026-11-21T08:43:43.108Z",
       "status": "ok"
     }
   }
