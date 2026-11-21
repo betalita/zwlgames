@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-21T19:05:43.798Z",
+  "generatedAt": "2026-11-21T23:11:24.296Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -670,7 +670,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-21T17:58:30.915Z"
+      "fetchedAt": "2026-11-21T23:11:24.296Z"
     },
     {
       "schoolId": "veritas-national",
@@ -1971,35 +1971,49 @@
   ],
   "sources": [
     {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "neprep",
+      "schoolId": "providence-tn-varsity",
+      "source": "official",
       "status": "ok",
-      "message": "exact Elmira prep squad; explicit Finals only",
-      "games": 30
+      "message": null,
+      "games": 5
     },
     {
-      "schoolId": "notre-dame-prep-ny",
+      "schoolId": "providence-tn-varsity",
+      "source": "maxpreps",
+      "status": "ok",
+      "message": null,
+      "games": 3
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "ballfrog",
+      "status": "ok",
+      "message": "explicit finals on registered team; matches on existing fixtures",
+      "games": 3
+    },
+    {
+      "schoolId": "providence-tn-varsity",
       "source": "zhibo8-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "notre-dame-prep-ny",
+      "schoolId": "providence-tn-varsity",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "notre-dame-prep-ny",
+      "schoolId": "providence-tn-varsity",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "notre-dame-prep-ny",
+      "schoolId": "providence-tn-varsity",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -2094,8 +2108,8 @@
     "providence-tn-varsity:mp-d30610a9-5363-4343-b333-6862953cee65": {
       "startsAt": "2026-11-19 23:00:00",
       "sourceDate": "2026-11-19",
-      "lastCheckedAt": "2026-11-21T10:29:55.675Z",
-      "attempts": 1
+      "lastCheckedAt": "2026-11-21T23:11:24.296Z",
+      "attempts": 2
     },
     "phelps-national:phelps-8521": {
       "startsAt": "2026-11-20 22:10:00",
@@ -2150,7 +2164,7 @@
       "status": "ok"
     },
     "providence-tn-varsity": {
-      "attemptedAt": "2026-11-21T17:58:30.915Z",
+      "attemptedAt": "2026-11-21T23:11:24.296Z",
       "status": "ok"
     },
     "veritas-national": {
