@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-21T02:43:36.608Z",
+  "generatedAt": "2026-11-21T03:13:43.619Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -441,8 +441,10 @@
           "venue": "neutral",
           "timeZone": "America/New_York",
           "localTime": "19:30",
-          "state": "pre",
-          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+          "state": "post",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/games",
+          "schoolScore": 65,
+          "opponentScore": 70
         },
         {
           "id": "neprep-9534434",
@@ -754,7 +756,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-21T02:43:36.608Z"
+      "fetchedAt": "2026-11-21T03:13:43.619Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1360,7 +1362,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-21T02:43:36.608Z"
+      "fetchedAt": "2026-11-21T03:13:43.619Z"
     }
   ],
   "sources": [
@@ -1560,14 +1562,14 @@
     "notre-dame-prep-ny:neprep-9967170": {
       "startsAt": "2026-11-21 00:30:00",
       "sourceDate": "2026-11-20",
-      "lastCheckedAt": "2026-11-21T02:43:36.608Z",
-      "attempts": 1
+      "lastCheckedAt": "2026-11-21T03:13:43.619Z",
+      "attempts": 2
     },
     "peddie-varsity:peddie-47020": {
       "startsAt": "2026-11-21 00:30:00",
       "sourceDate": "2026-11-20",
-      "lastCheckedAt": "2026-11-21T02:43:36.608Z",
-      "attempts": 1
+      "lastCheckedAt": "2026-11-21T03:13:43.619Z",
+      "attempts": 2
     }
   },
   "schoolChecks": {
@@ -1588,7 +1590,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-21T02:43:36.608Z",
+      "attemptedAt": "2026-11-21T03:13:43.619Z",
       "status": "ok"
     },
     "link-hs-elite": {
@@ -1600,7 +1602,7 @@
       "status": "ok"
     },
     "peddie-varsity": {
-      "attemptedAt": "2026-11-21T02:43:36.608Z",
+      "attemptedAt": "2026-11-21T03:13:43.619Z",
       "status": "ok"
     }
   }
