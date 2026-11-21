@@ -3,7 +3,8 @@
 const { createHash } = require('node:crypto');
 const { chinaDate } = require('./transform');
 const { LEAGUE, SEASON, SCHOOLS, HIGH_SCHOOL_PLAYERS } = require('./high-school-roster');
-const { isMediaUrl, validateMediaRecord } = require('./high-school-media-evidence');
+const { isHupuUrl, isMediaUrl, validateMediaRecord } = require('./high-school-media-evidence');
+const { isNikeSource } = require('./high-school-nike');
 
 const extraHosts = ['nikeeyblscholastic.com', 'grindsession.com', 'grindsession.sportstrack.app',
   'www.maxpreps.com', 'legitgm.com', 'tssaasports.com', 'www.mshsaa.org', 'www.bellavistacollegeprep.com', 'www.neprepbasketball.net'];
@@ -34,17 +35,33 @@ const reviewedMediaResults = new Map([
   }],
 ]);
 
+const nikeBoxScoreFixtures = new Map([
+  ['https://scholastic.nikeeyb.com/api/current/games/cd229bd4-7c02-5a2c-bfc9-1b09fb68bf65', {
+    schoolId: 'wasatch-national', id: 'seed2027-wasatch-faith-family', date: '2026-11-20',
+    opponent: 'Faith Family', opponentSchoolId: undefined, state: 'post',
+  }],
+  ['https://scholastic.nikeeyb.com/api/current/games/21fbc22e-5178-5442-b95b-e30e4b28ee05', {
+    schoolId: 'veritas-national', id: 'seed2027-veritas-bella-vista', date: '2026-11-20',
+    opponent: 'CIA Bella Vista', opponentSchoolId: 'bella-vista', state: 'post',
+  }],
+]);
+
 function reviewedResult(url) {
   return reviewedPrimaryResults.get(url) || reviewedMediaResults.get(url);
 }
 
-function sourceUrl(value, schoolId, allowMedia = false) {
+function sourceUrl(value, schoolId, allowMedia = false, record) {
   let url;
   try { url = new URL(value); } catch { throw new Error('invalid high school source URL'); }
   const hosts = [...Object.values(SCHOOLS).map(school => new URL(school.url).hostname), ...extraHosts];
   const isProvidenceFeed = schoolId === 'providence-tn-varsity' && url.href === BALLFROG_URL;
+  const nikeFixture = nikeBoxScoreFixtures.get(url.href);
+  const isNikeBoxScore = nikeFixture && record &&
+    Object.entries(nikeFixture).every(([field, expected]) => record[field] === expected);
+  const isNike = nikeFixture ? isNikeBoxScore : isNikeSource(url.href, record);
   if (url.protocol !== 'https:' || url.username || url.password || url.port && url.port !== '443' ||
-      (!hosts.includes(url.hostname) && !isProvidenceFeed && verifiedMediaSources.get(url.href) !== schoolId &&
+      (!hosts.includes(url.hostname) && !isProvidenceFeed && !isNike &&
+       verifiedMediaSources.get(url.href) !== schoolId &&
        reviewedResult(url.href)?.schoolId !== schoolId && !(allowMedia && isMediaUrl(url.href))) ||
       url.href.length > 500) throw new Error('unapproved high school source URL');
   return url.href;
@@ -109,12 +126,12 @@ function normalizeRecord(record) {
     throw new Error('invalid opponent school');
   if (typeof record.id !== 'string' || !/^[a-zA-Z0-9_-]{1,48}$/.test(record.id)) throw new Error('invalid stable game id');
   if (typeof record.opponent !== 'string' || !record.opponent.trim() || record.opponent.length > 120 || /[<>]/.test(record.opponent)) throw new Error('invalid opponent');
-  const source = sourceUrl(record.sourceUrl, record.schoolId, Boolean(record.evidence));
+  const source = sourceUrl(record.sourceUrl, record.schoolId, Boolean(record.evidence), record);
   const reviewed = reviewedResult(source);
   if (reviewed && Object.entries(reviewed).some(([key,value]) => record[key] !== value))
     throw new Error('reviewed result mismatch');
   const reviewedMedia = reviewedMediaResults.has(source);
-  if (reviewedMedia && record.players?.length)
+  if (reviewedMedia && record.players?.length && !(isHupuUrl(source) && record.evidence?.sourceUrl === source))
     throw new Error('reviewed media result accepts scores only');
   if (reviewed && (record.players || []).some(row => row.stats && Object.keys(row.stats).some(key =>
     !record.evidence || !isMediaUrl(row.statSources?.[key]) || row.statSources[key] !== record.evidence.sourceUrl)))
@@ -149,8 +166,9 @@ function normalizeRecord(record) {
       if(row.statSources){
         if(typeof row.statSources!=='object'||Array.isArray(row.statSources)||Object.keys(row.statSources).some(k=>!Object.hasOwn(stats,k)))throw Error('invalid statistic provenance');
         statSources=Object.fromEntries(Object.entries(row.statSources).map(([key,url])=>{
-          const approved=sourceUrl(url,record.schoolId,Boolean(record.evidence));
-          if(reviewedResult(approved))throw new Error('score-only source cannot prove player statistics');
+          const approved=sourceUrl(url,record.schoolId,Boolean(record.evidence),record);
+          if(reviewedResult(approved) && !(approved===source && isHupuUrl(approved) && record.evidence?.sourceUrl===approved))
+            throw new Error('score-only source cannot prove player statistics');
           return [key,approved];
         }));
       }

@@ -12,8 +12,9 @@ const {HIGH_SCHOOL_PLAYERS}=require('./high-school-lib/high-school-roster');
 const {normalizeRecord}=require('./high-school-lib/high-school-records');
 const {recoverHighSchoolDeadline,highSchoolTiming}=require('./high-school-lib/high-school-postgame');
 const {inspectMediaResult,isMediaUrl}=require('./high-school-lib/high-school-media-evidence');
-const {LISTING,parseMediaListing,parseMediaPage}=require('./high-school-media.cjs');
+const {LISTING,HUPU_LISTINGS,parseMediaListing,parseMediaPage}=require('./high-school-media.cjs');
 const {BALLFROG_URL,prepUrl,parseBallfrog,parsePrepFinals,applyFinals}=require('./high-school-lib/high-school-result-sources');
+const {NIKE_FIXTURES,NIKE_BOX_PREFIX,parseNikeFixtures,collectNike}=require('./high-school-lib/high-school-nike');
 const FILE='data/high-school-2026-27.json';
 const day=value=>new Date(value).toISOString().slice(0,10);
 const same=(a,b)=>a.id===b.id||a.schoolId===b.schoolId&&a.date===b.date&&a.opponent.toLowerCase()===b.opponent.toLowerCase();
@@ -32,7 +33,7 @@ function dueSchools(previous,now=new Date()){
  }
  return due;
 }
-function publishSchool(previous,current,now){
+function publishSchool(previous,current,now,onConflict){
  if(!current){
   if(!previous||previous.mode!=='verified-seed'&&now.getTime()-Date.parse(previous.fetchedAt)>72*3600000)return null;
   return previous;
@@ -44,13 +45,21 @@ function publishSchool(previous,current,now){
   if(!old||old.state!=='post')return row;
   if(row.state==='pre')return old;
   const officialUpgrade=isMediaUrl(old.sourceUrl)&&!isMediaUrl(row.sourceUrl)&&row.date===old.date&&row.schoolId===old.schoolId&&row.opponent===old.opponent;
-  if(row.schoolScore!==old.schoolScore||row.opponentScore!==old.opponentScore){if(!officialUpgrade)throw new Error('confirmed final score conflict');return {...row,evidence:undefined};}
-  if(officialUpgrade)return {...row,evidence:undefined};
+  const conflict=message=>{
+   if(!onConflict)throw new Error(message);
+   onConflict(row,message);
+   return old;
+  };
+  if(row.schoolScore!==old.schoolScore||row.opponentScore!==old.opponentScore){
+   if(!officialUpgrade)return conflict('confirmed final score conflict');
+   return {...row,evidence:undefined};
+  }
+  if(officialUpgrade)return row;
   const players=new Map((old.players||[]).map(p=>[p.playerId,p]));
   for(const player of row.players||[]){
    const prior=players.get(player.playerId);
-   if(prior&&(prior.stats&&player.dnp||prior.dnp&&player.stats))throw new Error('DNP/ready statistics conflict');
-   if(prior?.stats&&player.stats&&Object.entries(player.stats).some(([k,v])=>prior.stats[k]!=null&&String(prior.stats[k])!==String(v)))throw new Error('confirmed player statistics conflict');
+   if(prior&&(prior.stats&&player.dnp||prior.dnp&&player.stats))return conflict('DNP/ready statistics conflict');
+   if(prior?.stats&&player.stats&&Object.entries(player.stats).some(([k,v])=>prior.stats[k]!=null&&String(prior.stats[k])!==String(v)))return conflict('confirmed player statistics conflict');
    players.set(player.playerId,prior?.stats&&player.stats?{...prior,...player,stats:{...prior.stats,...player.stats}}:player);
   }
   return {...row,players:[...players.values()]};
@@ -62,7 +71,7 @@ function publishSchool(previous,current,now){
  return result;
 }
 async function defaultFetch(url){
- const contentTypes=url===BALLFROG_URL?['application/json']:['text/html','application/pdf','text/calendar'];
+ const contentTypes=url===BALLFROG_URL||url===NIKE_FIXTURES||url.startsWith(NIKE_BOX_PREFIX)?['application/json']:['text/html','application/pdf','text/calendar'];
  const result=await fetchOfficialSource(url,new URL(url).hostname,{timeoutMs:12000,maxBytes:3*1024*1024,contentTypes});
  return result.body.toString('utf8');
 }
@@ -78,6 +87,9 @@ async function collect({now=new Date(),previous=null,fetchText=defaultFetch,post
  const lastCheck=schoolId=>Math.min(...[...(due.get(schoolId)||[])].map(key=>Date.parse(previous?.postgameChecks?.[key]?.lastCheckedAt)||0));
  const selected=new Set([...due.keys()].filter(id=>!schoolIds||schoolIds.includes(id)).sort((a,b)=>lastCheck(a)-lastCheck(b)).slice(0,3));
  let mediaReads=0;
+ let nikeFixtures;
+ const previousNikeRecords=(previous?.schools||[]).flatMap(entry=>entry.games);
+
  const postgameChecks={...(previous?.postgameChecks||{})};
  const schoolChecks=Object.fromEntries(Object.entries(previous?.schoolChecks||{}).filter(([id,check])=>
   Object.hasOwn(SCHOOLS,id)&&now.getTime()-Date.parse(check.attemptedAt)<72*3600000));
@@ -148,6 +160,16 @@ async function collect({now=new Date(),previous=null,fetchText=defaultFetch,post
     report('legitgm',matched?'ok':'pending',matched?null:'no verified current matchup/player statistics found',matched);
    }catch(error){report('legitgm','error',error.message);}
   }
+  if(LEGIT_TEAMS[schoolId]&&(!postgameOnly||due.has(schoolId))){
+   try{
+    const input=await read(NIKE_FIXTURES);
+    nikeFixtures ||= parseNikeFixtures(input);
+    records=await collectNike(schoolId,records||old?.games||[],previousNikeRecords,nikeFixtures,read,
+     {now,due:postgameOnly?due.get(schoolId):undefined,onWarning:message=>report('nike-eybl','warning',message)});
+    const count=records.filter(row=>row.sourceNativeId?.startsWith('nike-')).length;
+    report('nike-eybl',count?'ok':'pending',null,count);
+   }catch(error){report('nike-eybl','error',error.message);}
+  }
   // Media may only supplement an already known exact fixture. A single cached
   // listing is shared across every due school; only followed articles are read.
   if(mediaDue.has(schoolId)){
@@ -155,7 +177,19 @@ async function collect({now=new Date(),previous=null,fetchText=defaultFetch,post
     const baseRecords=records?.length?records:old?.games;
     if(baseRecords?.length){
      const members=HIGH_SCHOOL_PLAYERS.filter(p=>p.schoolId===schoolId);
-     const allLinks=parseMediaListing(await read(LISTING),members.flatMap(p=>[p.name,p.englishName,...(p.aliases||[])]));
+     const names=members.flatMap(p=>[p.name,p.englishName,...(p.aliases||[])]);
+     const listings=await Promise.allSettled([LISTING,...HUPU_LISTINGS].map(async listing=>({listing,
+      links:parseMediaListing(await read(listing),names,listing)})));
+     const hupuLinks=[],zhiboLinks=[];
+     for(const [index,result] of listings.entries()){
+      const source=index===0?'zhibo8-listing':'hupu-listing';
+      if(result.status==='rejected'){report(source,'error',result.reason.message);continue;}
+      const links=index===0?zhiboLinks:hupuLinks;
+      for(const link of result.value.links)if(!links.some(prior=>prior.url===link.url))links.push(link);
+      report(source,result.value.links.length?'ok':'pending',null,result.value.links.length);
+     }
+     const allLinks=Array.from({length:Math.max(hupuLinks.length,zhiboLinks.length)},(_,index)=>
+      [hupuLinks[index],zhiboLinks[index]].filter(Boolean)).flat();
      const attempts=Math.min(...[...mediaDue.get(schoolId)].map(key=>previous?.postgameChecks?.[key]?.attempts||0));
      const quota=postgameOnly?2:1;
      const offset=allLinks.length?(attempts*quota)%allLinks.length:0;
@@ -193,7 +227,8 @@ async function collect({now=new Date(),previous=null,fetchText=defaultFetch,post
   }
   if(accessed.has(schoolId))schoolChecks[schoolId]={attemptedAt:now.toISOString(),status:records?.length?'ok':'source_error'};
   try{
-   const entry=publishSchool(old,records?.length?{schoolId,games:records}:null,now);
+   const entry=publishSchool(old,records?.length?{schoolId,games:records}:null,now,(row,message)=>
+    sources.push({schoolId,source:'publication',status:'warning',reason:'source_conflict',gameId:row.id,message}));
    if(entry)schools.push(entry);
   }catch(error){report('publication','error',error.message);const entry=publishSchool(old,null,now);if(entry)schools.push(entry);}
   for(const record of old?.games||[])if(due.get(schoolId)?.has(checkKey(record))){
