@@ -5,7 +5,7 @@ const {SEEDS}=require('./high-school-lib/high-school-schedule-seeds');
 const {parseSchoolSchedule}=require('./high-school-lib/high-school-sources');
 const {validateSnapshot,SEED_VERIFIED_AT}=require('./high-school-lib/high-school-snapshot');
 const {fetchOfficialSource}=require('./high-school-lib/official-source-fetch');
-const {MAXPREPS,LEGIT_TEAMS,parseMaxPreps,parseLegitBox,mergeSchedules}=require('./high-school-lib/high-school-external');
+const {MAXPREPS,WASATCH_MAXPREPS,LEGIT_TEAMS,parseMaxPreps,parseLegitBox,mergeSchedules}=require('./high-school-lib/high-school-external');
 const {collectBellaVista}=require('./high-school-lib/high-school-bella-vista');
 const {collectNotreDame}=require('./high-school-lib/high-school-neprep');
 const {HIGH_SCHOOL_PLAYERS}=require('./high-school-lib/high-school-roster');
@@ -13,6 +13,7 @@ const {normalizeRecord}=require('./high-school-lib/high-school-records');
 const {recoverHighSchoolDeadline,highSchoolTiming}=require('./high-school-lib/high-school-postgame');
 const {inspectMediaResult,isMediaUrl}=require('./high-school-lib/high-school-media-evidence');
 const {LISTING,parseMediaListing,parseMediaPage}=require('./high-school-media.cjs');
+const {BALLFROG_URL,prepUrl,parseBallfrog,parsePrepFinals,applyFinals}=require('./high-school-lib/high-school-result-sources');
 const FILE='data/high-school-2026-27.json';
 const day=value=>new Date(value).toISOString().slice(0,10);
 const same=(a,b)=>a.id===b.id||a.schoolId===b.schoolId&&a.date===b.date&&a.opponent.toLowerCase()===b.opponent.toLowerCase();
@@ -61,8 +62,8 @@ function publishSchool(previous,current,now){
  return result;
 }
 async function defaultFetch(url){
- const result=await fetchOfficialSource(url,new URL(url).hostname,{timeoutMs:12000,maxBytes:3*1024*1024});
- if(!['text/html','application/pdf','text/calendar'].includes(result.contentType))throw new Error('source content type');
+ const contentTypes=url===BALLFROG_URL?['application/json']:['text/html','application/pdf','text/calendar'];
+ const result=await fetchOfficialSource(url,new URL(url).hostname,{timeoutMs:12000,maxBytes:3*1024*1024,contentTypes});
  return result.body.toString('utf8');
 }
 async function collect({now=new Date(),previous=null,fetchText=defaultFetch,postgameOnly=false,schoolIds}={}){
@@ -112,6 +113,22 @@ async function collect({now=new Date(),previous=null,fetchText=defaultFetch,post
     }
     else report('maxpreps','pending','no individually dated current matchups',0);
    }catch(error){report('maxpreps','error',error.message);}
+  }
+  // Supplements only confirm finals for a unique, previously identified fixture.
+  const isProvidence=schoolId==='providence-tn-varsity';
+  const isWasatch=schoolId==='wasatch-national';
+  const scoreSource=isProvidence?BALLFROG_URL:isWasatch?WASATCH_MAXPREPS.url:prepUrl(schoolId);
+  const scoreBase=records?.length?records:old?.games;
+  if(scoreSource&&scoreBase?.some(row=>row.schoolId===schoolId&&row.state==='pre'&&!row.scheduleStatus&&row.date<=day(now))){
+   const provider=isProvidence?'ballfrog':isWasatch?'maxpreps-finals':'neprep-finals';
+   try{
+    const body=await read(scoreSource);
+    const finals=isProvidence?parseBallfrog(body):isWasatch?
+     parseMaxPreps(schoolId,body,scoreSource).filter(row=>row.state==='post'):parsePrepFinals(schoolId,body);
+    const confirmed=applyFinals(schoolId,scoreBase,finals);
+    if(confirmed.updated)records=confirmed.games;
+    report(provider,'ok','explicit finals on registered team; matches on existing fixtures',confirmed.updated);
+   }catch(error){report(provider,'error',error.message);}
   }
   // Only follow links from the registered team page. Bound work and require a
   // current known matchup, exact player name, final scores and consistent box.

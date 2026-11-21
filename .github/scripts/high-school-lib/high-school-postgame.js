@@ -23,8 +23,10 @@ function schedule(game){
  if(!Number.isFinite(start))return null;
  if(game.time_known!==true){
   if(!/^\d{4}-\d\d-\d\d$/.test(game.source_date||''))return null;
-  const first=Date.parse(game.source_date+'T00:00:00Z')+36*HOUR;
-  return {first,end:first+169*HOUR,checks:[0,6,12,24,48,72,96,120,144,168].map(hour=>first+hour*HOUR)};
+  // Read sources late on the game date even on the US West Coast. An
+  // unknown tipoff can schedule a source check but cannot establish a final.
+  const first=Date.parse(game.source_date+'T00:00:00Z')+29*HOUR;
+  return {first,end:first+169*HOUR,checks:[0,3,9,15,24,48,72,96,120,144,168].map(hour=>first+hour*HOUR)};
  }
  return {first:start+120*MINUTE,end:start+169*HOUR,checks:CHECK_MINUTES.map(minutes=>start+minutes*MINUTE)};
 }
@@ -41,11 +43,11 @@ function recoverHighSchoolDeadline(game,now=new Date()){
  const slots=schedule(game),current=now.getTime();
  if(!slots||current>=slots.end)return null;
  const saved=timestamp(game.next_sync_at);
- if(Number.isFinite(saved)&&saved>=slots.first&&saved<slots.end){
-  const last=timestamp(game.last_checked_at);
-  if(!Number.isFinite(last)||saved>last)return new Date(saved);
- }
  const last=timestamp(game.last_checked_at);
+ if(Number.isFinite(saved)&&saved>=slots.first&&saved<slots.end){
+  if(Number.isFinite(last)&&saved>last||!Number.isFinite(last)&&
+    (game.time_known===true||saved===slots.first||saved<=current))return new Date(saved);
+ }
  if(!Number.isFinite(last))return new Date(Math.max(current,slots.first));
  const next=slots.checks.find(at=>at>last);
  return next==null?null:new Date(Math.max(current,next));

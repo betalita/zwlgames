@@ -1,5 +1,6 @@
 'use strict';
 const {SEASON,HIGH_SCHOOL_PLAYERS}=require('./high-school-roster');
+const WASATCH_MAXPREPS={name:'Wasatch Academy',url:'https://www.maxpreps.com/ut/mt-pleasant/wasatch-academy-tigers/basketball/schedule/'};
 const MAXPREPS={
   'providence-tn-varsity':{name:'Providence Christian Academy',url:'https://www.maxpreps.com/tn/murfreesboro/providence-christian-academy-lions/basketball/schedule/'},
   'veritas-national':{name:'Veritas Academy',url:'https://www.maxpreps.com/ca/ontario/veritas-academy-titans/basketball/schedule/'},
@@ -15,7 +16,7 @@ function plain(value){return String(value).replace(/<script\b[^>]*>[\s\S]*?<\/sc
 const key=value=>plain(value).toLowerCase().replace(/[^a-z0-9]/g,'');
 const cells=row=>[...row.matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)].map(m=>plain(m[1]));
 function parseMaxPreps(schoolId,html,sourceUrl){
-  const mapping=MAXPREPS[schoolId];if(!mapping)throw new Error('unverified MaxPreps school/squad mapping');
+  const mapping=schoolId==='wasatch-national'?WASATCH_MAXPREPS:MAXPREPS[schoolId];if(!mapping)throw new Error('unverified MaxPreps school/squad mapping');
   let context;
   try{context=JSON.parse(/<script\b[^>]*id=["']__NEXT_DATA__["'][^>]*>([\s\S]*?)<\/script>/i.exec(html)[1]).props.pageProps.teamContext.data;}
   catch{throw new Error('MaxPreps identity payload missing');}
@@ -97,4 +98,4 @@ function parseLegitBox(html,record,sourceUrl){
  }
  return {...record,evidence:undefined,bootstrap:false,state:'post',schoolScore:scores[side],opponentScore:scores[1-side],players,sourceUrl};
 }
-module.exports={MAXPREPS,LEGIT_TEAMS,parseMaxPreps,parseLegitBox,mergeSchedules,plain};
+module.exports={MAXPREPS,WASATCH_MAXPREPS,LEGIT_TEAMS,parseMaxPreps,parseLegitBox,mergeSchedules,plain};

@@ -9,7 +9,7 @@ function checkedUrl(value, host) {
 }
 
 async function fetchOfficialSource(value, allowedHost, { fetchImpl = fetch, timeoutMs = 10000,
-  maxBytes = 2 * 1024 * 1024 } = {}) {
+  maxBytes = 2 * 1024 * 1024, contentTypes = ['text/html', 'text/plain', 'application/pdf', 'text/calendar'] } = {}) {
   let url = checkedUrl(value, allowedHost);
   const controller = new AbortController();
   const started = Date.now();
@@ -30,7 +30,7 @@ async function fetchOfficialSource(value, allowedHost, { fetchImpl = fetch, time
       if (!response.ok) throw new Error(`official source HTTP ${response.status}`);
       phase = 'body';
       const contentType = (response.headers.get('content-type') || '').split(';')[0].toLowerCase();
-      if (!['text/html', 'text/plain', 'application/pdf', 'text/calendar'].includes(contentType))
+      if (!contentTypes.includes(contentType))
         throw new Error(`unsupported official source content type: ${contentType}`);
       const declared = Number(response.headers.get('content-length'));
       if (Number.isFinite(declared) && declared > maxBytes) throw new Error('official source size limit exceeded');

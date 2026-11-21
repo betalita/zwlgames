@@ -14,11 +14,24 @@ function dateOf(text){
  if(!month)return null;
  return `${m[3]||(month>=7?SEASON-1:SEASON)}-${String(month).padStart(2,'0')}-${m[2].padStart(2,'0')}`;
 }
-function verify(html){
- if(!/<h1\b[^>]*>\s*Notre Dame Prep \(NY\)\s*<\/h1>/i.test(html)||
-  !/href="\/team\/272487"/.test(html)||!/>\s*2026-2027\s*</.test(html))
+function verifyTeam(html,title,id){
+ const heading=plain(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i.exec(html)?.[1]||'');
+ if(heading!==title||!html.includes('href="/team/'+id+'"')||!/>\s*2026-2027\s*</.test(html))
   throw new Error('NEPrep team/season not verified');
 }
+function readGameCards(html){
+ const cards=[];
+ for(const box of html.split(/<div\b[^>]*class="box"[^>]*>/i).slice(1)){
+  const heads=[...box.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)].map(m=>plain(m[1]));
+  const opponent=plain(box.match(/<h2\b[^>]*>([\s\S]*?)<\/h2>/i)?.[1]||'').replace(/^(?:vs\.|@)\s*/i,'');
+  const date=dateOf(heads.join(' '));
+  if(!date||!opponent)continue;
+  cards.push({date,opponent,final:/<p\b[^>]*>\s*Final\s*<\/p>/i.test(box),
+   score:plain(box.match(/<h3\b[^>]*>([\s\S]*?)<\/h3>/i)?.[1]||'')});
+ }
+ return cards;
+}
+function verify(html){verifyTeam(html,'Notre Dame Prep (NY)',272487);}
 function parseNotreDame(scheduleHtml,gamesHtml){
  verify(scheduleHtml);verify(gamesHtml);
  const games=[];
@@ -56,20 +69,17 @@ function parseNotreDame(scheduleHtml,gamesHtml){
   if(!matchups.has(k))matchups.set(k,[]);
   matchups.get(k).push(game);
  }
- for(const box of gamesHtml.split(/<div\b[^>]*class="box"[^>]*>/i).slice(1)){
-  const heads=[...box.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)].map(m=>plain(m[1]));
-  const opponent=plain(box.match(/<h2\b[^>]*>([\s\S]*?)<\/h2>/i)?.[1]||'').replace(/^(?:vs\.|@)\s*/i,'');
-  const date=dateOf(heads.join(' '));if(!date||!opponent)continue;cards++;
+ for(const card of readGameCards(gamesHtml)){
+  const {date,opponent}=card;cards++;
   if(/^(?:TBA|TBD)$/i.test(opponent))continue;
   const k=key(date,opponent),match=matchups.get(k)||[];
   const count=(seen.get(k)||0)+1;
   if(!match.length||count>match.length)throw new Error('NEPrep results matchup ambiguous');
   seen.set(k,count);
-  if(!/<p\b[^>]*>\s*Final\s*<\/p>/i.test(box))continue;
+  if(!card.final)continue;
   // Never assign a Final to one of several native fixtures by card order.
   if(match.length!==1)throw new Error('NEPrep results matchup ambiguous');
-  const score=plain(box.match(/<h3\b[^>]*>([\s\S]*?)<\/h3>/i)?.[1]||'');
-  const m=/^(\d{1,3})\s*[-–]\s*(\d{1,3})\s*\(([WL])\)$/.exec(score);
+  const m=/^(\d{1,3})\s*[-–]\s*(\d{1,3})\s*\(([WL])\)$/.exec(card.score);
   if(!m||Number(m[1])===Number(m[2])||(m[3]==='W')!==(Number(m[1])>Number(m[2])))
    throw new Error('NEPrep final disagrees with win/loss');
   finals.set(match[0].id,{state:'post',schoolScore:Number(m[1]),opponentScore:Number(m[2]),sourceUrl:ROOT+'/games'});
@@ -83,4 +93,4 @@ async function collectNotreDame(read,report){
  report('neprep','ok','exact Elmira prep squad; explicit Finals only',records.length);
  return records;
 }
-module.exports={parseNotreDame,collectNotreDame};
+module.exports={parseNotreDame,collectNotreDame,readGameCards,verifyTeam};

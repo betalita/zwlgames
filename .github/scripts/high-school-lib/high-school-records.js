@@ -7,6 +7,7 @@ const { isMediaUrl, validateMediaRecord } = require('./high-school-media-evidenc
 
 const extraHosts = ['nikeeyblscholastic.com', 'grindsession.com', 'grindsession.sportstrack.app',
   'www.maxpreps.com', 'legitgm.com', 'tssaasports.com', 'www.mshsaa.org', 'www.bellavistacollegeprep.com', 'www.neprepbasketball.net'];
+const BALLFROG_URL = 'https://api.v2.ballfrog.com/api/v1/teams/12146/events?school_uuid=543f9cc1-5486-442f-8de3-e9632883c6f4&event_types=game&limit=100';
 // Reviewed media evidence is approved per article and school, not per domain.
 const verifiedMediaSources = new Map([
   ['https://m.zhibo8.com/news/web/nba/2026-11-13/6af68b22f283fnative.htm', 'bella-vista'],
@@ -21,12 +22,30 @@ const reviewedPrimaryResults = new Map([
   }],
 ]);
 
+// These reports were reviewed for the final score and the existing fixture identity.
+const reviewedMediaResults = new Map([
+  ['https://m.zhibo8.com/news/web/nba/2026-11-21/6b010986da765native.htm', {
+    schoolId: 'wasatch-national', id: 'seed2027-wasatch-faith-family', date: '2026-11-20',
+    opponent: 'Faith Family', opponentSchoolId: undefined, state: 'post', schoolScore: 58, opponentScore: 64,
+  }],
+  ['https://bbs.hupu.com/644104461.html', {
+    schoolId: 'veritas-national', id: 'seed2027-veritas-bella-vista', date: '2026-11-20',
+    opponent: 'CIA Bella Vista', opponentSchoolId: 'bella-vista', state: 'post', schoolScore: 51, opponentScore: 64,
+  }],
+]);
+
+function reviewedResult(url) {
+  return reviewedPrimaryResults.get(url) || reviewedMediaResults.get(url);
+}
+
 function sourceUrl(value, schoolId, allowMedia = false) {
   let url;
   try { url = new URL(value); } catch { throw new Error('invalid high school source URL'); }
   const hosts = [...Object.values(SCHOOLS).map(school => new URL(school.url).hostname), ...extraHosts];
+  const isProvidenceFeed = schoolId === 'providence-tn-varsity' && url.href === BALLFROG_URL;
   if (url.protocol !== 'https:' || url.username || url.password || url.port && url.port !== '443' ||
-      (!hosts.includes(url.hostname) && verifiedMediaSources.get(url.href) !== schoolId && reviewedPrimaryResults.get(url.href)?.schoolId !== schoolId && !(allowMedia && isMediaUrl(url.href))) ||
+      (!hosts.includes(url.hostname) && !isProvidenceFeed && verifiedMediaSources.get(url.href) !== schoolId &&
+       reviewedResult(url.href)?.schoolId !== schoolId && !(allowMedia && isMediaUrl(url.href))) ||
       url.href.length > 500) throw new Error('unapproved high school source URL');
   return url.href;
 }
@@ -91,9 +110,12 @@ function normalizeRecord(record) {
   if (typeof record.id !== 'string' || !/^[a-zA-Z0-9_-]{1,48}$/.test(record.id)) throw new Error('invalid stable game id');
   if (typeof record.opponent !== 'string' || !record.opponent.trim() || record.opponent.length > 120 || /[<>]/.test(record.opponent)) throw new Error('invalid opponent');
   const source = sourceUrl(record.sourceUrl, record.schoolId, Boolean(record.evidence));
-  const reviewed = reviewedPrimaryResults.get(source);
+  const reviewed = reviewedResult(source);
   if (reviewed && Object.entries(reviewed).some(([key,value]) => record[key] !== value))
-    throw new Error('reviewed primary result mismatch');
+    throw new Error('reviewed result mismatch');
+  const reviewedMedia = reviewedMediaResults.has(source);
+  if (reviewedMedia && record.players?.length)
+    throw new Error('reviewed media result accepts scores only');
   if (reviewed && (record.players || []).some(row => row.stats && Object.keys(row.stats).some(key =>
     !record.evidence || !isMediaUrl(row.statSources?.[key]) || row.statSources[key] !== record.evidence.sourceUrl)))
     throw new Error('reviewed result statistics require separate media evidence');
@@ -128,7 +150,7 @@ function normalizeRecord(record) {
         if(typeof row.statSources!=='object'||Array.isArray(row.statSources)||Object.keys(row.statSources).some(k=>!Object.hasOwn(stats,k)))throw Error('invalid statistic provenance');
         statSources=Object.fromEntries(Object.entries(row.statSources).map(([key,url])=>{
           const approved=sourceUrl(url,record.schoolId,Boolean(record.evidence));
-          if(reviewedPrimaryResults.has(approved))throw new Error('score-only source cannot prove player statistics');
+          if(reviewedResult(approved))throw new Error('score-only source cannot prove player statistics');
           return [key,approved];
         }));
       }
@@ -140,7 +162,7 @@ function normalizeRecord(record) {
     sourceSchoolId: record.schoolId, neutralSite: record.venue === 'neutral', homeAwayKnown: record.venue !== 'unknown',
     sourceObservedId: record.id,
     sourceNativeId: record.sourceNativeId || null, scheduleStatus: record.scheduleStatus || null,
-    sourceUrl: source, dataSource: isMediaUrl(source) ? 'verified-media-import' : 'high-school-official', liveSupported: false,
+    sourceUrl: source, dataSource: reviewedMedia || isMediaUrl(source) ? 'verified-media-import' : 'high-school-official', liveSupported: false,
     venue: record.venue, location: record.location || (record.venue === 'home' ? SCHOOLS[record.schoolId].location : null), timeZone: time.timeZone };
   const school = { id: record.schoolId, name: SCHOOLS[record.schoolId].name, logo: SCHOOLS[record.schoolId].logo, ...metadata,
     score: isFinal ? String(record.schoolScore) : null, winner: isFinal ? record.schoolScore > record.opponentScore : null };
@@ -159,4 +181,4 @@ function normalizeRecord(record) {
     ...(record.evidence?{evidence:record.evidence}:{} ) };
 }
 
-module.exports = { normalizeRecord, gameTime, sourceUrl, statsMap };
+module.exports = { normalizeRecord, gameTime, sourceUrl, statsMap, BALLFROG_URL };
