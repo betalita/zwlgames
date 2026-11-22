@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-22T21:27:10.408Z",
+  "generatedAt": "2026-11-22T22:27:06.407Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1671,7 +1671,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-22T21:27:10.408Z"
+      "fetchedAt": "2026-11-22T22:27:06.407Z"
     },
     {
       "schoolId": "peddie-varsity",
@@ -2079,8 +2079,8 @@
     "phelps-national:phelps-8521": {
       "startsAt": "2026-11-20 22:10:00",
       "sourceDate": "2026-11-20",
-      "lastCheckedAt": "2026-11-21T23:46:36.029Z",
-      "attempts": 8
+      "lastCheckedAt": "2026-11-22T22:27:06.407Z",
+      "attempts": 9
     },
     "notre-dame-prep-ny:neprep-9967170": {
       "startsAt": "2026-11-21 00:30:00",
@@ -2181,7 +2181,7 @@
       "status": "ok"
     },
     "phelps-national": {
-      "attemptedAt": "2026-11-22T21:27:10.408Z",
+      "attemptedAt": "2026-11-22T22:27:06.407Z",
       "status": "ok"
     },
     "peddie-varsity": {
