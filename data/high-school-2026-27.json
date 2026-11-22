@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-22T20:27:06.882Z",
+  "generatedAt": "2026-11-22T20:57:09.166Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1063,8 +1063,10 @@
           "venue": "away",
           "timeZone": "America/New_York",
           "localTime": "13:30",
-          "state": "pre",
-          "sourceUrl": "https://www.neprepbasketball.net/team/272487/schedule"
+          "state": "post",
+          "sourceUrl": "https://www.neprepbasketball.net/team/272487/games",
+          "schoolScore": 85,
+          "opponentScore": 71
         },
         {
           "id": "neprep-9860994",
@@ -1348,7 +1350,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-22T18:31:59.617Z"
+      "fetchedAt": "2026-11-22T20:57:09.166Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1947,42 +1949,35 @@
   ],
   "sources": [
     {
-      "schoolId": "phelps-national",
-      "source": "official",
+      "schoolId": "notre-dame-prep-ny",
+      "source": "neprep",
       "status": "ok",
-      "message": null,
-      "games": 9
+      "message": "exact Elmira prep squad; explicit Finals only",
+      "games": 30
     },
     {
-      "schoolId": "phelps-national",
-      "source": "neprep-finals",
-      "status": "ok",
-      "message": "explicit finals on registered team; matches on existing fixtures",
-      "games": 2
-    },
-    {
-      "schoolId": "phelps-national",
+      "schoolId": "notre-dame-prep-ny",
       "source": "zhibo8-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "phelps-national",
+      "schoolId": "notre-dame-prep-ny",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "phelps-national",
+      "schoolId": "notre-dame-prep-ny",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "phelps-national",
+      "schoolId": "notre-dame-prep-ny",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -2151,6 +2146,12 @@
       "sourceDate": "2026-11-20",
       "lastCheckedAt": "2026-11-22T19:27:51.787Z",
       "attempts": 1
+    },
+    "notre-dame-prep-ny:neprep-9159073": {
+      "startsAt": "2026-11-22 18:30:00",
+      "sourceDate": "2026-11-22",
+      "lastCheckedAt": "2026-11-22T20:57:09.166Z",
+      "attempts": 1
     }
   },
   "schoolChecks": {
@@ -2171,7 +2172,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-22T18:31:59.617Z",
+      "attemptedAt": "2026-11-22T20:57:09.166Z",
       "status": "ok"
     },
     "link-hs-elite": {
