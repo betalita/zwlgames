@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-22T19:57:08.868Z",
+  "generatedAt": "2026-11-22T20:27:06.882Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1669,7 +1669,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-22T18:31:59.617Z"
+      "fetchedAt": "2026-11-22T20:27:06.882Z"
     },
     {
       "schoolId": "peddie-varsity",
@@ -1947,49 +1947,42 @@
   ],
   "sources": [
     {
-      "schoolId": "peddie-varsity",
+      "schoolId": "phelps-national",
       "source": "official",
       "status": "ok",
       "message": null,
-      "games": 17
+      "games": 9
     },
     {
-      "schoolId": "peddie-varsity",
-      "source": "maxpreps",
-      "status": "ok",
-      "message": null,
-      "games": 1
-    },
-    {
-      "schoolId": "peddie-varsity",
+      "schoolId": "phelps-national",
       "source": "neprep-finals",
       "status": "ok",
       "message": "explicit finals on registered team; matches on existing fixtures",
-      "games": 0
+      "games": 2
     },
     {
-      "schoolId": "peddie-varsity",
+      "schoolId": "phelps-national",
       "source": "zhibo8-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "peddie-varsity",
+      "schoolId": "phelps-national",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "peddie-varsity",
+      "schoolId": "phelps-national",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "peddie-varsity",
+      "schoolId": "phelps-national",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -2138,8 +2131,8 @@
     "phelps-national:phelps-8522": {
       "startsAt": "2026-11-21 12:00:00",
       "sourceDate": "2026-11-21",
-      "lastCheckedAt": "2026-11-22T14:13:24.767Z",
-      "attempts": 3
+      "lastCheckedAt": "2026-11-22T20:27:06.882Z",
+      "attempts": 4
     },
     "peddie-varsity:peddie-47022": {
       "startsAt": "2026-11-22 16:45:00",
@@ -2186,7 +2179,7 @@
       "status": "ok"
     },
     "phelps-national": {
-      "attemptedAt": "2026-11-22T18:31:59.617Z",
+      "attemptedAt": "2026-11-22T20:27:06.882Z",
       "status": "ok"
     },
     "peddie-varsity": {
