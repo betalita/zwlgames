@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-22T14:13:24.767Z",
+  "generatedAt": "2026-11-22T17:12:02.937Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1349,7 +1349,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-22T14:13:24.767Z"
+      "fetchedAt": "2026-11-22T17:12:02.937Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1975,52 +1975,12 @@
     {
       "schoolId": "notre-dame-prep-ny",
       "source": "hupu-listing",
-      "status": "error",
-      "message": "fetch failed"
+      "status": "pending",
+      "message": null,
+      "games": 0
     },
     {
       "schoolId": "notre-dame-prep-ny",
-      "source": "verified-media",
-      "status": "pending",
-      "message": "no unambiguous current report",
-      "games": 0
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "official",
-      "status": "ok",
-      "message": null,
-      "games": 9
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "neprep-finals",
-      "status": "ok",
-      "message": "explicit finals on registered team; matches on existing fixtures",
-      "games": 2
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "zhibo8-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "hupu-listing",
-      "status": "error",
-      "message": "fetch failed"
-    },
-    {
-      "schoolId": "phelps-national",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -2157,8 +2117,8 @@
     "notre-dame-prep-ny:neprep-9534434": {
       "startsAt": "2026-11-21 17:00:00",
       "sourceDate": "2026-11-21",
-      "lastCheckedAt": "2026-11-22T05:11:49.364Z",
-      "attempts": 4
+      "lastCheckedAt": "2026-11-22T17:12:02.937Z",
+      "attempts": 5
     },
     "peddie-varsity:peddie-47021": {
       "startsAt": "2026-11-21 18:45:00",
@@ -2191,7 +2151,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-22T14:13:24.767Z",
+      "attemptedAt": "2026-11-22T17:12:02.937Z",
       "status": "ok"
     },
     "link-hs-elite": {
