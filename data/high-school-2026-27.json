@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-22T19:27:17.356Z",
+  "generatedAt": "2026-11-22T19:27:51.787Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -669,7 +669,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-22T18:31:59.617Z"
+      "fetchedAt": "2026-11-22T19:27:51.787Z"
     },
     {
       "schoolId": "veritas-national",
@@ -1947,49 +1947,49 @@
   ],
   "sources": [
     {
-      "schoolId": "peddie-varsity",
+      "schoolId": "providence-tn-varsity",
       "source": "official",
       "status": "ok",
       "message": null,
-      "games": 17
+      "games": 4
     },
     {
-      "schoolId": "peddie-varsity",
+      "schoolId": "providence-tn-varsity",
       "source": "maxpreps",
       "status": "ok",
       "message": null,
-      "games": 1
+      "games": 3
     },
     {
-      "schoolId": "peddie-varsity",
-      "source": "neprep-finals",
+      "schoolId": "providence-tn-varsity",
+      "source": "ballfrog",
       "status": "ok",
       "message": "explicit finals on registered team; matches on existing fixtures",
-      "games": 0
+      "games": 3
     },
     {
-      "schoolId": "peddie-varsity",
+      "schoolId": "providence-tn-varsity",
       "source": "zhibo8-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "peddie-varsity",
+      "schoolId": "providence-tn-varsity",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "peddie-varsity",
+      "schoolId": "providence-tn-varsity",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "peddie-varsity",
+      "schoolId": "providence-tn-varsity",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -2152,6 +2152,12 @@
       "sourceDate": "2026-11-21",
       "lastCheckedAt": "2026-11-22T18:57:07.683Z",
       "attempts": 1
+    },
+    "providence-tn-varsity:mp-987a7478-3745-42e5-bc82-6555d44126e3": {
+      "startsAt": "2026-11-21 00:00:00",
+      "sourceDate": "2026-11-20",
+      "lastCheckedAt": "2026-11-22T19:27:51.787Z",
+      "attempts": 1
     }
   },
   "schoolChecks": {
@@ -2164,7 +2170,7 @@
       "status": "ok"
     },
     "providence-tn-varsity": {
-      "attemptedAt": "2026-11-22T18:31:59.617Z",
+      "attemptedAt": "2026-11-22T19:27:51.787Z",
       "status": "ok"
     },
     "veritas-national": {
