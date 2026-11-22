@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-22T19:27:51.787Z",
+  "generatedAt": "2026-11-22T19:57:08.868Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1942,54 +1942,54 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-22T19:27:17.356Z"
+      "fetchedAt": "2026-11-22T19:57:08.868Z"
     }
   ],
   "sources": [
     {
-      "schoolId": "providence-tn-varsity",
+      "schoolId": "peddie-varsity",
       "source": "official",
       "status": "ok",
       "message": null,
-      "games": 4
+      "games": 17
     },
     {
-      "schoolId": "providence-tn-varsity",
+      "schoolId": "peddie-varsity",
       "source": "maxpreps",
       "status": "ok",
       "message": null,
-      "games": 3
+      "games": 1
     },
     {
-      "schoolId": "providence-tn-varsity",
-      "source": "ballfrog",
+      "schoolId": "peddie-varsity",
+      "source": "neprep-finals",
       "status": "ok",
       "message": "explicit finals on registered team; matches on existing fixtures",
-      "games": 3
+      "games": 0
     },
     {
-      "schoolId": "providence-tn-varsity",
+      "schoolId": "peddie-varsity",
       "source": "zhibo8-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "providence-tn-varsity",
+      "schoolId": "peddie-varsity",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "providence-tn-varsity",
+      "schoolId": "peddie-varsity",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "providence-tn-varsity",
+      "schoolId": "peddie-varsity",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -2144,8 +2144,8 @@
     "peddie-varsity:peddie-47022": {
       "startsAt": "2026-11-22 16:45:00",
       "sourceDate": "2026-11-22",
-      "lastCheckedAt": "2026-11-22T19:27:17.356Z",
-      "attempts": 2
+      "lastCheckedAt": "2026-11-22T19:57:08.868Z",
+      "attempts": 3
     },
     "peddie-varsity:mp-0818f1a6-c4d7-4fa1-bc1f-271206218f8d": {
       "startsAt": "2026-11-21 12:00:00",
@@ -2190,7 +2190,7 @@
       "status": "ok"
     },
     "peddie-varsity": {
-      "attemptedAt": "2026-11-22T19:27:17.356Z",
+      "attemptedAt": "2026-11-22T19:57:08.868Z",
       "status": "ok"
     }
   }
