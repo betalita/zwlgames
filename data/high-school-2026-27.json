@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-22T18:57:07.683Z",
+  "generatedAt": "2026-11-22T19:27:17.356Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1942,7 +1942,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-22T18:57:07.683Z"
+      "fetchedAt": "2026-11-22T19:27:17.356Z"
     }
   ],
   "sources": [
@@ -2144,8 +2144,8 @@
     "peddie-varsity:peddie-47022": {
       "startsAt": "2026-11-22 16:45:00",
       "sourceDate": "2026-11-22",
-      "lastCheckedAt": "2026-11-22T18:57:07.683Z",
-      "attempts": 1
+      "lastCheckedAt": "2026-11-22T19:27:17.356Z",
+      "attempts": 2
     },
     "peddie-varsity:mp-0818f1a6-c4d7-4fa1-bc1f-271206218f8d": {
       "startsAt": "2026-11-21 12:00:00",
@@ -2184,7 +2184,7 @@
       "status": "ok"
     },
     "peddie-varsity": {
-      "attemptedAt": "2026-11-22T18:57:07.683Z",
+      "attemptedAt": "2026-11-22T19:27:17.356Z",
       "status": "ok"
     }
   }
