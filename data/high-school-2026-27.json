@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-23T08:16:41.531Z",
+  "generatedAt": "2026-11-23T16:59:29.270Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1677,20 +1677,6 @@
       "schoolId": "peddie-varsity",
       "games": [
         {
-          "id": "peddie-47022",
-          "schoolId": "peddie-varsity",
-          "season": 2027,
-          "date": "2026-11-22",
-          "opponent": "Virginia Episcopal School (VA)",
-          "sourceUrl": "https://peddie.org/peddie-education/athletics/athletics-schedule/",
-          "state": "pre",
-          "venue": "neutral",
-          "timeZone": "America/New_York",
-          "localTime": "11:45",
-          "sourceNativeId": "peddie-47022",
-          "scheduleStatus": null
-        },
-        {
           "id": "peddie-47025",
           "schoolId": "peddie-varsity",
           "season": 2027,
@@ -1925,6 +1911,16 @@
           "state": "pre"
         },
         {
+          "id": "mp-9f04297d-c530-4ee6-8ff4-03df129ef9d1",
+          "season": 2027,
+          "schoolId": "peddie-varsity",
+          "date": "2026-11-22",
+          "opponent": "Virginia Episcopal School***",
+          "venue": "unknown",
+          "sourceUrl": "https://www.maxpreps.com/inter-state/basketball/game/peddie-hightstown-nj-vs-virginia-episcopal-school-lynchburg-va/11-22-2026/?c=9f04297d-c530-4ee6-8ff4-03df129ef9d1",
+          "state": "pre"
+        },
+        {
           "id": "peddie-47020",
           "schoolId": "peddie-varsity",
           "season": 2027,
@@ -1944,7 +1940,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-23T08:16:41.531Z"
+      "fetchedAt": "2026-11-23T16:59:29.270Z"
     }
   ],
   "sources": [
@@ -1953,14 +1949,14 @@
       "source": "official",
       "status": "ok",
       "message": null,
-      "games": 17
+      "games": 16
     },
     {
       "schoolId": "peddie-varsity",
       "source": "maxpreps",
       "status": "ok",
       "message": null,
-      "games": 1
+      "games": 2
     },
     {
       "schoolId": "peddie-varsity",
@@ -1972,20 +1968,23 @@
     {
       "schoolId": "peddie-varsity",
       "source": "zhibo8-listing",
-      "status": "error",
-      "message": "fetch failed"
+      "status": "pending",
+      "message": null,
+      "games": 0
     },
     {
       "schoolId": "peddie-varsity",
       "source": "hupu-listing",
-      "status": "error",
-      "message": "fetch failed"
+      "status": "pending",
+      "message": null,
+      "games": 0
     },
     {
       "schoolId": "peddie-varsity",
       "source": "hupu-listing",
-      "status": "error",
-      "message": "fetch failed"
+      "status": "pending",
+      "message": null,
+      "games": 0
     },
     {
       "schoolId": "peddie-varsity",
@@ -2137,8 +2136,8 @@
     "peddie-varsity:peddie-47022": {
       "startsAt": "2026-11-22 16:45:00",
       "sourceDate": "2026-11-22",
-      "lastCheckedAt": "2026-11-23T04:59:26.743Z",
-      "attempts": 6
+      "lastCheckedAt": "2026-11-23T16:59:29.270Z",
+      "attempts": 7
     },
     "peddie-varsity:mp-0818f1a6-c4d7-4fa1-bc1f-271206218f8d": {
       "startsAt": "2026-11-21 12:00:00",
@@ -2189,7 +2188,7 @@
       "status": "ok"
     },
     "peddie-varsity": {
-      "attemptedAt": "2026-11-23T08:16:41.531Z",
+      "attemptedAt": "2026-11-23T16:59:29.270Z",
       "status": "ok"
     }
   }
