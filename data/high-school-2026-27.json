@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-23T16:59:29.270Z",
+  "generatedAt": "2026-11-23T17:29:25.604Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1350,7 +1350,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-23T06:44:28.073Z"
+      "fetchedAt": "2026-11-23T17:29:25.604Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1945,53 +1945,47 @@
   ],
   "sources": [
     {
-      "schoolId": "peddie-varsity",
-      "source": "official",
+      "schoolId": "notre-dame-prep-ny",
+      "source": "neprep",
       "status": "ok",
-      "message": null,
-      "games": 16
+      "message": "exact Elmira prep squad; explicit Finals only",
+      "games": 30
     },
     {
-      "schoolId": "peddie-varsity",
-      "source": "maxpreps",
-      "status": "ok",
-      "message": null,
-      "games": 2
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "neprep-finals",
-      "status": "ok",
-      "message": "explicit finals on registered team; matches on existing fixtures",
-      "games": 0
-    },
-    {
-      "schoolId": "peddie-varsity",
+      "schoolId": "notre-dame-prep-ny",
       "source": "zhibo8-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "peddie-varsity",
+      "schoolId": "notre-dame-prep-ny",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "peddie-varsity",
+      "schoolId": "notre-dame-prep-ny",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "peddie-varsity",
+      "schoolId": "notre-dame-prep-ny",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
       "games": 0
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "publication",
+      "status": "warning",
+      "reason": "source_conflict",
+      "gameId": "neprep-9159073",
+      "message": "confirmed final score conflict"
     }
   ],
   "postgameChecks": {
@@ -2118,8 +2112,8 @@
     "notre-dame-prep-ny:neprep-9534434": {
       "startsAt": "2026-11-21 17:00:00",
       "sourceDate": "2026-11-21",
-      "lastCheckedAt": "2026-11-22T17:12:02.937Z",
-      "attempts": 5
+      "lastCheckedAt": "2026-11-23T17:29:25.604Z",
+      "attempts": 6
     },
     "peddie-varsity:peddie-47021": {
       "startsAt": "2026-11-21 18:45:00",
@@ -2176,7 +2170,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-23T06:44:28.073Z",
+      "attemptedAt": "2026-11-23T17:29:25.604Z",
       "status": "ok"
     },
     "link-hs-elite": {
