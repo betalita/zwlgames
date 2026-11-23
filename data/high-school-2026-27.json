@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-23T05:29:32.768Z",
+  "generatedAt": "2026-11-23T06:44:28.073Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1350,7 +1350,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-23T05:29:32.768Z"
+      "fetchedAt": "2026-11-23T06:44:28.073Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1990,48 +1990,6 @@
       "reason": "source_conflict",
       "gameId": "neprep-9159073",
       "message": "confirmed final score conflict"
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "official",
-      "status": "ok",
-      "message": null,
-      "games": 9
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "neprep-finals",
-      "status": "ok",
-      "message": "explicit finals on registered team; matches on existing fixtures",
-      "games": 2
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "zhibo8-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "verified-media",
-      "status": "pending",
-      "message": "no unambiguous current report",
-      "games": 0
     }
   ],
   "postgameChecks": {
@@ -2194,8 +2152,8 @@
     "notre-dame-prep-ny:neprep-9159073": {
       "startsAt": "2026-11-22 18:30:00",
       "sourceDate": "2026-11-22",
-      "lastCheckedAt": "2026-11-23T02:43:06.001Z",
-      "attempts": 4
+      "lastCheckedAt": "2026-11-23T06:44:28.073Z",
+      "attempts": 5
     }
   },
   "schoolChecks": {
@@ -2216,7 +2174,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-23T05:29:32.768Z",
+      "attemptedAt": "2026-11-23T06:44:28.073Z",
       "status": "ok"
     },
     "link-hs-elite": {
