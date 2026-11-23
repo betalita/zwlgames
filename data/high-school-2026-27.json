@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-23T18:59:27.163Z",
+  "generatedAt": "2026-11-23T20:25:07.022Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1350,7 +1350,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-23T17:29:25.604Z"
+      "fetchedAt": "2026-11-23T20:25:07.022Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -1940,10 +1940,52 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-23T18:59:27.163Z"
+      "fetchedAt": "2026-11-23T20:25:07.022Z"
     }
   ],
   "sources": [
+    {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "neprep",
+      "status": "ok",
+      "message": "exact Elmira prep squad; explicit Finals only",
+      "games": 30
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "zhibo8-listing",
+      "status": "pending",
+      "message": null,
+      "games": 0
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "hupu-listing",
+      "status": "error",
+      "message": "fetch failed"
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "hupu-listing",
+      "status": "pending",
+      "message": null,
+      "games": 0
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "verified-media",
+      "status": "pending",
+      "message": "no unambiguous current report",
+      "games": 0
+    },
+    {
+      "schoolId": "notre-dame-prep-ny",
+      "source": "publication",
+      "status": "warning",
+      "reason": "source_conflict",
+      "gameId": "neprep-9159073",
+      "message": "confirmed final score conflict"
+    },
     {
       "schoolId": "peddie-varsity",
       "source": "official",
@@ -1975,9 +2017,8 @@
     {
       "schoolId": "peddie-varsity",
       "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
+      "status": "error",
+      "message": "fetch failed"
     },
     {
       "schoolId": "peddie-varsity",
@@ -2154,14 +2195,14 @@
     "notre-dame-prep-ny:neprep-9159073": {
       "startsAt": "2026-11-22 18:30:00",
       "sourceDate": "2026-11-22",
-      "lastCheckedAt": "2026-11-23T06:44:28.073Z",
-      "attempts": 5
+      "lastCheckedAt": "2026-11-23T20:25:07.022Z",
+      "attempts": 6
     },
     "peddie-varsity:mp-9f04297d-c530-4ee6-8ff4-03df129ef9d1": {
       "startsAt": "2026-11-22 12:00:00",
       "sourceDate": "2026-11-22",
-      "lastCheckedAt": "2026-11-23T18:59:27.163Z",
-      "attempts": 1
+      "lastCheckedAt": "2026-11-23T20:25:07.022Z",
+      "attempts": 2
     }
   },
   "schoolChecks": {
@@ -2182,7 +2223,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-23T17:29:25.604Z",
+      "attemptedAt": "2026-11-23T20:25:07.022Z",
       "status": "ok"
     },
     "link-hs-elite": {
@@ -2194,7 +2235,7 @@
       "status": "ok"
     },
     "peddie-varsity": {
-      "attemptedAt": "2026-11-23T18:59:27.163Z",
+      "attemptedAt": "2026-11-23T20:25:07.022Z",
       "status": "ok"
     }
   }
