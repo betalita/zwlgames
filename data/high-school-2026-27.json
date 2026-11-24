@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-23T23:14:27.447Z",
+  "generatedAt": "2026-11-24T00:14:27.471Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -679,7 +679,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-23T23:14:27.447Z"
+      "fetchedAt": "2026-11-24T00:14:27.471Z"
     },
     {
       "schoolId": "veritas-national",
@@ -2158,8 +2158,8 @@
     "providence-tn-varsity:mp-987a7478-3745-42e5-bc82-6555d44126e3": {
       "startsAt": "2026-11-21 00:00:00",
       "sourceDate": "2026-11-20",
-      "lastCheckedAt": "2026-11-23T00:29:53.222Z",
-      "attempts": 2
+      "lastCheckedAt": "2026-11-24T00:14:27.471Z",
+      "attempts": 3
     },
     "notre-dame-prep-ny:neprep-9159073": {
       "startsAt": "2026-11-22 18:30:00",
@@ -2184,7 +2184,7 @@
       "status": "ok"
     },
     "providence-tn-varsity": {
-      "attemptedAt": "2026-11-23T23:14:27.447Z",
+      "attemptedAt": "2026-11-24T00:14:27.471Z",
       "status": "ok"
     },
     "veritas-national": {
