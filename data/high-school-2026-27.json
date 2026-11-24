@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-24T01:14:38.323Z",
+  "generatedAt": "2026-11-24T02:14:47.956Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -391,16 +391,15 @@
         },
         {
           "id": "seed2027-veritas-wasatch",
-          "sourceNativeId": "nike-b710e837-7edb-5d0f-9058-1be0eb9a0587",
           "schoolId": "veritas-national",
-          "season": 2027,
           "date": "2027-02-14",
-          "timeZone": "America/Los_Angeles",
           "opponent": "Wasatch Academy",
-          "opponentSchoolId": "wasatch-national",
           "venue": "home",
+          "sourceUrl": "https://veritasbasketball.com/schedule",
+          "season": 2027,
           "state": "pre",
-          "sourceUrl": "https://scholastic.nikeeyb.com/api/current/fixtures"
+          "opponentSchoolId": "wasatch-national",
+          "bootstrap": true
         },
         {
           "id": "nike-6feefaab-3595-520b-bd23-475ca398abf2",
@@ -413,160 +412,32 @@
           "location": "Pleasant Grove High School, Pleasant Grove, UT",
           "opponent": "Tennessee Collegiate",
           "venue": "unknown",
-          "state": "pre",
-          "sourceUrl": "https://scholastic.nikeeyb.com/api/current/fixtures"
-        },
-        {
-          "id": "nike-4b0d3b23-8a03-59c2-9f37-fc4ee83e2ebe",
-          "sourceNativeId": "nike-4b0d3b23-8a03-59c2-9f37-fc4ee83e2ebe",
-          "schoolId": "wasatch-national",
-          "season": 2027,
-          "date": "2026-11-24",
-          "localTime": "17:30",
-          "timeZone": "America/Denver",
-          "location": "Pleasant Grove High School, Pleasant Grove, UT",
-          "opponent": "The St James",
-          "venue": "unknown",
-          "state": "pre",
-          "sourceUrl": "https://scholastic.nikeeyb.com/api/current/fixtures"
-        },
-        {
-          "id": "nike-9ba2260d-e78a-555f-b3fb-334f8e215333",
-          "sourceNativeId": "nike-9ba2260d-e78a-555f-b3fb-334f8e215333",
-          "schoolId": "wasatch-national",
-          "season": 2027,
-          "date": "2026-12-10",
-          "localTime": "16:30",
-          "timeZone": "America/Phoenix",
-          "location": "Millennium High School, Goodyear, AZ",
-          "opponent": "CIA Bella Vista",
-          "opponentSchoolId": "bella-vista",
-          "venue": "unknown",
-          "state": "pre",
-          "sourceUrl": "https://scholastic.nikeeyb.com/api/current/fixtures"
-        },
-        {
-          "id": "nike-6ad548a6-16e8-5056-ba44-09a8017c331e",
-          "sourceNativeId": "nike-6ad548a6-16e8-5056-ba44-09a8017c331e",
-          "schoolId": "wasatch-national",
-          "season": 2027,
-          "date": "2026-12-12",
-          "localTime": "15:00",
-          "timeZone": "America/Phoenix",
-          "location": "Millennium High School, Goodyear, AZ",
-          "opponent": "Dream City Christian",
-          "venue": "unknown",
-          "state": "pre",
-          "sourceUrl": "https://scholastic.nikeeyb.com/api/current/fixtures"
-        },
-        {
-          "id": "nike-ed999139-b148-5f15-adc0-7317ba7c24ba",
-          "sourceNativeId": "nike-ed999139-b148-5f15-adc0-7317ba7c24ba",
-          "schoolId": "wasatch-national",
-          "season": 2027,
-          "date": "2026-12-28",
-          "localTime": "12:30",
-          "timeZone": "America/New_York",
-          "location": "478 Gerard Ave, Bronx, NY",
-          "opponent": "Masters Academy International",
-          "venue": "unknown",
-          "state": "pre",
-          "sourceUrl": "https://scholastic.nikeeyb.com/api/current/fixtures"
-        },
-        {
-          "id": "nike-030b66da-2e12-5561-9c94-64b20c9f2b6d",
-          "sourceNativeId": "nike-030b66da-2e12-5561-9c94-64b20c9f2b6d",
-          "schoolId": "wasatch-national",
-          "season": 2027,
-          "date": "2026-12-29",
-          "localTime": "15:45",
-          "timeZone": "America/New_York",
-          "location": "478 Gerard Ave, Bronx, NY",
-          "opponent": "Monarch Academy",
-          "venue": "unknown",
-          "state": "pre",
-          "sourceUrl": "https://scholastic.nikeeyb.com/api/current/fixtures"
-        },
-        {
-          "id": "nike-7fa25096-3e6b-513c-bec8-4e04fccf7de9",
-          "sourceNativeId": "nike-7fa25096-3e6b-513c-bec8-4e04fccf7de9",
-          "schoolId": "wasatch-national",
-          "season": 2027,
-          "date": "2027-01-09",
-          "localTime": "15:00",
-          "timeZone": "America/Chicago",
-          "opponent": "Oak Hill Academy",
-          "venue": "unknown",
-          "state": "pre",
-          "sourceUrl": "https://scholastic.nikeeyb.com/api/current/fixtures"
-        },
-        {
-          "id": "nike-c5965691-ada8-517d-8d4b-864ae9683571",
-          "sourceNativeId": "nike-c5965691-ada8-517d-8d4b-864ae9683571",
-          "schoolId": "wasatch-national",
-          "season": 2027,
-          "date": "2027-01-10",
-          "localTime": "16:00",
-          "timeZone": "America/Chicago",
-          "opponent": "La Lumiere School",
-          "venue": "unknown",
-          "state": "pre",
-          "sourceUrl": "https://scholastic.nikeeyb.com/api/current/fixtures"
-        },
-        {
-          "id": "nike-04614d87-4f9f-5c89-8d3e-c0e619be6d60",
-          "sourceNativeId": "nike-04614d87-4f9f-5c89-8d3e-c0e619be6d60",
-          "schoolId": "wasatch-national",
-          "season": 2027,
-          "date": "2027-01-29",
-          "localTime": "19:00",
-          "timeZone": "America/New_York",
-          "opponent": "Long Island Lutheran",
-          "venue": "unknown",
-          "state": "pre",
-          "sourceUrl": "https://scholastic.nikeeyb.com/api/current/fixtures"
-        },
-        {
-          "id": "nike-aa525a06-2aa3-528e-8c1b-0a106db7aac6",
-          "sourceNativeId": "nike-aa525a06-2aa3-528e-8c1b-0a106db7aac6",
-          "schoolId": "wasatch-national",
-          "season": 2027,
-          "date": "2027-02-05",
-          "localTime": "19:00",
-          "timeZone": "America/New_York",
-          "location": "500 Dodds Ave, Chattanooga, TN",
-          "opponent": "Montverde Academy",
-          "venue": "unknown",
-          "state": "pre",
-          "sourceUrl": "https://scholastic.nikeeyb.com/api/current/fixtures"
-        },
-        {
-          "id": "nike-a433f043-b964-585a-800a-fd274dac1c0a",
-          "sourceNativeId": "nike-a433f043-b964-585a-800a-fd274dac1c0a",
-          "schoolId": "wasatch-national",
-          "season": 2027,
-          "date": "2027-02-13",
-          "timeZone": "America/Los_Angeles",
-          "opponent": "AZ Compass Prep",
-          "venue": "unknown",
-          "state": "pre",
-          "sourceUrl": "https://scholastic.nikeeyb.com/api/current/fixtures"
-        },
-        {
-          "id": "nike-f80fdb14-183a-5311-aac1-6889306a32cd",
-          "sourceNativeId": "nike-f80fdb14-183a-5311-aac1-6889306a32cd",
-          "schoolId": "wasatch-national",
-          "season": 2027,
-          "date": "2027-02-27",
-          "timeZone": null,
-          "opponent": "Iowa United",
-          "venue": "home",
-          "state": "pre",
-          "sourceUrl": "https://scholastic.nikeeyb.com/api/current/fixtures"
+          "state": "post",
+          "sourceUrl": "https://scholastic.nikeeyb.com/api/current/games/6feefaab-3595-520b-bd23-475ca398abf2",
+          "schoolScore": 72,
+          "opponentScore": 67,
+          "players": [
+            {
+              "playerId": "zhangyizhaojie",
+              "stats": {
+                "MIN": "14:07",
+                "PTS": "2",
+                "REB": "1",
+                "AST": "3",
+                "STL": "2",
+                "BLK": "0",
+                "TO": "2",
+                "PF": "5",
+                "FG": "1-1",
+                "3PT": "0-0",
+                "FT": "0-0"
+              }
+            }
+          ]
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-23T22:40:49.648Z"
+      "fetchedAt": "2026-11-24T02:14:47.956Z"
     },
     {
       "schoolId": "providence-tn-varsity",
@@ -1955,49 +1826,70 @@
   ],
   "sources": [
     {
-      "schoolId": "providence-tn-varsity",
-      "source": "official",
+      "schoolId": "wasatch-national",
+      "source": "verified-seed",
       "status": "ok",
-      "message": null,
-      "games": 4
+      "message": "2026-11-11 transcription; source availability rechecked",
+      "games": 8
     },
     {
-      "schoolId": "providence-tn-varsity",
-      "source": "maxpreps",
-      "status": "ok",
-      "message": null,
-      "games": 4
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "ballfrog",
+      "schoolId": "wasatch-national",
+      "source": "maxpreps-finals",
       "status": "ok",
       "message": "explicit finals on registered team; matches on existing fixtures",
-      "games": 3
+      "games": 0
     },
     {
-      "schoolId": "providence-tn-varsity",
+      "schoolId": "wasatch-national",
+      "source": "legitgm",
+      "status": "pending",
+      "message": "no verified current matchup/player statistics found",
+      "games": 0
+    },
+    {
+      "schoolId": "wasatch-national",
+      "source": "nike-eybl",
+      "status": "ok",
+      "message": null,
+      "games": 1
+    },
+    {
+      "schoolId": "wasatch-national",
       "source": "zhibo8-listing",
-      "status": "pending",
+      "status": "ok",
       "message": null,
-      "games": 0
+      "games": 1
     },
     {
-      "schoolId": "providence-tn-varsity",
+      "schoolId": "wasatch-national",
+      "source": "hupu-listing",
+      "status": "ok",
+      "message": null,
+      "games": 1
+    },
+    {
+      "schoolId": "wasatch-national",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "providence-tn-varsity",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
+      "schoolId": "wasatch-national",
+      "source": "media-article",
+      "status": "warning",
+      "reason": "unmatched_report",
+      "sourceUrl": "https://bbs.hupu.com/642665996.html"
     },
     {
-      "schoolId": "providence-tn-varsity",
+      "schoolId": "wasatch-national",
+      "source": "media-article",
+      "status": "warning",
+      "reason": "unmatched_report",
+      "sourceUrl": "https://news.zhibo8.com/nba/2026-11-21/6b010986da765native.htm"
+    },
+    {
+      "schoolId": "wasatch-national",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -2172,6 +2064,12 @@
       "sourceDate": "2026-11-22",
       "lastCheckedAt": "2026-11-23T20:25:07.022Z",
       "attempts": 2
+    },
+    "wasatch-national:nike-6feefaab-3595-520b-bd23-475ca398abf2": {
+      "startsAt": "2026-11-24 00:00:00",
+      "sourceDate": "2026-11-23",
+      "lastCheckedAt": "2026-11-24T02:14:47.956Z",
+      "attempts": 1
     }
   },
   "schoolChecks": {
@@ -2180,7 +2078,7 @@
       "status": "ok"
     },
     "wasatch-national": {
-      "attemptedAt": "2026-11-23T22:40:49.648Z",
+      "attemptedAt": "2026-11-24T02:14:47.956Z",
       "status": "ok"
     },
     "providence-tn-varsity": {
