@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-24T08:14:45.517Z",
+  "generatedAt": "2026-11-24T15:43:24.538Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -443,54 +443,6 @@
       "schoolId": "providence-tn-varsity",
       "games": [
         {
-          "id": "a9a2fe3d8f620800c8b9d52ab9dbd98f",
-          "schoolId": "providence-tn-varsity",
-          "season": 2027,
-          "date": "2026-12-01",
-          "opponent": "Franklin Road Academy",
-          "sourceUrl": "https://providencechristian.com/calendar/athletics-calendar-list/",
-          "state": "pre",
-          "venue": "away",
-          "timeZone": "America/Chicago",
-          "scheduleStatus": null
-        },
-        {
-          "id": "c6e3b89962f8ea1c6e00d7fc0342c6e2",
-          "schoolId": "providence-tn-varsity",
-          "season": 2027,
-          "date": "2026-12-08",
-          "opponent": "Columbia Academy",
-          "sourceUrl": "https://providencechristian.com/calendar/athletics-calendar-list/",
-          "state": "pre",
-          "venue": "home",
-          "timeZone": "America/Chicago",
-          "scheduleStatus": null
-        },
-        {
-          "id": "26fbef1fb1c4bfe5e67fc5f3a435ae49",
-          "schoolId": "providence-tn-varsity",
-          "season": 2027,
-          "date": "2026-12-11",
-          "opponent": "MTCS",
-          "sourceUrl": "https://providencechristian.com/calendar/athletics-calendar-list/",
-          "state": "pre",
-          "venue": "home",
-          "timeZone": "America/Chicago",
-          "scheduleStatus": null
-        },
-        {
-          "id": "c17feb5ae29d242f1647c4d5cefa74d8",
-          "schoolId": "providence-tn-varsity",
-          "season": 2027,
-          "date": "2026-12-18",
-          "opponent": "BGA",
-          "sourceUrl": "https://providencechristian.com/calendar/athletics-calendar-list/",
-          "state": "pre",
-          "venue": "home",
-          "timeZone": "America/Chicago",
-          "scheduleStatus": null
-        },
-        {
           "id": "mp-7103774a-0aed-43c0-bb4a-c5e0464f22ff",
           "season": 2027,
           "schoolId": "providence-tn-varsity",
@@ -550,7 +502,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-24T08:14:45.517Z"
+      "fetchedAt": "2026-11-24T15:43:24.538Z"
     },
     {
       "schoolId": "veritas-national",
@@ -662,7 +614,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-24T08:14:45.517Z"
+      "fetchedAt": "2026-11-24T15:43:24.538Z"
     },
     {
       "schoolId": "notre-dame-prep-ny",
@@ -1689,16 +1641,15 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-24T00:44:43.393Z"
+      "fetchedAt": "2026-11-24T15:43:24.538Z"
     }
   ],
   "sources": [
     {
       "schoolId": "providence-tn-varsity",
       "source": "official",
-      "status": "ok",
-      "message": null,
-      "games": 4
+      "status": "error",
+      "message": "fetch failed"
     },
     {
       "schoolId": "providence-tn-varsity",
@@ -1717,20 +1668,23 @@
     {
       "schoolId": "providence-tn-varsity",
       "source": "zhibo8-listing",
-      "status": "error",
-      "message": "fetch failed"
+      "status": "pending",
+      "message": null,
+      "games": 0
     },
     {
       "schoolId": "providence-tn-varsity",
       "source": "hupu-listing",
-      "status": "error",
-      "message": "fetch failed"
+      "status": "pending",
+      "message": null,
+      "games": 0
     },
     {
       "schoolId": "providence-tn-varsity",
       "source": "hupu-listing",
-      "status": "error",
-      "message": "fetch failed"
+      "status": "pending",
+      "message": null,
+      "games": 0
     },
     {
       "schoolId": "providence-tn-varsity",
@@ -1770,20 +1724,23 @@
     {
       "schoolId": "veritas-national",
       "source": "zhibo8-listing",
-      "status": "error",
-      "message": "fetch failed"
+      "status": "pending",
+      "message": null,
+      "games": 0
     },
     {
       "schoolId": "veritas-national",
       "source": "hupu-listing",
-      "status": "error",
-      "message": "fetch failed"
+      "status": "pending",
+      "message": null,
+      "games": 0
     },
     {
       "schoolId": "veritas-national",
       "source": "hupu-listing",
-      "status": "error",
-      "message": "fetch failed"
+      "status": "pending",
+      "message": null,
+      "games": 0
     },
     {
       "schoolId": "veritas-national",
@@ -1793,32 +1750,49 @@
       "games": 0
     },
     {
-      "schoolId": "link-hs-elite",
+      "schoolId": "peddie-varsity",
       "source": "official",
       "status": "ok",
       "message": null,
-      "games": 14
+      "games": 16
     },
     {
-      "schoolId": "link-hs-elite",
+      "schoolId": "peddie-varsity",
+      "source": "maxpreps",
+      "status": "ok",
+      "message": null,
+      "games": 2
+    },
+    {
+      "schoolId": "peddie-varsity",
+      "source": "neprep-finals",
+      "status": "ok",
+      "message": "explicit finals on registered team; matches on existing fixtures",
+      "games": 0
+    },
+    {
+      "schoolId": "peddie-varsity",
       "source": "zhibo8-listing",
-      "status": "error",
-      "message": "fetch failed"
+      "status": "pending",
+      "message": null,
+      "games": 0
     },
     {
-      "schoolId": "link-hs-elite",
+      "schoolId": "peddie-varsity",
       "source": "hupu-listing",
-      "status": "error",
-      "message": "fetch failed"
+      "status": "pending",
+      "message": null,
+      "games": 0
     },
     {
-      "schoolId": "link-hs-elite",
+      "schoolId": "peddie-varsity",
       "source": "hupu-listing",
-      "status": "error",
-      "message": "fetch failed"
+      "status": "pending",
+      "message": null,
+      "games": 0
     },
     {
-      "schoolId": "link-hs-elite",
+      "schoolId": "peddie-varsity",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -1973,8 +1947,8 @@
     "peddie-varsity:mp-0818f1a6-c4d7-4fa1-bc1f-271206218f8d": {
       "startsAt": "2026-11-21 12:00:00",
       "sourceDate": "2026-11-21",
-      "lastCheckedAt": "2026-11-23T08:16:41.531Z",
-      "attempts": 3
+      "lastCheckedAt": "2026-11-24T15:43:24.538Z",
+      "attempts": 4
     },
     "providence-tn-varsity:mp-987a7478-3745-42e5-bc82-6555d44126e3": {
       "startsAt": "2026-11-21 00:00:00",
@@ -1991,8 +1965,8 @@
     "peddie-varsity:mp-9f04297d-c530-4ee6-8ff4-03df129ef9d1": {
       "startsAt": "2026-11-22 12:00:00",
       "sourceDate": "2026-11-22",
-      "lastCheckedAt": "2026-11-23T20:25:07.022Z",
-      "attempts": 2
+      "lastCheckedAt": "2026-11-24T15:43:24.538Z",
+      "attempts": 3
     },
     "wasatch-national:nike-6feefaab-3595-520b-bd23-475ca398abf2": {
       "startsAt": "2026-11-24 00:00:00",
@@ -2003,8 +1977,8 @@
     "veritas-national:mp-3099d503-8efc-49eb-83ce-19d39d1db51d": {
       "startsAt": "2026-11-23 12:00:00",
       "sourceDate": "2026-11-23",
-      "lastCheckedAt": "2026-11-24T08:14:45.517Z",
-      "attempts": 2
+      "lastCheckedAt": "2026-11-24T15:43:24.538Z",
+      "attempts": 3
     },
     "link-hs-elite:96c7d8a54deaab67b8a1877eb5167af9": {
       "startsAt": "2026-11-23 12:00:00",
@@ -2015,8 +1989,8 @@
     "providence-tn-varsity:mp-de8b9ac4-6932-45be-83de-283181f60e63": {
       "startsAt": "2026-11-23 12:00:00",
       "sourceDate": "2026-11-23",
-      "lastCheckedAt": "2026-11-24T08:14:45.517Z",
-      "attempts": 2
+      "lastCheckedAt": "2026-11-24T15:43:24.538Z",
+      "attempts": 3
     }
   },
   "schoolChecks": {
@@ -2029,11 +2003,11 @@
       "status": "ok"
     },
     "providence-tn-varsity": {
-      "attemptedAt": "2026-11-24T08:14:45.517Z",
+      "attemptedAt": "2026-11-24T15:43:24.538Z",
       "status": "ok"
     },
     "veritas-national": {
-      "attemptedAt": "2026-11-24T08:14:45.517Z",
+      "attemptedAt": "2026-11-24T15:43:24.538Z",
       "status": "ok"
     },
     "notre-dame-prep-ny": {
@@ -2049,7 +2023,7 @@
       "status": "ok"
     },
     "peddie-varsity": {
-      "attemptedAt": "2026-11-24T00:44:43.393Z",
+      "attemptedAt": "2026-11-24T15:43:24.538Z",
       "status": "ok"
     }
   }
