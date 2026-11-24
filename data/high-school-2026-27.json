@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-24T05:44:42.206Z",
+  "generatedAt": "2026-11-24T08:14:45.517Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -550,7 +550,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-24T05:44:42.206Z"
+      "fetchedAt": "2026-11-24T08:14:45.517Z"
     },
     {
       "schoolId": "veritas-national",
@@ -662,7 +662,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-24T05:14:58.186Z"
+      "fetchedAt": "2026-11-24T08:14:45.517Z"
     },
     {
       "schoolId": "notre-dame-prep-ny",
@@ -1280,7 +1280,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-24T05:14:58.186Z"
+      "fetchedAt": "2026-11-24T08:14:45.517Z"
     },
     {
       "schoolId": "phelps-national",
@@ -1717,23 +1717,20 @@
     {
       "schoolId": "providence-tn-varsity",
       "source": "zhibo8-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
+      "status": "error",
+      "message": "fetch failed"
     },
     {
       "schoolId": "providence-tn-varsity",
       "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
+      "status": "error",
+      "message": "fetch failed"
     },
     {
       "schoolId": "providence-tn-varsity",
       "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
+      "status": "error",
+      "message": "fetch failed"
     },
     {
       "schoolId": "providence-tn-varsity",
@@ -1743,47 +1740,89 @@
       "games": 0
     },
     {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "neprep",
+      "schoolId": "veritas-national",
+      "source": "verified-seed",
       "status": "ok",
-      "message": "exact Elmira prep squad; explicit Finals only",
-      "games": 30
+      "message": "2026-11-11 transcription; source availability rechecked",
+      "games": 4
     },
     {
-      "schoolId": "notre-dame-prep-ny",
+      "schoolId": "veritas-national",
+      "source": "maxpreps",
+      "status": "ok",
+      "message": null,
+      "games": 2
+    },
+    {
+      "schoolId": "veritas-national",
+      "source": "legitgm",
+      "status": "pending",
+      "message": "no verified current matchup/player statistics found",
+      "games": 0
+    },
+    {
+      "schoolId": "veritas-national",
+      "source": "nike-eybl",
+      "status": "pending",
+      "message": null,
+      "games": 0
+    },
+    {
+      "schoolId": "veritas-national",
       "source": "zhibo8-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
+      "status": "error",
+      "message": "fetch failed"
     },
     {
-      "schoolId": "notre-dame-prep-ny",
+      "schoolId": "veritas-national",
       "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
+      "status": "error",
+      "message": "fetch failed"
     },
     {
-      "schoolId": "notre-dame-prep-ny",
+      "schoolId": "veritas-national",
       "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
+      "status": "error",
+      "message": "fetch failed"
     },
     {
-      "schoolId": "notre-dame-prep-ny",
+      "schoolId": "veritas-national",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
       "games": 0
     },
     {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "publication",
-      "status": "warning",
-      "reason": "source_conflict",
-      "gameId": "neprep-9159073",
-      "message": "confirmed final score conflict"
+      "schoolId": "link-hs-elite",
+      "source": "official",
+      "status": "ok",
+      "message": null,
+      "games": 14
+    },
+    {
+      "schoolId": "link-hs-elite",
+      "source": "zhibo8-listing",
+      "status": "error",
+      "message": "fetch failed"
+    },
+    {
+      "schoolId": "link-hs-elite",
+      "source": "hupu-listing",
+      "status": "error",
+      "message": "fetch failed"
+    },
+    {
+      "schoolId": "link-hs-elite",
+      "source": "hupu-listing",
+      "status": "error",
+      "message": "fetch failed"
+    },
+    {
+      "schoolId": "link-hs-elite",
+      "source": "verified-media",
+      "status": "pending",
+      "message": "no unambiguous current report",
+      "games": 0
     }
   ],
   "postgameChecks": {
@@ -1964,20 +2003,20 @@
     "veritas-national:mp-3099d503-8efc-49eb-83ce-19d39d1db51d": {
       "startsAt": "2026-11-23 12:00:00",
       "sourceDate": "2026-11-23",
-      "lastCheckedAt": "2026-11-24T05:14:58.186Z",
-      "attempts": 1
+      "lastCheckedAt": "2026-11-24T08:14:45.517Z",
+      "attempts": 2
     },
     "link-hs-elite:96c7d8a54deaab67b8a1877eb5167af9": {
       "startsAt": "2026-11-23 12:00:00",
       "sourceDate": "2026-11-23",
-      "lastCheckedAt": "2026-11-24T05:14:58.186Z",
-      "attempts": 1
+      "lastCheckedAt": "2026-11-24T08:14:45.517Z",
+      "attempts": 2
     },
     "providence-tn-varsity:mp-de8b9ac4-6932-45be-83de-283181f60e63": {
       "startsAt": "2026-11-23 12:00:00",
       "sourceDate": "2026-11-23",
-      "lastCheckedAt": "2026-11-24T05:44:42.206Z",
-      "attempts": 1
+      "lastCheckedAt": "2026-11-24T08:14:45.517Z",
+      "attempts": 2
     }
   },
   "schoolChecks": {
@@ -1990,11 +2029,11 @@
       "status": "ok"
     },
     "providence-tn-varsity": {
-      "attemptedAt": "2026-11-24T05:44:42.206Z",
+      "attemptedAt": "2026-11-24T08:14:45.517Z",
       "status": "ok"
     },
     "veritas-national": {
-      "attemptedAt": "2026-11-24T05:14:58.186Z",
+      "attemptedAt": "2026-11-24T08:14:45.517Z",
       "status": "ok"
     },
     "notre-dame-prep-ny": {
@@ -2002,7 +2041,7 @@
       "status": "ok"
     },
     "link-hs-elite": {
-      "attemptedAt": "2026-11-24T05:14:58.186Z",
+      "attemptedAt": "2026-11-24T08:14:45.517Z",
       "status": "ok"
     },
     "phelps-national": {
