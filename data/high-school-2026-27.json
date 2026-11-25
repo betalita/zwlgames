@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-25T20:29:16.868Z",
+  "generatedAt": "2026-11-25T21:13:27.456Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1760,7 +1760,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-25T20:29:16.868Z"
+      "fetchedAt": "2026-11-25T21:13:27.456Z"
     },
     {
       "schoolId": "peddie-varsity",
@@ -2034,250 +2034,6 @@
   ],
   "sources": [
     {
-      "schoolId": "bella-vista",
-      "source": "school-ical",
-      "status": "ok",
-      "message": null,
-      "games": 1
-    },
-    {
-      "schoolId": "bella-vista",
-      "source": "legitgm",
-      "status": "pending",
-      "message": "no verified current matchup/player statistics found",
-      "games": 0
-    },
-    {
-      "schoolId": "bella-vista",
-      "source": "nike-eybl",
-      "status": "ok",
-      "message": null,
-      "games": 14
-    },
-    {
-      "schoolId": "wasatch-national",
-      "source": "verified-seed",
-      "status": "ok",
-      "message": "2026-11-11 transcription; source availability rechecked",
-      "games": 8
-    },
-    {
-      "schoolId": "wasatch-national",
-      "source": "maxpreps-finals",
-      "status": "ok",
-      "message": "explicit finals on registered team; matches on existing fixtures",
-      "games": 0
-    },
-    {
-      "schoolId": "wasatch-national",
-      "source": "legitgm",
-      "status": "pending",
-      "message": "no verified current matchup/player statistics found",
-      "games": 0
-    },
-    {
-      "schoolId": "wasatch-national",
-      "source": "nike-eybl",
-      "status": "ok",
-      "message": null,
-      "games": 14
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "official",
-      "status": "ok",
-      "message": null,
-      "games": 4
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "maxpreps",
-      "status": "ok",
-      "message": null,
-      "games": 5
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "ballfrog",
-      "status": "error",
-      "message": "invalid Ballfrog result"
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "zhibo8-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "verified-media",
-      "status": "pending",
-      "message": "no unambiguous current report",
-      "games": 0
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "verified-seed",
-      "status": "ok",
-      "message": "2026-11-11 transcription; source availability rechecked",
-      "games": 4
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "maxpreps",
-      "status": "ok",
-      "message": null,
-      "games": 1
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "legitgm",
-      "status": "pending",
-      "message": "no verified current matchup/player statistics found",
-      "games": 0
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "nike-eybl",
-      "status": "warning",
-      "message": "Nike player and team shooting disagree"
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "nike-eybl",
-      "status": "ok",
-      "message": null,
-      "games": 14
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "zhibo8-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "verified-media",
-      "status": "pending",
-      "message": "no unambiguous current report",
-      "games": 0
-    },
-    {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "neprep",
-      "status": "ok",
-      "message": "exact Elmira prep squad; explicit Finals only",
-      "games": 30
-    },
-    {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "zhibo8-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "verified-media",
-      "status": "pending",
-      "message": "no unambiguous current report",
-      "games": 0
-    },
-    {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "publication",
-      "status": "warning",
-      "reason": "source_conflict",
-      "gameId": "neprep-9159073",
-      "message": "confirmed final score conflict"
-    },
-    {
-      "schoolId": "link-hs-elite",
-      "source": "official",
-      "status": "ok",
-      "message": null,
-      "games": 14
-    },
-    {
-      "schoolId": "link-hs-elite",
-      "source": "zhibo8-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "link-hs-elite",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "link-hs-elite",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "link-hs-elite",
-      "source": "verified-media",
-      "status": "pending",
-      "message": "no unambiguous current report",
-      "games": 0
-    },
-    {
-      "schoolId": "patrick-school",
-      "source": "official",
-      "status": "pending",
-      "message": "awaiting a verified schedule for this exact squad",
-      "games": 0
-    },
-    {
       "schoolId": "phelps-national",
       "source": "official",
       "status": "ok",
@@ -2314,55 +2070,6 @@
     },
     {
       "schoolId": "phelps-national",
-      "source": "verified-media",
-      "status": "pending",
-      "message": "no unambiguous current report",
-      "games": 0
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "official",
-      "status": "ok",
-      "message": null,
-      "games": 16
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "maxpreps",
-      "status": "ok",
-      "message": null,
-      "games": 2
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "neprep-finals",
-      "status": "ok",
-      "message": "explicit finals on registered team; matches on existing fixtures",
-      "games": 0
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "zhibo8-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "peddie-varsity",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -2433,8 +2140,8 @@
     "phelps-national:phelps-8520": {
       "startsAt": "2026-11-18 21:00:00",
       "sourceDate": "2026-11-18",
-      "lastCheckedAt": "2026-11-24T21:13:43.874Z",
-      "attempts": 13
+      "lastCheckedAt": "2026-11-25T21:13:27.456Z",
+      "attempts": 14
     },
     "notre-dame-prep-ny:neprep-9534381": {
       "startsAt": "2026-11-18 12:00:00",
@@ -2619,7 +2326,7 @@
       "status": "ok"
     },
     "phelps-national": {
-      "attemptedAt": "2026-11-25T20:29:16.868Z",
+      "attemptedAt": "2026-11-25T21:13:27.456Z",
       "status": "ok"
     },
     "peddie-varsity": {
