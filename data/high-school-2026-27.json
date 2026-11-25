@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-25T22:28:32.388Z",
+  "generatedAt": "2026-11-25T23:13:31.129Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -612,54 +612,6 @@
       "schoolId": "providence-tn-varsity",
       "games": [
         {
-          "id": "a9a2fe3d8f620800c8b9d52ab9dbd98f",
-          "schoolId": "providence-tn-varsity",
-          "season": 2027,
-          "date": "2026-12-01",
-          "opponent": "Franklin Road Academy",
-          "sourceUrl": "https://providencechristian.com/calendar/athletics-calendar-list/",
-          "state": "pre",
-          "venue": "away",
-          "timeZone": "America/Chicago",
-          "scheduleStatus": null
-        },
-        {
-          "id": "c6e3b89962f8ea1c6e00d7fc0342c6e2",
-          "schoolId": "providence-tn-varsity",
-          "season": 2027,
-          "date": "2026-12-08",
-          "opponent": "Columbia Academy",
-          "sourceUrl": "https://providencechristian.com/calendar/athletics-calendar-list/",
-          "state": "pre",
-          "venue": "home",
-          "timeZone": "America/Chicago",
-          "scheduleStatus": null
-        },
-        {
-          "id": "26fbef1fb1c4bfe5e67fc5f3a435ae49",
-          "schoolId": "providence-tn-varsity",
-          "season": 2027,
-          "date": "2026-12-11",
-          "opponent": "MTCS",
-          "sourceUrl": "https://providencechristian.com/calendar/athletics-calendar-list/",
-          "state": "pre",
-          "venue": "home",
-          "timeZone": "America/Chicago",
-          "scheduleStatus": null
-        },
-        {
-          "id": "c17feb5ae29d242f1647c4d5cefa74d8",
-          "schoolId": "providence-tn-varsity",
-          "season": 2027,
-          "date": "2026-12-18",
-          "opponent": "BGA",
-          "sourceUrl": "https://providencechristian.com/calendar/athletics-calendar-list/",
-          "state": "pre",
-          "venue": "home",
-          "timeZone": "America/Chicago",
-          "scheduleStatus": null
-        },
-        {
           "id": "mp-7103774a-0aed-43c0-bb4a-c5e0464f22ff",
           "season": 2027,
           "schoolId": "providence-tn-varsity",
@@ -729,7 +681,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-25T20:29:16.868Z"
+      "fetchedAt": "2026-11-25T23:13:31.129Z"
     },
     {
       "schoolId": "veritas-national",
@@ -2034,42 +1986,47 @@
   ],
   "sources": [
     {
-      "schoolId": "phelps-national",
+      "schoolId": "providence-tn-varsity",
       "source": "official",
+      "status": "error",
+      "message": "fetch failed"
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "maxpreps",
       "status": "ok",
       "message": null,
-      "games": 9
+      "games": 5
     },
     {
-      "schoolId": "phelps-national",
-      "source": "neprep-finals",
-      "status": "ok",
-      "message": "explicit finals on registered team; matches on existing fixtures",
-      "games": 2
+      "schoolId": "providence-tn-varsity",
+      "source": "ballfrog",
+      "status": "error",
+      "message": "invalid Ballfrog result"
     },
     {
-      "schoolId": "phelps-national",
+      "schoolId": "providence-tn-varsity",
       "source": "zhibo8-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "phelps-national",
+      "schoolId": "providence-tn-varsity",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "phelps-national",
+      "schoolId": "providence-tn-varsity",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "phelps-national",
+      "schoolId": "providence-tn-varsity",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -2158,8 +2115,8 @@
     "providence-tn-varsity:mp-d30610a9-5363-4343-b333-6862953cee65": {
       "startsAt": "2026-11-19 23:00:00",
       "sourceDate": "2026-11-19",
-      "lastCheckedAt": "2026-11-25T00:08:45.304Z",
-      "attempts": 5
+      "lastCheckedAt": "2026-11-25T23:13:31.129Z",
+      "attempts": 6
     },
     "phelps-national:phelps-8521": {
       "startsAt": "2026-11-20 22:10:00",
@@ -2310,7 +2267,7 @@
       "status": "ok"
     },
     "providence-tn-varsity": {
-      "attemptedAt": "2026-11-25T20:29:16.868Z",
+      "attemptedAt": "2026-11-25T23:13:31.129Z",
       "status": "ok"
     },
     "veritas-national": {
