@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-25T05:45:04.798Z",
+  "generatedAt": "2026-11-25T08:13:04.862Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -729,7 +729,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-25T05:45:04.798Z"
+      "fetchedAt": "2026-11-25T08:13:04.862Z"
     },
     {
       "schoolId": "veritas-national",
@@ -1610,7 +1610,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-25T05:15:06.565Z"
+      "fetchedAt": "2026-11-25T08:13:04.862Z"
     },
     {
       "schoolId": "phelps-national",
@@ -2070,6 +2070,41 @@
       "status": "pending",
       "message": "no unambiguous current report",
       "games": 0
+    },
+    {
+      "schoolId": "link-hs-elite",
+      "source": "official",
+      "status": "ok",
+      "message": null,
+      "games": 14
+    },
+    {
+      "schoolId": "link-hs-elite",
+      "source": "zhibo8-listing",
+      "status": "pending",
+      "message": null,
+      "games": 0
+    },
+    {
+      "schoolId": "link-hs-elite",
+      "source": "hupu-listing",
+      "status": "pending",
+      "message": null,
+      "games": 0
+    },
+    {
+      "schoolId": "link-hs-elite",
+      "source": "hupu-listing",
+      "status": "pending",
+      "message": null,
+      "games": 0
+    },
+    {
+      "schoolId": "link-hs-elite",
+      "source": "verified-media",
+      "status": "pending",
+      "message": "no unambiguous current report",
+      "games": 0
     }
   ],
   "postgameChecks": {
@@ -2280,14 +2315,14 @@
     "link-hs-elite:d07bc6785b535f01dd80cfe9a62deadc": {
       "startsAt": "2026-11-24 12:00:00",
       "sourceDate": "2026-11-24",
-      "lastCheckedAt": "2026-11-25T05:15:06.565Z",
-      "attempts": 1
+      "lastCheckedAt": "2026-11-25T08:13:04.862Z",
+      "attempts": 2
     },
     "providence-tn-varsity:mp-ea3813e1-3564-4f49-987e-de3c461a2740": {
       "startsAt": "2026-11-24 12:00:00",
       "sourceDate": "2026-11-24",
-      "lastCheckedAt": "2026-11-25T05:45:04.798Z",
-      "attempts": 1
+      "lastCheckedAt": "2026-11-25T08:13:04.862Z",
+      "attempts": 2
     }
   },
   "schoolChecks": {
@@ -2300,7 +2335,7 @@
       "status": "ok"
     },
     "providence-tn-varsity": {
-      "attemptedAt": "2026-11-25T05:45:04.798Z",
+      "attemptedAt": "2026-11-25T08:13:04.862Z",
       "status": "ok"
     },
     "veritas-national": {
@@ -2312,7 +2347,7 @@
       "status": "ok"
     },
     "link-hs-elite": {
-      "attemptedAt": "2026-11-25T05:15:06.565Z",
+      "attemptedAt": "2026-11-25T08:13:04.862Z",
       "status": "ok"
     },
     "phelps-national": {
