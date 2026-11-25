@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-25T18:58:20.945Z",
+  "generatedAt": "2026-11-25T19:08:27.799Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -882,7 +882,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-25T08:54:49.517Z"
+      "fetchedAt": "2026-11-25T19:08:27.799Z"
     },
     {
       "schoolId": "notre-dame-prep-ny",
@@ -1916,47 +1916,60 @@
   ],
   "sources": [
     {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "neprep",
+      "schoolId": "veritas-national",
+      "source": "verified-seed",
       "status": "ok",
-      "message": "exact Elmira prep squad; explicit Finals only",
-      "games": 30
+      "message": "2026-11-11 transcription; source availability rechecked",
+      "games": 4
     },
     {
-      "schoolId": "notre-dame-prep-ny",
+      "schoolId": "veritas-national",
+      "source": "maxpreps",
+      "status": "ok",
+      "message": null,
+      "games": 1
+    },
+    {
+      "schoolId": "veritas-national",
+      "source": "legitgm",
+      "status": "pending",
+      "message": "no verified current matchup/player statistics found",
+      "games": 0
+    },
+    {
+      "schoolId": "veritas-national",
+      "source": "nike-eybl",
+      "status": "pending",
+      "message": null,
+      "games": 0
+    },
+    {
+      "schoolId": "veritas-national",
       "source": "zhibo8-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "notre-dame-prep-ny",
+      "schoolId": "veritas-national",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "notre-dame-prep-ny",
+      "schoolId": "veritas-national",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "notre-dame-prep-ny",
+      "schoolId": "veritas-national",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
       "games": 0
-    },
-    {
-      "schoolId": "notre-dame-prep-ny",
-      "source": "publication",
-      "status": "warning",
-      "reason": "source_conflict",
-      "gameId": "neprep-9159073",
-      "message": "confirmed final score conflict"
     }
   ],
   "postgameChecks": {
@@ -2135,10 +2148,10 @@
       "attempts": 1
     },
     "veritas-national:mp-3099d503-8efc-49eb-83ce-19d39d1db51d": {
-      "startsAt": "2026-11-23 12:00:00",
-      "sourceDate": "2026-11-23",
-      "lastCheckedAt": "2026-11-24T21:13:43.874Z",
-      "attempts": 4
+      "startsAt": "2026-11-24 12:00:00",
+      "sourceDate": "2026-11-24",
+      "lastCheckedAt": "2026-11-25T19:08:27.799Z",
+      "attempts": 1
     },
     "link-hs-elite:96c7d8a54deaab67b8a1877eb5167af9": {
       "startsAt": "2026-11-23 12:00:00",
@@ -2197,7 +2210,7 @@
       "status": "ok"
     },
     "veritas-national": {
-      "attemptedAt": "2026-11-25T08:54:49.517Z",
+      "attemptedAt": "2026-11-25T19:08:27.799Z",
       "status": "ok"
     },
     "notre-dame-prep-ny": {
