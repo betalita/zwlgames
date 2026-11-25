@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-25T19:08:27.799Z",
+  "generatedAt": "2026-11-25T20:13:20.795Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -729,7 +729,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-25T14:13:15.851Z"
+      "fetchedAt": "2026-11-25T20:13:20.795Z"
     },
     {
       "schoolId": "veritas-national",
@@ -882,7 +882,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-25T19:08:27.799Z"
+      "fetchedAt": "2026-11-25T20:13:20.795Z"
     },
     {
       "schoolId": "notre-dame-prep-ny",
@@ -1502,7 +1502,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-25T14:13:15.851Z"
+      "fetchedAt": "2026-11-25T20:13:20.795Z"
     },
     {
       "schoolId": "phelps-national",
@@ -1916,6 +1916,54 @@
   ],
   "sources": [
     {
+      "schoolId": "providence-tn-varsity",
+      "source": "official",
+      "status": "ok",
+      "message": null,
+      "games": 4
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "maxpreps",
+      "status": "ok",
+      "message": null,
+      "games": 5
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "ballfrog",
+      "status": "error",
+      "message": "invalid Ballfrog result"
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "zhibo8-listing",
+      "status": "pending",
+      "message": null,
+      "games": 0
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "hupu-listing",
+      "status": "pending",
+      "message": null,
+      "games": 0
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "hupu-listing",
+      "status": "pending",
+      "message": null,
+      "games": 0
+    },
+    {
+      "schoolId": "providence-tn-varsity",
+      "source": "verified-media",
+      "status": "pending",
+      "message": "no unambiguous current report",
+      "games": 0
+    },
+    {
       "schoolId": "veritas-national",
       "source": "verified-seed",
       "status": "ok",
@@ -1939,9 +1987,15 @@
     {
       "schoolId": "veritas-national",
       "source": "nike-eybl",
-      "status": "pending",
+      "status": "warning",
+      "message": "Nike player and team shooting disagree"
+    },
+    {
+      "schoolId": "veritas-national",
+      "source": "nike-eybl",
+      "status": "ok",
       "message": null,
-      "games": 0
+      "games": 1
     },
     {
       "schoolId": "veritas-national",
@@ -1966,6 +2020,41 @@
     },
     {
       "schoolId": "veritas-national",
+      "source": "verified-media",
+      "status": "pending",
+      "message": "no unambiguous current report",
+      "games": 0
+    },
+    {
+      "schoolId": "link-hs-elite",
+      "source": "official",
+      "status": "ok",
+      "message": null,
+      "games": 14
+    },
+    {
+      "schoolId": "link-hs-elite",
+      "source": "zhibo8-listing",
+      "status": "pending",
+      "message": null,
+      "games": 0
+    },
+    {
+      "schoolId": "link-hs-elite",
+      "source": "hupu-listing",
+      "status": "pending",
+      "message": null,
+      "games": 0
+    },
+    {
+      "schoolId": "link-hs-elite",
+      "source": "hupu-listing",
+      "status": "pending",
+      "message": null,
+      "games": 0
+    },
+    {
+      "schoolId": "link-hs-elite",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -2150,8 +2239,8 @@
     "veritas-national:mp-3099d503-8efc-49eb-83ce-19d39d1db51d": {
       "startsAt": "2026-11-24 12:00:00",
       "sourceDate": "2026-11-24",
-      "lastCheckedAt": "2026-11-25T19:08:27.799Z",
-      "attempts": 1
+      "lastCheckedAt": "2026-11-25T20:13:20.795Z",
+      "attempts": 2
     },
     "link-hs-elite:96c7d8a54deaab67b8a1877eb5167af9": {
       "startsAt": "2026-11-23 12:00:00",
@@ -2180,20 +2269,20 @@
     "link-hs-elite:d07bc6785b535f01dd80cfe9a62deadc": {
       "startsAt": "2026-11-24 12:00:00",
       "sourceDate": "2026-11-24",
-      "lastCheckedAt": "2026-11-25T14:13:15.851Z",
-      "attempts": 3
+      "lastCheckedAt": "2026-11-25T20:13:20.795Z",
+      "attempts": 4
     },
     "providence-tn-varsity:mp-ea3813e1-3564-4f49-987e-de3c461a2740": {
       "startsAt": "2026-11-24 12:00:00",
       "sourceDate": "2026-11-24",
-      "lastCheckedAt": "2026-11-25T14:13:15.851Z",
-      "attempts": 3
+      "lastCheckedAt": "2026-11-25T20:13:20.795Z",
+      "attempts": 4
     },
     "veritas-national:nike-e881ad10-6303-5fab-a532-259bc7ccce7c": {
       "startsAt": "2026-11-23 20:00:00",
       "sourceDate": "2026-11-23",
-      "lastCheckedAt": "2026-11-25T08:54:49.517Z",
-      "attempts": 1
+      "lastCheckedAt": "2026-11-25T20:13:20.795Z",
+      "attempts": 2
     }
   },
   "schoolChecks": {
@@ -2206,11 +2295,11 @@
       "status": "ok"
     },
     "providence-tn-varsity": {
-      "attemptedAt": "2026-11-25T14:13:15.851Z",
+      "attemptedAt": "2026-11-25T20:13:20.795Z",
       "status": "ok"
     },
     "veritas-national": {
-      "attemptedAt": "2026-11-25T19:08:27.799Z",
+      "attemptedAt": "2026-11-25T20:13:20.795Z",
       "status": "ok"
     },
     "notre-dame-prep-ny": {
@@ -2218,7 +2307,7 @@
       "status": "ok"
     },
     "link-hs-elite": {
-      "attemptedAt": "2026-11-25T14:13:15.851Z",
+      "attemptedAt": "2026-11-25T20:13:20.795Z",
       "status": "ok"
     },
     "phelps-national": {
