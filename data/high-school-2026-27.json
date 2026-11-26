@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-26T05:13:51.397Z",
+  "generatedAt": "2026-11-26T05:43:43.460Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1439,7 +1439,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-26T03:35:32.427Z"
+      "fetchedAt": "2026-11-26T05:43:43.460Z"
     },
     {
       "schoolId": "link-hs-elite",
@@ -2034,129 +2034,47 @@
   ],
   "sources": [
     {
-      "schoolId": "providence-tn-varsity",
-      "source": "official",
+      "schoolId": "notre-dame-prep-ny",
+      "source": "neprep",
       "status": "ok",
-      "message": null,
-      "games": 4
+      "message": "exact Elmira prep squad; explicit Finals only",
+      "games": 30
     },
     {
-      "schoolId": "providence-tn-varsity",
-      "source": "maxpreps",
-      "status": "ok",
-      "message": null,
-      "games": 5
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "ballfrog",
-      "status": "error",
-      "message": "invalid Ballfrog result"
-    },
-    {
-      "schoolId": "providence-tn-varsity",
+      "schoolId": "notre-dame-prep-ny",
       "source": "zhibo8-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "providence-tn-varsity",
+      "schoolId": "notre-dame-prep-ny",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "providence-tn-varsity",
+      "schoolId": "notre-dame-prep-ny",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "providence-tn-varsity",
+      "schoolId": "notre-dame-prep-ny",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
       "games": 0
     },
     {
-      "schoolId": "link-hs-elite",
-      "source": "official",
-      "status": "ok",
-      "message": null,
-      "games": 14
-    },
-    {
-      "schoolId": "link-hs-elite",
-      "source": "zhibo8-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "link-hs-elite",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "link-hs-elite",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "link-hs-elite",
-      "source": "verified-media",
-      "status": "pending",
-      "message": "no unambiguous current report",
-      "games": 0
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "official",
-      "status": "ok",
-      "message": null,
-      "games": 9
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "neprep-finals",
-      "status": "ok",
-      "message": "explicit finals on registered team; matches on existing fixtures",
-      "games": 2
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "zhibo8-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "verified-media",
-      "status": "pending",
-      "message": "no unambiguous current report",
-      "games": 0
+      "schoolId": "notre-dame-prep-ny",
+      "source": "publication",
+      "status": "warning",
+      "reason": "source_conflict",
+      "gameId": "neprep-9159073",
+      "message": "confirmed final score conflict"
     }
   ],
   "postgameChecks": {
@@ -2229,8 +2147,8 @@
     "notre-dame-prep-ny:neprep-9534381": {
       "startsAt": "2026-11-18 12:00:00",
       "sourceDate": "2026-11-18",
-      "lastCheckedAt": "2026-11-25T05:15:06.565Z",
-      "attempts": 9
+      "lastCheckedAt": "2026-11-26T05:43:43.460Z",
+      "attempts": 10
     },
     "providence-tn-varsity:7c8d3121ccaf8dc3fe69101e5508b2a3": {
       "startsAt": "2026-11-19 12:00:00",
@@ -2401,7 +2319,7 @@
       "status": "ok"
     },
     "notre-dame-prep-ny": {
-      "attemptedAt": "2026-11-26T03:35:32.427Z",
+      "attemptedAt": "2026-11-26T05:43:43.460Z",
       "status": "ok"
     },
     "link-hs-elite": {
