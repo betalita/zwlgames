@@ -79,13 +79,13 @@ async function collect({now=new Date(),previous=null,fetchText=defaultFetch,post
  if(schoolIds!==undefined&&(!postgameOnly||!Array.isArray(schoolIds)||!schoolIds.length||schoolIds.length>3||
   new Set(schoolIds).size!==schoolIds.length||schoolIds.some(id=>!Object.hasOwn(SCHOOLS,id))))throw Error('invalid high school dispatch scope');
  const due=dueSchools(previous,now);
+ const lastCheck=schoolId=>Math.min(...[...(due.get(schoolId)||[])].map(key=>Date.parse(previous?.postgameChecks?.[key]?.lastCheckedAt)||0));
+ const selected=new Set([...due.keys()].filter(id=>!schoolIds||schoolIds.includes(id)).sort((a,b)=>lastCheck(a)-lastCheck(b)).slice(0,3));
+ if(postgameOnly&&!selected.size)return previous;
  // A full refresh also checks recent incomplete fixtures between postgame
  // checkpoints. Cheap postgame probes retain their no-work/no-request behavior.
  const mediaDue=postgameOnly?due:dueSchools(previous?{...previous,postgameChecks:{}}:null,now);
- if(postgameOnly&&!due.size)return previous;
  const sources=[],schools=[],cache=new Map();
- const lastCheck=schoolId=>Math.min(...[...(due.get(schoolId)||[])].map(key=>Date.parse(previous?.postgameChecks?.[key]?.lastCheckedAt)||0));
- const selected=new Set([...due.keys()].filter(id=>!schoolIds||schoolIds.includes(id)).sort((a,b)=>lastCheck(a)-lastCheck(b)).slice(0,3));
  let mediaReads=0;
  let nikeFixtures;
  const previousNikeRecords=(previous?.schools||[]).flatMap(entry=>entry.games);

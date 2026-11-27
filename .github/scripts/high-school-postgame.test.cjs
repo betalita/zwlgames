@@ -32,6 +32,17 @@ test('dispatch scope cannot fetch or charge other due schools and no-read school
  const empty=await collect({now,fetchText:async()=>{throw Error('unavailable');}});
  assert.equal(empty.schoolChecks['patrick-school'],undefined);
 });
+test('a scoped postgame run with work due only outside its scope keeps the previous snapshot',async()=>{
+ const notreDame=HIGH_SCHOOL_PLAYERS.find(p=>p.schoolId==='notre-dame-prep-ny');
+ const previous=snapshot([row(),{...row(notreDame),date:'2026-11-20'}]);
+ assert.deepEqual([...dueSchools(previous,now).keys()],['bella-vista']);
+ const calls=[];
+ const result=await collect({now,previous,postgameOnly:true,schoolIds:[notreDame.schoolId],fetchText:async url=>{
+  calls.push(url);throw Error('unexpected source request');
+ }});
+ assert.deepEqual(calls,[]);
+ assert.ok(result===previous,'the CLI must skip publication when no requested school is due');
+});
 test('three simultaneous schools each receive a reserved media quota and rotate older articles',async()=>{
  const members=HIGH_SCHOOL_PLAYERS.slice(0,3),previous=snapshot(members.map(row));const requested=[];
  const links=members.flatMap((member,i)=>Array.from({length:6},(_,j)=>`<a href="https://news.zhibo8.com/nba/2026-11-13/school${i}article${j}.htm">${member.name}拿下6分</a>`)).join('');
