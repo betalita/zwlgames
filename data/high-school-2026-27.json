@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-27T20:14:16.252Z",
+  "generatedAt": "2026-11-27T22:29:17.473Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1642,7 +1642,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-27T19:59:00.568Z"
+      "fetchedAt": "2026-11-27T22:29:17.473Z"
     },
     {
       "schoolId": "peddie-varsity",
@@ -1916,62 +1916,42 @@
   ],
   "sources": [
     {
-      "schoolId": "veritas-national",
-      "source": "verified-seed",
-      "status": "ok",
-      "message": "2026-11-11 transcription; source availability rechecked",
-      "games": 4
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "maxpreps",
+      "schoolId": "phelps-national",
+      "source": "official",
       "status": "ok",
       "message": null,
-      "games": 1
+      "games": 9
     },
     {
-      "schoolId": "veritas-national",
-      "source": "legitgm",
-      "status": "pending",
-      "message": "no verified current matchup/player statistics found",
-      "games": 0
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "nike-eybl",
-      "status": "warning",
-      "message": "Nike player and team shooting disagree"
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "nike-eybl",
+      "schoolId": "phelps-national",
+      "source": "neprep-finals",
       "status": "ok",
-      "message": null,
-      "games": 1
+      "message": "explicit finals on registered team; matches on existing fixtures",
+      "games": 2
     },
     {
-      "schoolId": "veritas-national",
+      "schoolId": "phelps-national",
       "source": "zhibo8-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "veritas-national",
+      "schoolId": "phelps-national",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "veritas-national",
+      "schoolId": "phelps-national",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "veritas-national",
+      "schoolId": "phelps-national",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -2060,8 +2040,8 @@
     "phelps-national:phelps-8521": {
       "startsAt": "2026-11-20 22:10:00",
       "sourceDate": "2026-11-20",
-      "lastCheckedAt": "2026-11-26T22:28:44.063Z",
-      "attempts": 13
+      "lastCheckedAt": "2026-11-27T22:29:17.473Z",
+      "attempts": 14
     },
     "notre-dame-prep-ny:neprep-9967170": {
       "startsAt": "2026-11-21 00:30:00",
@@ -2222,7 +2202,7 @@
       "status": "ok"
     },
     "phelps-national": {
-      "attemptedAt": "2026-11-27T19:59:00.568Z",
+      "attemptedAt": "2026-11-27T22:29:17.473Z",
       "status": "ok"
     },
     "peddie-varsity": {
