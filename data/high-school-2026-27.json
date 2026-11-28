@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-28T12:02:39.486Z",
+  "generatedAt": "2026-11-28T14:12:24.481Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1502,7 +1502,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-28T08:14:37.408Z"
+      "fetchedAt": "2026-11-28T14:12:24.481Z"
     },
     {
       "schoolId": "phelps-national",
@@ -1916,103 +1916,34 @@
   ],
   "sources": [
     {
-      "schoolId": "veritas-national",
-      "source": "verified-seed",
-      "status": "ok",
-      "message": "2026-11-11 transcription; source availability rechecked",
-      "games": 4
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "maxpreps",
-      "status": "ok",
-      "message": null,
-      "games": 1
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "legitgm",
-      "status": "pending",
-      "message": "no verified current matchup/player statistics found",
-      "games": 0
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "nike-eybl",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "zhibo8-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "hupu-listing",
-      "status": "error",
-      "message": "fetch failed"
-    },
-    {
-      "schoolId": "veritas-national",
-      "source": "verified-media",
-      "status": "pending",
-      "message": "no unambiguous current report",
-      "games": 0
-    },
-    {
-      "schoolId": "peddie-varsity",
+      "schoolId": "link-hs-elite",
       "source": "official",
       "status": "ok",
       "message": null,
-      "games": 16
+      "games": 14
     },
     {
-      "schoolId": "peddie-varsity",
-      "source": "maxpreps",
-      "status": "ok",
-      "message": null,
-      "games": 2
-    },
-    {
-      "schoolId": "peddie-varsity",
-      "source": "neprep-finals",
-      "status": "ok",
-      "message": "explicit finals on registered team; matches on existing fixtures",
-      "games": 0
-    },
-    {
-      "schoolId": "peddie-varsity",
+      "schoolId": "link-hs-elite",
       "source": "zhibo8-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "peddie-varsity",
+      "schoolId": "link-hs-elite",
       "source": "hupu-listing",
       "status": "pending",
       "message": null,
       "games": 0
     },
     {
-      "schoolId": "peddie-varsity",
+      "schoolId": "link-hs-elite",
       "source": "hupu-listing",
       "status": "error",
       "message": "fetch failed"
     },
     {
-      "schoolId": "peddie-varsity",
+      "schoolId": "link-hs-elite",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -2079,12 +2010,6 @@
       "sourceDate": "2026-11-18",
       "lastCheckedAt": "2026-11-26T05:43:43.460Z",
       "attempts": 10
-    },
-    "providence-tn-varsity:7c8d3121ccaf8dc3fe69101e5508b2a3": {
-      "startsAt": "2026-11-19 12:00:00",
-      "sourceDate": "2026-11-19",
-      "lastCheckedAt": "2026-11-20T12:13:34.089Z",
-      "attempts": 1
     },
     "providence-tn-varsity:mp-d30610a9-5363-4343-b333-6862953cee65": {
       "startsAt": "2026-11-19 23:00:00",
@@ -2233,8 +2158,8 @@
     "link-hs-elite:0a0885caad1b788c5a28b612dfb41eeb": {
       "startsAt": "2026-11-27 12:00:00",
       "sourceDate": "2026-11-27",
-      "lastCheckedAt": "2026-11-28T08:14:37.408Z",
-      "attempts": 2
+      "lastCheckedAt": "2026-11-28T14:12:24.481Z",
+      "attempts": 3
     }
   },
   "schoolChecks": {
@@ -2259,7 +2184,7 @@
       "status": "ok"
     },
     "link-hs-elite": {
-      "attemptedAt": "2026-11-28T08:14:37.408Z",
+      "attemptedAt": "2026-11-28T14:12:24.481Z",
       "status": "ok"
     },
     "phelps-national": {
