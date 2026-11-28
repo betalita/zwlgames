@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "league": "high-school-basketball",
   "season": 2027,
-  "generatedAt": "2026-11-28T05:14:38.902Z",
+  "generatedAt": "2026-11-28T08:14:37.408Z",
   "schools": [
     {
       "schoolId": "bella-vista",
@@ -1620,7 +1620,7 @@
         }
       ],
       "mode": "automatic",
-      "fetchedAt": "2026-11-28T05:14:38.902Z"
+      "fetchedAt": "2026-11-28T08:14:37.408Z"
     },
     {
       "schoolId": "phelps-national",
@@ -2034,54 +2034,6 @@
   ],
   "sources": [
     {
-      "schoolId": "providence-tn-varsity",
-      "source": "official",
-      "status": "ok",
-      "message": null,
-      "games": 4
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "maxpreps",
-      "status": "ok",
-      "message": null,
-      "games": 5
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "ballfrog",
-      "status": "error",
-      "message": "invalid Ballfrog result"
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "zhibo8-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "providence-tn-varsity",
-      "source": "verified-media",
-      "status": "pending",
-      "message": "no unambiguous current report",
-      "games": 0
-    },
-    {
       "schoolId": "link-hs-elite",
       "source": "official",
       "status": "ok",
@@ -2111,48 +2063,6 @@
     },
     {
       "schoolId": "link-hs-elite",
-      "source": "verified-media",
-      "status": "pending",
-      "message": "no unambiguous current report",
-      "games": 0
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "official",
-      "status": "ok",
-      "message": null,
-      "games": 9
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "neprep-finals",
-      "status": "ok",
-      "message": "explicit finals on registered team; matches on existing fixtures",
-      "games": 2
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "zhibo8-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "phelps-national",
-      "source": "hupu-listing",
-      "status": "pending",
-      "message": null,
-      "games": 0
-    },
-    {
-      "schoolId": "phelps-national",
       "source": "verified-media",
       "status": "pending",
       "message": "no unambiguous current report",
@@ -2373,8 +2283,8 @@
     "link-hs-elite:0a0885caad1b788c5a28b612dfb41eeb": {
       "startsAt": "2026-11-27 12:00:00",
       "sourceDate": "2026-11-27",
-      "lastCheckedAt": "2026-11-28T05:14:38.902Z",
-      "attempts": 1
+      "lastCheckedAt": "2026-11-28T08:14:37.408Z",
+      "attempts": 2
     }
   },
   "schoolChecks": {
@@ -2399,7 +2309,7 @@
       "status": "ok"
     },
     "link-hs-elite": {
-      "attemptedAt": "2026-11-28T05:14:38.902Z",
+      "attemptedAt": "2026-11-28T08:14:37.408Z",
       "status": "ok"
     },
     "phelps-national": {
